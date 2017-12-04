@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "lib": [
+      "dom",
+      "es6",
+      "es2017.object",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "sourceMap": true,
+    "target": "ES6"
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ]
+}

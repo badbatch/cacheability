@@ -1,6 +1,6 @@
 {
   "name": "cacheability",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility class for parsing http cache headers.",
   "author": "Dylan Aubrey <dylanaubrey@gmail.com>",
   "license": "MIT",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:dylanaubrey/cacheability.git"
+    "url": "https://github.com/dylanaubrey/cacheability"
   },
   "main": "lib/main/index.js",
   "module": "lib/module/index.js",
@@ -25,8 +25,8 @@
   "scripts": {
     "build": "npm run test && npm run transpile",
     "clean": "rimraf lib/*",
-    "coverage": "cross-env BABEL_ENV=test ISO_LOG=false nyc mocha test/specs/index.js",
-    "lint": "eslint . --fix",
+    "coverage": "nyc mocha --opts \"./mocha.opts\"",
+    "lint": "tslint --project \"./tsconfig.json\" --fix",
     "publish:pkg": "npm run build && npm publish",
     "test": "npm run lint && npm run coverage",
     "transpile": "npm run clean && npm run transpile:browser && npm run transpile:main && npm run transpile:module",
@@ -35,30 +35,29 @@
     "transpile:module": " cross-env BABEL_ENV=module babel src --out-dir lib/module --copy-files"
   },
   "dependencies": {
+    "es6-promise": "^4.1.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-eslint": "^7.2.3",
-    "babel-plugin-istanbul": "^4.1.4",
-    "babel-preset-env": "^1.5.2",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.24.1",
+    "@types/chai": "^4.0.8",
+    "@types/es6-promise": "0.0.33",
+    "@types/isomorphic-fetch": "0.0.34",
+    "@types/lodash": "^4.14.85",
+    "@types/mocha": "^2.2.44",
+    "@types/node": "^8.0.53",
     "chai": "^4.0.2",
-    "codecov": "^2.2.0",
+    "codecov": "^3.0.0",
     "cross-env": "^5.0.1",
-    "dirty-chai": "^2.0.0",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
-    "mocha": "^3.4.2",
+    "fetch-mock": "^5.12.1",
+    "mocha": "^4.0.1",
     "nyc": "^11.0.3",
     "rimraf": "^2.6.1",
-    "sinon": "^3.2.0",
-    "sinon-chai": "^2.11.0"
+    "sinon": "^4.1.2",
+    "sinon-chai": "^2.11.0",
+    "source-map-support": "^0.5.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
   }
 }
