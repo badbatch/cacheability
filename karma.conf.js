@@ -14,16 +14,20 @@ module.exports = (config) => {
     webpack: {
       devtool: 'cheap-module-eval-source-map',
       resolve: {
-        extensions: ['.ts', '.js', '.json']
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       },
       module: {
         rules: [{
-          test: /\.(ts|js)$/,
-          include: [
-            resolve(__dirname, 'src'),
-            resolve(__dirname, 'test'),
-          ],
-          use: { loader: 'babel-loader' },
+          test: /\.tsx?$/,
+          use: [{
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+              compilerOptions: {
+                target: 'es5',
+              },
+            },
+          }],
         }],
       },
     },
@@ -32,6 +36,9 @@ module.exports = (config) => {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     concurrency: Infinity,
-    client: { captureConsole: true }
+    client: { captureConsole: true },
+    mime: {
+      'text/x-typescript': ['ts','tsx'],
+    },
   });
 };

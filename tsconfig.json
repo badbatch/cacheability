@@ -1,11 +1,8 @@
 {
   "extends": "./tsconfig.base",
   "compilerOptions": {
-    "module": "es6",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "target": "es6",
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "target": "es6"
   },
   "include": [
     "src/**/*"

@@ -10,6 +10,7 @@
       "dom.iterable",
       "scripthost"
     ],
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
