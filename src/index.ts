@@ -1,6 +1,9 @@
+import { polyfill } from "es6-promise";
 import "isomorphic-fetch";
 import { camelCase, isBoolean, isPlainObject, isString, kebabCase } from "lodash";
 import { CacheControl, Metadata, ObjectStringMap } from "./types";
+
+polyfill();
 
 export default class Cacheability {
   private static _getDirectives(cacheControl: string): string[] {
@@ -24,11 +27,11 @@ export default class Cacheability {
     return obj;
   }
 
-  private static _setTTL(cacheControl?: CacheControl): number | void {
-    if (!isPlainObject(cacheControl)) return;
-    const { maxAge, sMaxage } = cacheControl;
+  private static _setTTL(cacheControl?: CacheControl): number | undefined {
+    if (!isPlainObject(cacheControl)) return undefined;
+    const { maxAge, sMaxage } = cacheControl as CacheControl;
     const sec = sMaxage || maxAge;
-    if (!sec) return;
+    if (!sec) return undefined;
     const ms = sec * 1000;
     return Date.now() + ms;
   }
@@ -55,7 +58,7 @@ export default class Cacheability {
     return this._metadata;
   }
 
-  public parseHeaders(headers: Headers): Metadata {
+  public parseHeaders(headers: Headers | ObjectStringMap): Metadata {
     if (!(headers instanceof Headers) && !isPlainObject(headers)) {
       this._metadata = {};
       return this._metadata;
@@ -68,8 +71,9 @@ export default class Cacheability {
     return this._metadata;
   }
 
-  public printCacheControl(): string {
-    const cacheControl = { ...this._metadata.cacheControl };
+  public printCacheControl(): string | undefined {
+    if (!isPlainObject(this._metadata.cacheControl)) return undefined;
+    const cacheControl: CacheControl = { ...this._metadata.cacheControl };
     const ttl = this._metadata.ttl;
     let maxAge = 0;
 
@@ -97,7 +101,7 @@ export default class Cacheability {
   public setMetadata(metadata?: Metadata): void {
     let _metadata = metadata;
     if (!isPlainObject(metadata)) _metadata = {};
-    this._metadata = _metadata;
+    this._metadata = _metadata as Metadata;
   }
 
   private _parseHeaders(headers: Headers): ObjectStringMap {
@@ -106,7 +110,7 @@ export default class Cacheability {
     this._headerKeys.forEach((key) => {
       const headerValue = headers.get(key);
       if (!headerValue) return;
-      metadata[key] = headerValue;
+      metadata[camelCase(key)] = headerValue;
     });
 
     return metadata;

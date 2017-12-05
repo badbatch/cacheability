@@ -1,5 +1,4 @@
 import { expect } from "chai";
-import "mocha";
 import Cacheability from "../../src";
 
 const cacheControl = "public, max-age=2";
@@ -22,46 +21,59 @@ describe("the cacheability class", () => {
     cacheability = new Cacheability();
   });
 
-  describe("when parsing a headers response object", () => {
-    after(() => {
+  describe("the checkTTL method", () => {
+    beforeEach(() => {
+      cacheability.parseHeaders(new Headers(headers));
+    });
+
+    afterEach(() => {
       cacheability.setMetadata();
     });
 
-    describe("when headers is not an instance of the Headers class or a plain object", () => {
-      it("should set metadata to an empty object", () => {
+    context("when ttl is valid", () => {
+      it("then the method should return true", () => {
+        expect(cacheability.checkTTL()).to.equal(true);
+      });
+    });
+
+    context("when ttl is not valid", () => {
+      it("then the method should return false", (done) => {
+        setTimeout(() => {
+          expect(cacheability.checkTTL()).to.equal(false);
+          done();
+        }, 1000);
+      });
+    });
+  });
+
+  describe("the parseHeaders method", () => {
+    afterEach(() => {
+      cacheability.setMetadata();
+    });
+
+    context("when headers is not an instance of the Headers class or a plain object", () => {
+      it("then the method should set metadata to an empty object", () => {
         const metadata = cacheability.parseHeaders(null);
+        expect(cacheability.metadata).to.equal(metadata);
         expect(metadata).to.deep.equal({});
       });
     });
 
-    describe("when headers is an instance of the Headers class", () => {
-      it("should parse the headers and set the resulting data to the metadata", () => {
+    context("when headers is an instance of the Headers class", () => {
+      it("then the method should parse the headers and set the resulting data to the metadata", () => {
         const metadata = cacheability.parseHeaders(new Headers(headers));
+        expect(cacheability.metadata).to.equal(metadata);
         expect(metadata.cacheControl.maxAge).to.equal(1);
         expect(metadata.cacheControl.public).to.equal(true);
         expect(metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
         expect(metadata.ttl).to.be.a("number");
       });
-
-      describe("when the ttl is valid", () => {
-        it("should return true from the .checkTTL() method", () => {
-          expect(cacheability.checkTTL()).to.equal(true);
-        });
-      });
-
-      describe("when the ttl is not valid", () => {
-        it("should return false from the .checkTTL() method", (done) => {
-          setTimeout(() => {
-            expect(cacheability.checkTTL()).to.equal(false);
-            done();
-          }, 1000);
-        });
-      });
     });
 
-    describe("when headers is a plain object", () => {
-      it("should parse the headers and set the resulting data to the metadata", () => {
-        const metadata = cacheability.parseHeaders(new Headers(cacheHeaders));
+    context("when headers is a plain object", () => {
+      it("then the method should parse the headers and set the resulting data to the metadata", () => {
+        const metadata = cacheability.parseHeaders(cacheHeaders);
+        expect(cacheability.metadata).to.equal(metadata);
         expect(metadata.cacheControl.maxAge).to.equal(3);
         expect(metadata.cacheControl.public).to.equal(true);
         expect(metadata.etag).to.eql("33a64df551425fcc55e4d42a148795d9f25f89d4");
@@ -70,29 +82,41 @@ describe("the cacheability class", () => {
     });
   });
 
-  describe("when parsing a cache control string", () => {
-    after(() => {
+  describe("the parseCacheControl method", () => {
+    afterEach(() => {
       cacheability.setMetadata();
     });
 
-    describe("when the param is not a string", () => {
-      it("should set metadata to an empty object", () => {
+    context("when cacheControl is not a string", () => {
+      it("then the method should set metadata to an empty object", () => {
         const metadata = cacheability.parseCacheControl(null);
+        expect(cacheability.metadata).to.equal(metadata);
         expect(metadata).to.deep.equal({});
       });
     });
 
-    describe("when the param is a string", () => {
-      it("should parse the cache control and set the resulting data to the metadata", () => {
+    context("when cacheControl is a string", () => {
+      it("then the method should parse the cache control and set the resulting data to the metadata", () => {
         const metadata = cacheability.parseCacheControl(cacheControl);
+        expect(cacheability.metadata).to.equal(metadata);
         expect(metadata.cacheControl.maxAge).to.equal(2);
         expect(metadata.cacheControl.public).to.equal(true);
         expect(metadata.ttl).to.be.a("number");
       });
     });
+  });
 
-    describe("when printing a cache control string", () => {
-      it("should print a cache control with updated maxAge based on time ellapsed", (done) => {
+  describe("the printCacheControl method", () => {
+    beforeEach(() => {
+      cacheability.parseCacheControl(cacheControl);
+    });
+
+    afterEach(() => {
+      cacheability.setMetadata();
+    });
+
+    context("when the method is executed", () => {
+      it("then the method should print a cache control with updated maxAge based on time ellapsed", (done) => {
         setTimeout(() => {
           expect(cacheability.printCacheControl()).to.equal("public, max-age=1");
           done();

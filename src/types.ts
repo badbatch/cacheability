@@ -5,11 +5,11 @@ export interface ObjectStringMap {
 export interface CacheControl {
   maxAge?: number;
   sMaxage?: number;
-  [key: string]: string | number | boolean;
+  [key: string]: string | number | boolean | undefined;
 }
 
 export interface Metadata {
   cacheControl?: CacheControl;
   etag?: string;
-  ttl?: number | void;
+  ttl?: number;
 }

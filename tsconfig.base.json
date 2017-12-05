@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es6",
+      "es2017.object",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "pretty": true,
+    "skipLibCheck": true,
+    "sourceMap": true
+  }
+}
