@@ -23,9 +23,10 @@
     "parser"
   ],
   "scripts": {
-    "build": "npm run test && npm run transpile",
+    "build": "npm run clean && npm run test && npm run compile",
     "clean": "rimraf lib/*",
-    "compile": "npm run compile:main && npm run compile:module",
+    "compile": "npm run compile:main && npm run compile:module && npm run compile:browser",
+    "compile:browser": "webpack --config webpack.browser.config.js",
     "compile:main": "tsc --module commonjs --target es5 --outDir lib/main",
     "compile:module": "tsc --module es6 --target es6 --outDir lib/module",
     "debug:web": "cross-env BABEL_ENV=browser:debug karma start --no-single-run --browsers Chrome",
@@ -61,6 +62,7 @@
     "karma-sinon": "^1.0.5",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.6",
+    "lodash-webpack-plugin": "^0.11.4",
     "mocha": "^4.0.1",
     "nyc": "^11.0.3",
     "phantomjs-prebuilt": "^2.1.16",
