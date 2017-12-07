@@ -18,6 +18,19 @@ module.exports = {
     rules: [{
       test: /\.tsx?$/,
       use: [{
+        loader: 'babel-loader',
+        options: {
+          babelrc: false,
+          plugins: ['lodash'],
+          presets: [
+            ['@babel/preset-env', {
+              targets: { browsers: 'last 4 versions' },
+              useBuiltIns: 'usage',
+            }],
+            '@babel/preset-stage-0',
+          ],
+        },
+      }, {
         loader: 'ts-loader',
         options: {
           transpileOnly: true,
