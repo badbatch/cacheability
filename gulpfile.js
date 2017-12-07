@@ -3,8 +3,8 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
 const ts = require('gulp-typescript');
-const webpack = require('gulp-webpack');
 const merge = require('merge-stream');
+const webpack = require('webpack-stream');
 
 gulp.task('clean', () => {
   return del('lib/*', { force: true });
@@ -14,7 +14,6 @@ gulp.task('main', () => {
   const tsProject = ts.createProject('tsconfig.base.json', {
     declaration: true,
     module: 'es6',
-    outDir: 'lib/main',
   });
 
   const babelrc = {
@@ -46,7 +45,6 @@ gulp.task('module', () => {
   const tsProject = ts.createProject('tsconfig.base.json', {
     declaration: true,
     module: 'es6',
-    outDir: 'lib/module',
   });
 
   const babelrc = {
@@ -76,7 +74,6 @@ gulp.task('module', () => {
 });
 
 gulp.task('browser', () => {
-  return gulp.src(['src/index.ts'])
-    .pipe(webpack())
+  return webpack(require('./webpack.config'))
     .pipe(gulp.dest('lib/browser'));
 });
