@@ -30,12 +30,12 @@
     "compile:main": "gulp main",
     "compile:module": "gulp module",
     "debug:web": "karma start --no-single-run --browsers Chrome",
-    "lint": "tslint --project \"./tsconfig.json\" --fix",
+    "lint": "gulp lint",
     "publish:pkg": "npm run build && npm publish",
     "test": "npm run lint && npm run type-check && npm run test:web && npm run test:node",
     "test:node": "cross-env TS_NODE_PROJECT=\"./tsconfig.test.json\" nyc mocha --opts \"./mocha.opts\"",
     "test:web": "karma start --single-run --browsers PhantomJS",
-    "type-check": "tsc --noEmit"
+    "type-check": "gulp type-check"
   },
   "dependencies": {
     "es6-promise": "^4.1.1",
@@ -63,6 +63,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0-beta.0",
     "gulp-sourcemaps": "^2.6.1",
+    "gulp-tslint": "^8.1.2",
     "gulp-typescript": "^3.2.3",
     "karma": "^1.7.1",
     "karma-chai": "^0.1.0",
