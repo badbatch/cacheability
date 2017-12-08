@@ -1,6 +1,6 @@
 {
   "name": "cacheability",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A utility class for parsing http cache headers.",
   "author": "Dylan Aubrey <dylanaubrey@gmail.com>",
   "license": "MIT",
@@ -15,6 +15,7 @@
   "main": "lib/main/index.js",
   "module": "lib/module/index.js",
   "browser": "lib/browser/index.js",
+  "types": "lib/main/index.d.ts",
   "keywords": [
     "http",
     "cacheControl",
