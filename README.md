@@ -1,5 +1,5 @@
 # cacheability
-A utility class for parsing http cache headers.
+A utility class to parse, store and print http cache headers.
 
 [![Build Status](https://travis-ci.org/dylanaubrey/cacheability.svg?branch=master)](https://travis-ci.org/dylanaubrey/cacheability)
 [![codecov](https://codecov.io/gh/dylanaubrey/cacheability/branch/master/graph/badge.svg)](https://codecov.io/gh/dylanaubrey/cacheability)
