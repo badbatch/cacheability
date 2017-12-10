@@ -5,6 +5,9 @@ import { CacheControl, Metadata, ParsedHeaders } from "./types";
 
 polyfill();
 
+export type CacheabilityCacheControl = CacheControl;
+export type CacheabilityMetadata = Metadata;
+
 export default class Cacheability {
   private static _headerKeys: Array<"cache-control" | "etag"> = ["cache-control", "etag"];
 
