@@ -1,18 +1,21 @@
 import { polyfill } from "es6-promise";
 import "isomorphic-fetch";
-import { camelCase, isBoolean, isPlainObject, isString, kebabCase } from "lodash";
-import { CacheControl, Metadata, ObjectStringMap } from "./types";
+import { camelCase, isBoolean, isNumber, isString, kebabCase } from "lodash";
+import { CacheControl, Metadata, ParsedHeaders } from "./types";
 
 polyfill();
 
 export default class Cacheability {
+  private static _headerKeys: Array<"cache-control" | "etag"> = ["cache-control", "etag"];
+
   private static _getDirectives(cacheControl: string): string[] {
     return cacheControl.split(", ");
   }
 
-  private static _parseCacheControl(cacheControl: string = ""): CacheControl {
-    const directives = Cacheability._getDirectives(cacheControl);
+  private static _parseCacheControl(cacheControl: string): CacheControl {
     const obj: CacheControl = {};
+    if (!cacheControl.length) return obj;
+    const directives = Cacheability._getDirectives(cacheControl);
 
     directives.forEach((dir) => {
       if (dir.match(/=/)) {
@@ -27,60 +30,85 @@ export default class Cacheability {
     return obj;
   }
 
-  private static _setTTL(cacheControl?: CacheControl): number | undefined {
-    if (!isPlainObject(cacheControl)) return undefined;
-    const { maxAge, sMaxage } = cacheControl as CacheControl;
+  private static _parseHeaders(headers: Headers): ParsedHeaders {
+    const metadata: ParsedHeaders = {};
+
+    Cacheability._headerKeys.forEach((key) => {
+      const headerValue = headers.get(key);
+      if (!headerValue) return;
+      const metadataKey = camelCase(key) as "cacheControl" | "etag";
+      metadata[metadataKey] = headerValue;
+    });
+
+    return metadata;
+  }
+
+  private static _setTTL({ maxAge, sMaxage }: CacheControl): number {
     const sec = sMaxage || maxAge;
-    if (!sec) return undefined;
+    if (!isNumber(sec)) return Infinity;
     const ms = sec * 1000;
     return Date.now() + ms;
   }
 
-  private _headerKeys: string[] = ["cache-control", "etag"];
-  private _metadata: Metadata = {};
+  private _metadata: Metadata;
 
   get metadata(): Metadata {
     return this._metadata;
   }
 
+  set metadata(metadata: Metadata) {
+    this._metadata = metadata;
+  }
+
   public checkTTL(): boolean {
-    return !this._metadata.ttl ? true : this._metadata.ttl > Date.now();
+    if (!this._metadata || !this._metadata.ttl) {
+      throw new TypeError("checkTTL expected this._metadata.ttl to be a number.");
+    }
+
+    return this._metadata.ttl > Date.now();
   }
 
   public parseCacheControl(cacheControl: string): Metadata {
     if (!isString(cacheControl)) {
-      this._metadata = {};
-      return this._metadata;
+      throw new TypeError("parseCacheControl expected cacheControl to be a string.");
     }
 
-    this._metadata = { cacheControl: Cacheability._parseCacheControl(cacheControl) };
-    this._metadata.ttl = Cacheability._setTTL(this._metadata.cacheControl);
+    const parsedCacheControl = Cacheability._parseCacheControl(cacheControl);
+
+    this._metadata = {
+      cacheControl: parsedCacheControl,
+      ttl: Cacheability._setTTL(parsedCacheControl),
+    };
+
     return this._metadata;
   }
 
-  public parseHeaders(headers: Headers | ObjectStringMap): Metadata {
-    if (!(headers instanceof Headers) && !isPlainObject(headers)) {
-      this._metadata = {};
-      return this._metadata;
+  public parseHeaders(headers: Headers): Metadata {
+    if (!(headers instanceof Headers)) {
+      throw new TypeError("parseHeaders expected headers to be an instance of Headers.");
     }
 
-    const metadata = headers instanceof Headers ? this._parseHeaders(headers) : headers;
-    const cacheControl = Cacheability._parseCacheControl(metadata.cacheControl);
-    const ttl = Cacheability._setTTL(cacheControl);
-    this._metadata = { ...metadata, cacheControl, ttl };
+    const { cacheControl = "", etag } = Cacheability._parseHeaders(headers);
+    const parsedCacheControl = Cacheability._parseCacheControl(cacheControl);
+
+    this._metadata = {
+      cacheControl: parsedCacheControl,
+      etag,
+      ttl: Cacheability._setTTL(parsedCacheControl),
+    };
+
     return this._metadata;
   }
 
-  public printCacheControl(): string | undefined {
-    if (!isPlainObject(this._metadata.cacheControl)) return undefined;
+  public printCacheControl(): string {
+    if (!this._metadata || !this._metadata.cacheControl) {
+      throw new TypeError("printCacheControl expected this._metadata.cacheControl to be an object");
+    }
+
     const cacheControl: CacheControl = { ...this._metadata.cacheControl };
-    const ttl = this._metadata.ttl;
-    let maxAge = 0;
 
-    if (this.checkTTL()) {
-      const validTTL = ttl as number;
-      maxAge = Math.round((validTTL - Date.now()) / 1000);
-    }
+    const maxAge = this.checkTTL() && this._metadata.ttl !== Infinity
+      ? Math.round((this._metadata.ttl - Date.now()) / 1000) : 0;
 
     if (cacheControl.sMaxage) cacheControl.sMaxage = maxAge;
     if (cacheControl.maxAge) cacheControl.maxAge = maxAge;
@@ -96,23 +124,5 @@ export default class Cacheability {
     });
 
     return directives.join(", ");
-  }
-
-  public setMetadata(metadata?: Metadata): void {
-    let _metadata = metadata;
-    if (!isPlainObject(metadata)) _metadata = {};
-    this._metadata = _metadata as Metadata;
-  }
-
-  private _parseHeaders(headers: Headers): ObjectStringMap {
-    const metadata: ObjectStringMap = {};
-
-    this._headerKeys.forEach((key) => {
-      const headerValue = headers.get(key);
-      if (!headerValue) return;
-      metadata[camelCase(key)] = headerValue;
-    });
-
-    return metadata;
   }
 }
