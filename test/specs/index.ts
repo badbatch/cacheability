@@ -13,8 +13,25 @@ const defaultHeaders = {
   "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
 };
 
+const metadata = {
+  cacheControl: { maxAge: 5, public: true },
+  etag: "33a64df551425fcc55e4d42a148795d9f25f89d4",
+  ttl: 1512917159801,
+};
+
 describe("the cacheability class", () => {
   let cacheability: Cacheability;
+
+  describe("the set metadata method", () => {
+    before(() => {
+      cacheability = new Cacheability();
+      cacheability.metadata = metadata;
+    });
+
+    it("the method should set metadata to this._metadata", () => {
+      expect(cacheability.metadata).to.equal(metadata);
+    });
+  });
 
   describe("the checkTTL method", () => {
     context("when this._metadata.cacheControl has a property of maxAge", () => {

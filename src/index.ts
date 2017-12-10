@@ -56,6 +56,10 @@ export default class Cacheability {
     return this._metadata;
   }
 
+  set metadata(metadata: Metadata) {
+    this._metadata = metadata;
+  }
+
   public checkTTL(): boolean {
     if (!this._metadata || !this._metadata.ttl) {
       throw new TypeError("checkTTL expected this._metadata.ttl to be a number.");
