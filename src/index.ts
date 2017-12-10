@@ -56,10 +56,6 @@ export default class Cacheability {
     return this._metadata;
   }
 
-  set metadata(metadata: Metadata) {
-    this._metadata = metadata;
-  }
-
   public checkTTL(): boolean {
     if (!this._metadata || !this._metadata.ttl) {
       throw new TypeError("checkTTL expected this._metadata.ttl to be a number.");
@@ -105,13 +101,15 @@ export default class Cacheability {
       throw new TypeError("printCacheControl expected this._metadata.cacheControl to be an object");
     }
 
+    if (!Object.values(this._metadata.cacheControl).length) return "";
     const cacheControl: CacheControl = { ...this._metadata.cacheControl };
 
-    const maxAge = this.checkTTL() && this._metadata.ttl !== Infinity
-      ? Math.round((this._metadata.ttl - Date.now()) / 1000) : 0;
+    if (cacheControl.sMaxage || cacheControl.maxAge) {
+      const maxAge = this.checkTTL() ? Math.round((this._metadata.ttl - Date.now()) / 1000) : 0;
+      if (cacheControl.sMaxage) cacheControl.sMaxage = maxAge;
+      if (cacheControl.maxAge) cacheControl.maxAge = maxAge;
+    }
 
-    if (cacheControl.sMaxage) cacheControl.sMaxage = maxAge;
-    if (cacheControl.maxAge) cacheControl.maxAge = maxAge;
     const directives: string[] = [];
 
     Object.keys(cacheControl).forEach((key) => {
