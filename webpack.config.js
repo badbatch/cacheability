@@ -9,6 +9,7 @@ module.exports = {
           plugins: ['lodash'],
           presets: [
             ['@babel/preset-env', {
+              debug: true,
               targets: { browsers: 'last 4 versions' },
               useBuiltIns: 'usage',
             }],
