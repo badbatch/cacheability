@@ -1,4 +1,13 @@
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const webpack = require('webpack');
+
 module.exports = {
+  entry: {
+    index: './src/index.ts',
+  },
+  output: {
+    filename: '[name].js',
+  },
   module: {
     rules: [{
       test: /\.tsx?$/,
@@ -27,5 +36,11 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      debug: true,
+    }),
+    new LodashModuleReplacementPlugin(),
+  ],
   devtool: 'source-map',
 };

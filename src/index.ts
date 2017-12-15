@@ -1,9 +1,6 @@
-import { polyfill } from "es6-promise";
 import "isomorphic-fetch";
 import { camelCase, isBoolean, isNumber, isString, kebabCase } from "lodash";
 import { CacheControl, Metadata, ParsedHeaders } from "./types";
-
-polyfill();
 
 export type CacheabilityCacheControl = CacheControl;
 export type CacheabilityMetadata = Metadata;
