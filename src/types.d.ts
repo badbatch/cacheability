@@ -1,4 +1,4 @@
-export interface ParsedHeaders {
+export interface CacheHeaders {
   cacheControl?: string;
   etag?: string;
 }

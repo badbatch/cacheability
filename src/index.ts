@@ -1,6 +1,15 @@
 import "isomorphic-fetch";
-import { camelCase, isBoolean, isNumber, isString, kebabCase } from "lodash";
-import { CacheControl, Metadata, ParsedHeaders } from "./types";
+
+import {
+  camelCase,
+  isBoolean,
+  isNumber,
+  isPlainObject,
+  isString,
+  kebabCase,
+} from "lodash";
+
+import { CacheControl, CacheHeaders, Metadata } from "./types";
 
 export type CacheabilityCacheControl = CacheControl;
 export type CacheabilityMetadata = Metadata;
@@ -30,8 +39,8 @@ export default class Cacheability {
     return obj;
   }
 
-  private static _parseHeaders(headers: Headers): ParsedHeaders {
-    const metadata: ParsedHeaders = {};
+  private static _parseHeaders(headers: Headers): CacheHeaders {
+    const metadata: CacheHeaders = {};
 
     Cacheability._headerKeys.forEach((key) => {
       const headerValue = headers.get(key);
@@ -83,12 +92,15 @@ export default class Cacheability {
     return this._metadata;
   }
 
-  public parseHeaders(headers: Headers): Metadata {
-    if (!(headers instanceof Headers)) {
-      throw new TypeError("parseHeaders expected headers to be an instance of Headers.");
+  public parseHeaders(headers: Headers | CacheHeaders): Metadata {
+    if (!(headers instanceof Headers) && !isPlainObject(headers)) {
+      const message = "parseHeaders expected headers to be an instance of Headers or a plain object.";
+      throw new TypeError(message);
     }
 
-    const { cacheControl = "", etag } = Cacheability._parseHeaders(headers);
+    const { cacheControl = "", etag } = headers instanceof Headers
+      ? Cacheability._parseHeaders(headers) : headers;
+
     const parsedCacheControl = Cacheability._parseCacheControl(cacheControl);
 
     this._metadata = {

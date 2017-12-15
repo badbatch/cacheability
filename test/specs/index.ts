@@ -13,6 +13,11 @@ const defaultHeaders = {
   "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
 };
 
+const cacheHeaders = {
+  cacheControl: "public, max-age=3",
+  etag: "33a64df551425fcc55e4d42a148795d9f25f89d4",
+};
+
 const metadata = {
   cacheControl: { maxAge: 5, public: true },
   etag: "33a64df551425fcc55e4d42a148795d9f25f89d4",
@@ -93,6 +98,20 @@ describe("the cacheability class", () => {
         expect(cacheability.metadata.cacheControl).to.deep.equal({});
         expect(cacheability.metadata.etag).to.equal(undefined);
         expect(cacheability.metadata.ttl).to.equal(Infinity);
+      });
+    });
+
+    context("when the headers are a plain object", () => {
+      before(() => {
+        cacheability = new Cacheability();
+        cacheability.parseHeaders(cacheHeaders);
+      });
+
+      it("then the method should parse the object and set the resulting data to this._metadata", () => {
+        expect(cacheability.metadata.cacheControl.maxAge).to.equal(3);
+        expect(cacheability.metadata.cacheControl.public).to.equal(true);
+        expect(cacheability.metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
+        expect(cacheability.metadata.ttl).to.be.a("number");
       });
     });
   });
