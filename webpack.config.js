@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     library: 'Cacheability',
-    libraryExport: 'default',
+    libraryTarget: 'commonjs2',
   },
   module: {
     rules: [{
