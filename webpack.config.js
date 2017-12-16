@@ -7,6 +7,8 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
+    library: 'Cacheability',
+    libraryExport: 'default',
   },
   module: {
     rules: [{
