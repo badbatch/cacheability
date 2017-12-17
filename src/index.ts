@@ -59,22 +59,14 @@ export default class Cacheability {
     return Date.now() + ms;
   }
 
-  private _metadata: Metadata;
-
-  get metadata(): Metadata {
-    return this._metadata;
-  }
-
-  set metadata(metadata: Metadata) {
-    this._metadata = metadata;
-  }
+  public metadata: Metadata;
 
   public checkTTL(): boolean {
-    if (!this._metadata || !this._metadata.ttl) {
+    if (!this.metadata || !this.metadata.ttl) {
       throw new TypeError("checkTTL expected this._metadata.ttl to be a number.");
     }
 
-    return this._metadata.ttl > Date.now();
+    return this.metadata.ttl > Date.now();
   }
 
   public parseCacheControl(cacheControl: string): Metadata {
@@ -84,12 +76,12 @@ export default class Cacheability {
 
     const parsedCacheControl = Cacheability._parseCacheControl(cacheControl);
 
-    this._metadata = {
+    this.metadata = {
       cacheControl: parsedCacheControl,
       ttl: Cacheability._setTTL(parsedCacheControl),
     };
 
-    return this._metadata;
+    return this.metadata;
   }
 
   public parseHeaders(headers: Headers | CacheHeaders): Metadata {
@@ -103,25 +95,25 @@ export default class Cacheability {
 
     const parsedCacheControl = Cacheability._parseCacheControl(cacheControl);
 
-    this._metadata = {
+    this.metadata = {
       cacheControl: parsedCacheControl,
       etag,
       ttl: Cacheability._setTTL(parsedCacheControl),
     };
 
-    return this._metadata;
+    return this.metadata;
   }
 
   public printCacheControl(): string {
-    if (!this._metadata || !this._metadata.cacheControl) {
+    if (!this.metadata || !this.metadata.cacheControl) {
       throw new TypeError("printCacheControl expected this._metadata.cacheControl to be an object");
     }
 
-    if (!Object.values(this._metadata.cacheControl).length) return "";
-    const cacheControl: CacheControl = { ...this._metadata.cacheControl };
+    if (!Object.values(this.metadata.cacheControl).length) return "";
+    const cacheControl: CacheControl = { ...this.metadata.cacheControl };
 
     if (cacheControl.sMaxage || cacheControl.maxAge) {
-      const maxAge = this.checkTTL() ? Math.round((this._metadata.ttl - Date.now()) / 1000) : 0;
+      const maxAge = this.checkTTL() ? Math.round((this.metadata.ttl - Date.now()) / 1000) : 0;
       if (cacheControl.sMaxage) cacheControl.sMaxage = maxAge;
       if (cacheControl.maxAge) cacheControl.maxAge = maxAge;
     }
