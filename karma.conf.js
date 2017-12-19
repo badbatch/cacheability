@@ -1,3 +1,4 @@
+const { resolve } = require('path');
 const webpackConfig = require('./webpack.config');
 
 module.exports = (config) => {
@@ -22,6 +23,18 @@ module.exports = (config) => {
     },
     mime: {
       'text/x-typescript': ['ts', 'tsx'],
+    },
+    coverageIstanbulReporter: {
+      reports: ['lcov', 'text-summary'],
+      dir: resolve(__dirname, 'coverage/web'),
+      thresholds: {
+        global: {
+          statements: 80,
+          lines: 80,
+          branches: 70,
+          functions: 80,
+        },
+      },
     },
   });
 };
