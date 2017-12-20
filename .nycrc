@@ -1,9 +1,4 @@
 {
-  "check-coverage": true,
-  "branches": 70,
-  "functions": 80,
-  "lines": 80,
-  "statements": 80,
   "all": true,
   "cache": true,
   "exclude": ["**/*.d.ts"],
@@ -11,6 +6,6 @@
   "include": ["src/**/*"],
   "instrument": true,
   "report-dir": "./coverage/node",
-  "reporter": ["lcov", "text-summary"],
+  "reporter": ["json", "lcov", "text-summary"],
   "sourceMap": true
 }

@@ -25,16 +25,9 @@ module.exports = (config) => {
       'text/x-typescript': ['ts', 'tsx'],
     },
     coverageIstanbulReporter: {
-      reports: ['lcov', 'text-summary'],
       dir: resolve(__dirname, 'coverage/web'),
-      thresholds: {
-        global: {
-          statements: 80,
-          lines: 80,
-          branches: 70,
-          functions: 80,
-        },
-      },
+      fixWebpackSourcePaths: true,
+      reports: ['json', 'lcov', 'text-summary'],
     },
   });
 };

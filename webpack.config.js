@@ -37,6 +37,7 @@ module.exports = {
       }],
     }, {
       enforce: 'post',
+      exclude: ['**/*.d.ts'],
       include: resolve(__dirname, 'src'),
       test: /\.tsx?$/,
       use: [{
