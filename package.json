@@ -1,6 +1,6 @@
 {
   "name": "cacheability",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "description": "A utility class to parse, store and print http cache headers.",
   "author": "Dylan Aubrey <dylanaubrey@gmail.com>",
   "license": "MIT",
@@ -17,6 +17,7 @@
   "browser": "lib/browser/index.js",
   "types": "lib/main/index.d.ts",
   "keywords": [
+    "cacheability",
     "http",
     "cacheControl",
     "etag",
