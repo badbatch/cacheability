@@ -3,7 +3,7 @@ const webpack = require('webpack'); // eslint-disable-line
 const webpackConfig = require('./webpack.config');
 
 webpackConfig.plugins.splice(2, 1, new webpack.SourceMapDevToolPlugin({
-  test: /\.tsx?$/,
+  test: /\.(tsx?|jsx?)$/,
 }));
 
 module.exports = (config) => {

@@ -27,6 +27,12 @@ module.exports = {
         },
       }],
     }, {
+      enforce: 'pre',
+      test: /\.(tsx?|jsx?)$/,
+      use: {
+        loader: 'source-map-loader',
+      },
+    }, {
       enforce: 'post',
       exclude: ['**/*.d.ts'],
       include: resolve(__dirname, 'src'),
@@ -46,7 +52,7 @@ module.exports = {
     }),
     new webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
-      test: /\.tsx?$/,
+      test: /\.(tsx?|jsx?)$/,
     }),
     new LodashModuleReplacementPlugin(),
   ],
