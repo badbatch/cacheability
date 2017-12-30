@@ -26,21 +26,6 @@ module.exports = {
           useBabel: true,
         },
       }],
-    }, {
-      enforce: 'pre',
-      test: /\.(tsx?|jsx?)$/,
-      use: {
-        loader: 'source-map-loader',
-      },
-    }, {
-      enforce: 'post',
-      exclude: ['**/*.d.ts'],
-      include: resolve(__dirname, 'src'),
-      test: /\.tsx?$/,
-      use: [{
-        loader: 'istanbul-instrumenter-loader',
-        options: { esModules: true },
-      }],
     }],
   },
   resolve: {
