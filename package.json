@@ -1,6 +1,6 @@
 {
   "name": "cacheability",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "A utility class to parse, store and print http cache headers.",
   "author": "Dylan Aubrey <dylanaubrey@gmail.com>",
   "license": "MIT",
@@ -25,7 +25,8 @@
     "parser"
   ],
   "scripts": {
-    "build": "npm run clean && npm run test && npm run compile",
+    "analyze:bundle": "webpack-bundle-analyzer bundle/stats.json --mode static --report bundle/report.html --no-open",
+    "build": "npm run clean && npm run test && npm run compile && npm run analyze:bundle",
     "clean": "gulp clean",
     "compile": "npm run compile:main && npm run compile:module && npm run compile:browser",
     "compile:browser": "cross-env BABEL_ENV=browser gulp browser",
@@ -88,6 +89,7 @@
     "tslint": "^5.8.0",
     "typescript": "^2.6.1",
     "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.1",
     "webpack-stream": "^4.0.0"
   }
 }
