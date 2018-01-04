@@ -1,6 +1,6 @@
 {
   "name": "cacheability",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "description": "A utility class to parse, store and print http cache headers.",
   "author": "Dylan Aubrey <dylanaubrey@gmail.com>",
   "license": "MIT",
@@ -25,13 +25,14 @@
     "parser"
   ],
   "scripts": {
-    "analyze:bundle": "webpack-bundle-analyzer bundle/stats.json --mode static --report bundle/report.html --no-open",
+    "analyze:bundle": "webpack-bundle-analyzer bundle/stats.json lib/umd --mode static --report bundle/report.html --no-open",
     "build": "npm run clean && npm run test && npm run compile && npm run analyze:bundle",
     "clean": "gulp clean",
-    "compile": "npm run compile:main && npm run compile:module && npm run compile:browser",
+    "compile": "npm run compile:main && npm run compile:module && npm run compile:browser && npm run compile:umd",
     "compile:browser": "cross-env BABEL_ENV=browser gulp browser",
     "compile:main": "cross-env BABEL_ENV=main gulp main",
     "compile:module": "cross-env BABEL_ENV=module gulp module",
+    "compile:umd": "cross-env BABEL_ENV=browser gulp umd",
     "debug:web": "cross-env BABEL_ENV=debug karma start --no-single-run --browsers Chrome",
     "lint": "gulp lint",
     "publish:pkg": "npm run build && npm publish",

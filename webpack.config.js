@@ -5,7 +5,8 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   entry: {
-    index: './src/index.ts',
+    cacheability: './src/index.ts',
+    'cacheability.min': './src/index.ts',
   },
   output: {
     filename: '[name].js',
@@ -33,12 +34,19 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   plugins: [
+    new webpack.EnvironmentPlugin({
+      WEB_ENV: true,
+    }),
     new webpack.LoaderOptionsPlugin({
       debug: true,
     }),
     new webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
       test: /\.(tsx?|jsx?)$/,
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      include: /\.min\.js$/,
+      sourceMap: true,
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'disabled',

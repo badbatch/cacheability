@@ -1,5 +1,3 @@
-import "isomorphic-fetch";
-
 import {
   camelCase,
   isBoolean,
@@ -10,6 +8,10 @@ import {
 } from "lodash";
 
 import { CacheControl, CacheHeaders, Metadata } from "./types";
+
+if (!process.env.WEB_ENV) {
+  require("isomorphic-fetch");
+}
 
 export type CacheabilityCacheControl = CacheControl;
 export type CacheabilityMetadata = Metadata;
