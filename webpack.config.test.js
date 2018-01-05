@@ -1,36 +1,22 @@
-const { resolve } = require('path');
 const webpack = require('webpack');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { resolve } = require('path');
 const webpackConfig = require('./webpack.config.base');
 
 webpackConfig.plugins.push(
+  new webpack.LoaderOptionsPlugin({
+    debug: true,
+  }),
   new webpack.SourceMapDevToolPlugin({
-    filename: '[name].js.map',
     test: /\.(tsx?|jsx?)$/,
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    sourceMap: true,
-  }),
-  new BundleAnalyzerPlugin({
-    analyzerMode: 'disabled',
-    generateStatsFile: true,
-    statsFilename: './bundle/stats.json',
   }),
 );
 
 module.exports = {
-  entry: {
-    cacheability: './src/index.ts',
-  },
-  output: {
-    filename: '[name].js',
-    library: 'Cacheability',
-    libraryTarget: 'umd',
-  },
   module: {
     rules: [{
       include: [
         resolve(__dirname, 'src'),
+        resolve(__dirname, 'test'),
       ],
       test: /\.tsx?$/,
       use: [{
@@ -40,6 +26,21 @@ module.exports = {
           transpileOnly: true,
           useBabel: true,
         },
+      }],
+    }, {
+      enforce: 'pre',
+      test: /\.(tsx?|jsx?)$/,
+      use: {
+        loader: 'source-map-loader',
+      },
+    }, {
+      enforce: 'post',
+      exclude: ['**/*.d.ts'],
+      include: resolve(__dirname, 'src'),
+      test: /\.tsx?$/,
+      use: [{
+        loader: 'istanbul-instrumenter-loader',
+        options: { esModules: true },
       }],
     }],
   },
