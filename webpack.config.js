@@ -6,7 +6,6 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 module.exports = {
   entry: {
     cacheability: './src/index.ts',
-    'cacheability.min': './src/index.ts',
   },
   output: {
     filename: '[name].js',
@@ -45,7 +44,6 @@ module.exports = {
       test: /\.(tsx?|jsx?)$/,
     }),
     new webpack.optimize.UglifyJsPlugin({
-      include: /\.min\.js$/,
       sourceMap: true,
     }),
     new BundleAnalyzerPlugin({

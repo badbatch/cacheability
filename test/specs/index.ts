@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import Cacheability from "../../src";
+import { Cacheability } from "../../src";
 
 const cacheControl = "public, max-age=2, s-maxage=2";
 
