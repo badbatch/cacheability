@@ -13,7 +13,7 @@ gulp.task('clean', () => {
   del('lib/*', { force: true });
   del('bundle/*', { force: true });
   del('coverage/*', { force: true });
-  del('documentation/*', { force: true });
+  del('docs/*', { force: true });
 });
 
 gulp.task('main', () => {
@@ -91,7 +91,7 @@ gulp.task('document', () => gulp.src(['src/**/*.ts'])
     mode: 'file',
     module: 'esnext',
     name: 'Cacheability',
-    out: './documentation',
+    out: './docs',
     readme: 'none',
     target: 'es6',
     theme: 'default',

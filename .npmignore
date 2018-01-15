@@ -3,7 +3,7 @@
 .vscode/
 bundle/
 coverage/
-documentation/
+docs/
 src/
 test/
 *.log
