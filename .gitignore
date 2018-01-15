@@ -2,6 +2,7 @@
 .vscode/
 bundle/
 coverage/
+documentation/
 lib/
 node_modules/
 *.log
