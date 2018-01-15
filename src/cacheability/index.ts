@@ -61,8 +61,23 @@ export class Cacheability {
     return Date.now() + ms;
   }
 
+  /**
+   * The property holds the cacheability instance's parsed cache
+   * headers data, including cache control directives, etag, and
+   * a derived TTL timestamp.
+   *
+   * @type {Metadata}
+   * @memberof Cacheability
+   */
   public metadata: Metadata;
 
+  /**
+   * The method checks whether the TTL timestamp stored in the cacheability
+   * instance is still valid, by comparing it to the current timestamp.
+   *
+   * @returns {boolean}
+   * @memberof Cacheability
+   */
   public checkTTL(): boolean {
     if (!this.metadata || !this.metadata.ttl) {
       throw new TypeError("checkTTL expected this._metadata.ttl to be a number.");
@@ -71,6 +86,17 @@ export class Cacheability {
     return this.metadata.ttl > Date.now();
   }
 
+  /**
+   * The method takes a cache-control header field value, parses it into
+   * an object literal and derives a TTL from the max-age or s-maxage
+   * directives. If no max-age or s-maxage directives are present,
+   * the TTL is given a value of Infinity. The data is stored on the
+   * cacheability instance's metadata property.
+   *
+   * @param {string} cacheControl
+   * @returns {Metadata}
+   * @memberof Cacheability
+   */
   public parseCacheControl(cacheControl: string): Metadata {
     if (!isString(cacheControl)) {
       throw new TypeError("parseCacheControl expected cacheControl to be a string.");
@@ -86,6 +112,18 @@ export class Cacheability {
     return this.metadata;
   }
 
+  /**
+   * Takes a Headers instance or object literal of header key/values,
+   * filters the cache-control and etag header fields, parses the
+   * cache-control into an object literal and derives a TTL from the
+   * max-age or s-maxage directives. If no max-age or s-maxage
+   * directives are present, the TTL is given a value of Infinity.
+   * The data is stored on the cacheability instance's metadata property.
+   *
+   * @param {(Headers | CacheHeaders)} headers
+   * @returns {Metadata}
+   * @memberof Cacheability
+   */
   public parseHeaders(headers: Headers | CacheHeaders): Metadata {
     if (!(headers instanceof Headers) && !isPlainObject(headers)) {
       const message = "parseHeaders expected headers to be an instance of Headers or a plain object.";
@@ -106,6 +144,14 @@ export class Cacheability {
     return this.metadata;
   }
 
+  /**
+   * The method prints a cache-control header field value based on
+   * the cacheability instance's metadata. The max-age and/or s-maxage
+   * are derived from the TTL stored in the metadata.
+   *
+   * @returns {string}
+   * @memberof Cacheability
+   */
   public printCacheControl(): string {
     if (!this.metadata || !this.metadata.cacheControl) {
       throw new TypeError("printCacheControl expected this._metadata.cacheControl to be an object");

@@ -9,4 +9,4 @@ A utility class to parse, store and print http cache headers.
 [![dependencies Status](https://david-dm.org/dylanaubrey/cacheability/status.svg)](https://david-dm.org/dylanaubrey/cacheability)
 [![devDependencies Status](https://david-dm.org/dylanaubrey/cacheability/dev-status.svg)](https://david-dm.org/dylanaubrey/cacheability?type=dev)
 
-### Work in progress...
+Please read the documentation on the cacheability [github pages](https://dylanaubrey.github.io/cacheability).
