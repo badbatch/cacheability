@@ -64,6 +64,15 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A utility class to parse, store and print http cache headers.</p>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> cacheability = <span class="hljs-keyword">new</span> Cacheability();
+</code></pre>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -102,7 +111,7 @@
 					<div class="tsd-signature tsd-kind-icon">metadata<span class="tsd-signature-symbol">:</span> <a href="../interfaces/metadata.html" class="tsd-signature-type">Metadata</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/3fcc8bb/src/cacheability/index.ts#L72">cacheability/index.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/f5e7cc7/src/cacheability/index.ts#L77">cacheability/index.ts:77</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -111,14 +120,6 @@
 								headers data, including cache control directives, etag, and
 							a derived TTL timestamp.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{Metadata}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>Cacheability</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 			</section>
@@ -134,19 +135,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/3fcc8bb/src/cacheability/index.ts#L81">cacheability/index.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/f5e7cc7/src/cacheability/index.ts#L92">cacheability/index.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>The method checks whether the TTL timestamp stored in the cacheability
 									instance is still valid, by comparing it to the current timestamp.</p>
+									<pre><code class="lang-typescript">cacheability.parseCacheControl(<span class="hljs-string">"public, max-age=3"</span>);
+<span class="hljs-comment">// One second elapses...</span>
+<span class="hljs-keyword">const</span> isValid = cacheability.checkTTL();
+<span class="hljs-comment">// isValid is true</span>
+<span class="hljs-comment">// Three seconds elapse...</span>
+<span class="hljs-keyword">const</span> isStillValid = cacheability.checkTTL();
+<span class="hljs-comment">// isStillValid is false</span>
+</code></pre>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>Cacheability</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
@@ -162,7 +166,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/3fcc8bb/src/cacheability/index.ts#L100">cacheability/index.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/f5e7cc7/src/cacheability/index.ts#L116">cacheability/index.ts:116</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -172,12 +176,14 @@
 										directives. If no max-age or s-maxage directives are present,
 										the TTL is given a value of Infinity. The data is stored on the
 									cacheability instance&#39;s metadata property.</p>
+									<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> {
+  cacheControl,
+  ttl,
+} = cacheability.parseCacheControl(<span class="hljs-string">"public, max-age=60, s-maxage=60"</span>);
+<span class="hljs-comment">// cacheControl is { maxAge: 60, public: true, sMaxage: 60 }</span>
+<span class="hljs-comment">// if Date.now is 1516060501948, ttl is 1516060712991</span>
+</code></pre>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>Cacheability</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -199,7 +205,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/3fcc8bb/src/cacheability/index.ts#L127">cacheability/index.ts:127</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/f5e7cc7/src/cacheability/index.ts#L151">cacheability/index.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -210,12 +216,17 @@
 										max-age or s-maxage directives. If no max-age or s-maxage
 										directives are present, the TTL is given a value of Infinity.
 									The data is stored on the cacheability instance&#39;s metadata property.</p>
+									<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> headers = <span class="hljs-keyword">new</span> Headers({
+  <span class="hljs-string">"cache-control"</span>: <span class="hljs-string">"public, max-age=60"</span>,
+  <span class="hljs-string">"content-type"</span>: <span class="hljs-string">"application/json"</span>,
+  <span class="hljs-string">"etag"</span>: <span class="hljs-string">"33a64df551425fcc55e4d42a148795d9f25f89d4"</span>,
+});
+<span class="hljs-keyword">const</span> { cacheControl, etag, ttl } = cacheability.parseHeaders(headers);
+<span class="hljs-comment">// cacheControl is { maxAge: 60, public: true }</span>
+<span class="hljs-comment">// etag is 33a64df551425fcc55e4d42a148795d9f25f89d4</span>
+<span class="hljs-comment">// if Date.now is 1516060501948, ttl is 1516060712991</span>
+</code></pre>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>Cacheability</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -237,7 +248,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/3fcc8bb/src/cacheability/index.ts#L155">cacheability/index.ts:155</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/f5e7cc7/src/cacheability/index.ts#L183">cacheability/index.ts:183</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -245,12 +256,12 @@
 									<p>The method prints a cache-control header field value based on
 										the cacheability instance&#39;s metadata. The max-age and/or s-maxage
 									are derived from the TTL stored in the metadata.</p>
+									<pre><code class="lang-typescript">cacheability.parseCacheControl(<span class="hljs-string">"public, max-age=60, s-maxage=60"</span>);
+<span class="hljs-comment">// Five seconds elapse...</span>
+<span class="hljs-keyword">const</span> cacheControl = cacheability.printCacheControl();
+<span class="hljs-comment">// cacheControl is "public, max-age=55, s-maxage=55"</span>
+</code></pre>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>Cacheability</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
