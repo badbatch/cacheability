@@ -1,6 +1,6 @@
 {
   "name": "cacheability",
-  "version": "0.0.57",
+  "version": "0.0.58",
   "description": "A utility class to parse, store and print http cache headers.",
   "author": "Dylan Aubrey <dylanaubrey@gmail.com>",
   "license": "MIT",

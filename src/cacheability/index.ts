@@ -18,7 +18,9 @@ export type CacheabilityMetadata = Metadata;
 
 /**
  * A utility class to parse, store and print http cache headers.
+ *
  * ```typescript
+ * import { Cacheability } from "cacheability";
  * const cacheability = new Cacheability();
  * ```
  *
@@ -79,6 +81,7 @@ export class Cacheability {
   /**
    * The method checks whether the TTL timestamp stored in the cacheability
    * instance is still valid, by comparing it to the current timestamp.
+   *
    * ```typescript
    * cacheability.parseCacheControl("public, max-age=3");
    * // One second elapses...
@@ -88,6 +91,7 @@ export class Cacheability {
    * const isStillValid = cacheability.checkTTL();
    * // isStillValid is false
    * ```
+   *
    */
   public checkTTL(): boolean {
     if (!this.metadata || !this.metadata.ttl) {
@@ -103,6 +107,7 @@ export class Cacheability {
    * directives. If no max-age or s-maxage directives are present,
    * the TTL is given a value of Infinity. The data is stored on the
    * cacheability instance's metadata property.
+   *
    * ```typescript
    * const {
    *   cacheControl,
@@ -135,6 +140,7 @@ export class Cacheability {
    * max-age or s-maxage directives. If no max-age or s-maxage
    * directives are present, the TTL is given a value of Infinity.
    * The data is stored on the cacheability instance's metadata property.
+   *
    * ```typescript
    * const headers = new Headers({
    *   "cache-control": "public, max-age=60",
@@ -172,6 +178,7 @@ export class Cacheability {
    * The method prints a cache-control header field value based on
    * the cacheability instance's metadata. The max-age and/or s-maxage
    * are derived from the TTL stored in the metadata.
+   *
    * ```typescript
    * cacheability.parseCacheControl("public, max-age=60, s-maxage=60");
    * // Five seconds elapse...
