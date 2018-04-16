@@ -61,7 +61,8 @@ export class Cacheability {
     return metadata;
   }
 
-  private static _setTTL({ maxAge, sMaxage }: CacheControl): number {
+  private static _setTTL({ maxAge, noCache, noStore, sMaxage }: CacheControl): number {
+    if (noCache || noStore) return 0;
     const sec = sMaxage || maxAge;
     if (!isNumber(sec)) return Infinity;
     const ms = sec * 1000;
@@ -92,7 +93,7 @@ export class Cacheability {
    *
    */
   public checkTTL(): boolean {
-    if (!this.metadata || !this.metadata.ttl) {
+    if (!this.metadata || !isNumber(this.metadata.ttl)) {
       throw new TypeError("checkTTL expected this._metadata.ttl to be a number.");
     }
 
