@@ -5,6 +5,8 @@ export interface CacheHeaders {
 
 export interface CacheControl {
   maxAge?: number;
+  noCache?: boolean;
+  noStore?: boolean;
   sMaxage?: number;
   [key: string]: string | number | boolean;
 }

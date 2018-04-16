@@ -13,6 +13,18 @@ const defaultHeaders = {
   "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
 };
 
+const noCacheHeaders = {
+  "cache-control": "public, no-cache",
+  "content-type": "application/json",
+  "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
+};
+
+const noStoreHeaders = {
+  "cache-control": "public, no-store",
+  "content-type": "application/json",
+  "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
+};
+
 const cacheHeaders = {
   cacheControl: "public, max-age=3",
   etag: "33a64df551425fcc55e4d42a148795d9f25f89d4",
@@ -69,6 +81,28 @@ describe("the cacheability class", () => {
 
       it("then this._metadata.ttl is valid and the method should return true", () => {
         expect(cacheability.checkTTL()).to.equal(true);
+      });
+    });
+
+    context("when this._metadata.cacheControl has a property of noCache", () => {
+      before(() => {
+        cacheability = new Cacheability();
+        cacheability.parseHeaders(new Headers(noCacheHeaders));
+      });
+
+      it("then this._metadata.ttl is invalid and the method should return false", () => {
+        expect(cacheability.checkTTL()).to.equal(false);
+      });
+    });
+
+    context("when this._metadata.cacheControl has a property of noStore", () => {
+      before(() => {
+        cacheability = new Cacheability();
+        cacheability.parseHeaders(new Headers(noStoreHeaders));
+      });
+
+      it("then this._metadata.ttl is invalid and the method should return false", () => {
+        expect(cacheability.checkTTL()).to.equal(false);
       });
     });
   });
