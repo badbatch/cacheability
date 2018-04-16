@@ -1,6 +1,6 @@
 {
   "name": "cacheability",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A utility class to parse, store and print http cache headers.",
   "author": "Dylan Aubrey <dylanaubrey@gmail.com>",
   "license": "MIT",
@@ -43,8 +43,8 @@
     "type-check": "gulp type-check"
   },
   "peerDependencies": {
-    "isomorphic-fetch": "^2.0.0",
-    "lodash": "^4.0.0"
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.36",
