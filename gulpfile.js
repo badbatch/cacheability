@@ -69,7 +69,7 @@ gulp.task('type-check', () => {
     .on('error', () => process.exit(1));
 });
 
-gulp.task('lint', () => {
+gulp.task('tslint', () => {
   gulp.src(['src/**/*.ts'])
     .pipe(tslint({
       configuration: 'tslint.json',
