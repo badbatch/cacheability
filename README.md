@@ -19,3 +19,7 @@ yarn add cacheability
 ## Documentation
 
 Please read the documentation on the cacheability [github pages](https://dylanaubrey.github.io/cacheability).
+
+## License
+
+Cacheability is [MIT Licensed](LICENSE).
