@@ -12,6 +12,7 @@ webpackConfig.plugins.push(
 );
 
 module.exports = {
+  mode: 'development',
   module: {
     rules: [{
       include: [

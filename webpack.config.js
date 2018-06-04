@@ -9,13 +9,13 @@ webpackConfig.plugins.push(
     filename: '[name].js.map',
     test: /\.(tsx?|jsx?)$/,
   }),
-  new UglifyJsPlugin({
-    sourceMap: true,
-  }),
   new BundleAnalyzerPlugin({
     analyzerMode: 'disabled',
     generateStatsFile: true,
     statsFilename: './bundle/stats.json',
+  }),
+  new UglifyJsPlugin({
+    sourceMap: true,
   }),
 );
 
@@ -23,11 +23,7 @@ module.exports = {
   entry: {
     cacheability: './src/index.ts',
   },
-  output: {
-    filename: '[name].js',
-    library: 'Cacheability',
-    libraryTarget: 'umd',
-  },
+  mode: 'production',
   module: {
     rules: [{
       include: [
@@ -43,6 +39,11 @@ module.exports = {
         },
       }],
     }],
+  },
+  output: {
+    filename: '[name].js',
+    library: 'Cacheability',
+    libraryTarget: 'umd',
   },
   ...webpackConfig,
 };
