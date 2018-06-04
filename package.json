@@ -83,7 +83,7 @@
     "gulp-tslint": "^8.1.2",
     "gulp-typedoc": "^2.2.0",
     "gulp-typescript": "^4.0.2",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.8",
     "isomorphic-fetch": "^2.2.1",
     "istanbul-instrumenter-loader": "^3.0.0",
     "karma": "^2.0.0",
