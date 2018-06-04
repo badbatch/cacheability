@@ -16,10 +16,10 @@ module.exports = (config) => {
       fixWebpackSourcePaths: true,
       reports: ['json', 'lcov', 'text-summary'],
     },
-    frameworks: ['mocha', 'chai'],
     files: [
       'test/specs/index.ts',
     ],
+    frameworks: ['mocha', 'chai'],
     logLevel: config.LOG_INFO,
     mime: {
       'text/x-typescript': ['ts', 'tsx'],

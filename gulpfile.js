@@ -7,7 +7,9 @@ const typedoc = require('gulp-typedoc');
 const ts = require('gulp-typescript');
 const merge = require('merge-stream');
 const { Linter } = require('tslint');
-const webpack = require('webpack-stream');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const webpackConfig = require('./webpack.config');
 
 gulp.task('clean', () => {
   del('lib/*', { force: true });
@@ -57,7 +59,7 @@ gulp.task('browser', () => {
     .on('error', () => process.exit(1));
 });
 
-gulp.task('umd', () => webpack(require('./webpack.config')) // eslint-disable-line global-require
+gulp.task('umd', () => webpackStream(webpackConfig, webpack) // eslint-disable-line global-require
   .pipe(gulp.dest('lib/umd'))
   .on('error', () => process.exit(1)));
 
@@ -69,7 +71,7 @@ gulp.task('type-check', () => {
     .on('error', () => process.exit(1));
 });
 
-gulp.task('lint', () => {
+gulp.task('tslint', () => {
   gulp.src(['src/**/*.ts'])
     .pipe(tslint({
       configuration: 'tslint.json',
