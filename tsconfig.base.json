@@ -19,7 +19,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "~/test": ["test/*"]
     },
     "pretty": true,
     "skipLibCheck": true,
