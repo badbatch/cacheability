@@ -20,6 +20,10 @@ yarn add cacheability
 
 Please read the documentation on the cacheability [github pages](https://bad-batch.github.io/cacheability/).
 
+## Changelog
+
+Check out the [features, fixes and more](CHANGELOG.md) that go into each major, minor and patch version.
+
 ## License
 
 Cacheability is [MIT Licensed](LICENSE).
