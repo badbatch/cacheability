@@ -1,3 +1,9 @@
+export interface ConstructorArgs {
+  cacheControl?: string;
+  headers?: Headers | CacheHeaders;
+  metadata?: Metadata;
+}
+
 export interface CacheHeaders {
   cacheControl?: string;
   etag?: string;
