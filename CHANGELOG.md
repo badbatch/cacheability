@@ -1,3 +1,13 @@
+#### 1.0.1 (2018-06-05)
+
+##### Documentation Changes
+
+* **changelog:**  Adding changelog link to readme. ([b8c1d645](https://github.com/dylanaubrey/cacheability/commit/b8c1d6456fd0c83a828d468b92e1f10c4a3f7d79))
+
+##### Bug Fixes
+
+* **linting:**  Add markdown lint config to extend line length. ([542cd018](https://github.com/dylanaubrey/cacheability/commit/542cd01824de65b7d67ecf8d8c7e37f83a910e3b))
+
 ## 1.0.0 (2018-06-05)
 
 ##### Build System / Dependencies
