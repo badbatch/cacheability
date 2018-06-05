@@ -9,7 +9,7 @@ import {
   kebabCase,
 } from "lodash";
 
-import { CacheControl, CacheHeaders, Metadata } from "../types";
+import { CacheControl, CacheHeaders, Metadata } from "~/types";
 
 export type CacheabilityCacheControl = CacheControl;
 export type CacheabilityMetadata = Metadata;
@@ -18,7 +18,7 @@ export type CacheabilityMetadata = Metadata;
  * A utility class to parse, store and print http cache headers.
  *
  * ```typescript
- * import { Cacheability } from "cacheability";
+ * import Cacheability from "cacheability";
  * const cacheability = new Cacheability();
  * ```
  *

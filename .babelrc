@@ -52,6 +52,12 @@
     "**/*.d.ts"
   ],
   "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "~": "./src",
+        "~/test": "./test"
+      }
+    }],
     "lodash"
   ]
 }
