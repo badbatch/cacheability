@@ -2,4 +2,4 @@
 --require tsconfig-paths/register
 --require source-map-support/register
 --exit
-test/specs/index.ts
+src/**/*.test.*

@@ -17,7 +17,6 @@ module.exports = {
     rules: [{
       include: [
         resolve(__dirname, 'src'),
-        resolve(__dirname, 'test'),
       ],
       test: /\.tsx?$/,
       use: [{

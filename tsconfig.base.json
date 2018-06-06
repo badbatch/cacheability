@@ -19,13 +19,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "paths": {
-      "~/*": ["src/*"],
-      "~/test": ["test/*"]
+      "~/*": ["src/*"]
     },
     "pretty": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
     "target": "es6"
   },
-  "include": ["src/**/*", "test/**/*"]
+  "include": ["src/**/*"]
 }

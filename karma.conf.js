@@ -17,7 +17,7 @@ module.exports = (config) => {
       reports: ['json', 'lcov', 'text-summary'],
     },
     files: [
-      'test/specs/index.ts',
+      'src/**/*.test.*',
     ],
     frameworks: ['mocha', 'chai'],
     logLevel: config.LOG_INFO,
@@ -26,7 +26,7 @@ module.exports = (config) => {
     },
     port: 9876,
     preprocessors: {
-      'test/specs/index.ts': ['webpack', 'sourcemap'],
+      'src/**/*.test.*': ['webpack', 'sourcemap'],
     },
     webpack: webpackConfig,
   });
