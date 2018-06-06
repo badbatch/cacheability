@@ -1,3 +1,14 @@
+#### 1.0.2 (2018-06-06)
+
+##### Continuous Integration
+
+* **codecov:**  Add codecov config file. ([093243d2](https://github.com/dylanaubrey/cacheability/commit/093243d268f714edab7ac02e2b369933441a5eb4))
+* **sonar:**  Updating sonar config file. ([73603790](https://github.com/dylanaubrey/cacheability/commit/736037908a82bd8ce4b9c70cc34f7fdb32572cf6))
+
+##### Tests
+
+* **structure:**  Move test files into src folder. ([6eff1696](https://github.com/dylanaubrey/cacheability/commit/6eff169688fce5803be5c6d419c006b97237f724))
+
 #### 1.0.1 (2018-06-05)
 
 ##### Documentation Changes
