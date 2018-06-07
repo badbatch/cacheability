@@ -1,3 +1,9 @@
+#### 1.0.4 (2018-06-07)
+
+##### Documentation Changes
+
+* **badges:**  Updating link of License badge. ([5f7f25dc](https://github.com/dylanaubrey/cacheability/commit/5f7f25dc389405e542c67e411f12a6a5f174224a))
+
 #### 1.0.3 (2018-06-07)
 
 ##### Chores
