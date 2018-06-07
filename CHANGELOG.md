@@ -1,3 +1,9 @@
+#### 1.0.3 (2018-06-07)
+
+##### Chores
+
+* **editor:**  Adding editorConfig. ([4d4e8989](https://github.com/dylanaubrey/cacheability/commit/4d4e8989027f9736597e9f27ea8161a76a775e58))
+
 #### 1.0.2 (2018-06-06)
 
 ##### Continuous Integration
