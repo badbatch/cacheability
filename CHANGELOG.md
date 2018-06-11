@@ -1,3 +1,9 @@
+#### 1.0.6 (2018-06-11)
+
+##### Tests
+
+* **structure:**  Moving setup files into .test folder within src folder. ([#8](https://github.com/dylanaubrey/cacheability/pull/8)) ([63b3dcd6](https://github.com/dylanaubrey/cacheability/commit/63b3dcd60ceef8990517ade6c77e392ceef7ae0d))
+
 #### 1.0.5 (2018-06-11)
 
 ##### Chores
