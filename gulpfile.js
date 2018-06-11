@@ -18,7 +18,7 @@ gulp.task('clean', () => {
   del('docs/*', { force: true });
 });
 
-const sources = ['src/**/*.ts', '!**/*.test.*'];
+const sources = ['src/**/*.ts', '!**/*.test.*', '!**/.test/**'];
 
 gulp.task('main', () => {
   const tsProject = ts.createProject('tsconfig.json', { declaration: true, module: 'commonjs' });

@@ -1,5 +1,4 @@
 import "isomorphic-fetch";
-
 import {
   camelCase,
   isBoolean,
@@ -8,7 +7,6 @@ import {
   isString,
   kebabCase,
 } from "lodash";
-
 import { CacheControl, CacheHeaders, ConstructorArgs, Metadata } from "~/types";
 
 /**
@@ -24,6 +22,7 @@ import { CacheControl, CacheHeaders, ConstructorArgs, Metadata } from "~/types";
  * });
  *
  * const cacheability = new Cacheability({ headers });
+ *
  * const { cacheControl, etag, ttl } = cacheability.metadata;
  * // cacheControl is { maxAge: 60, public: true }
  * // etag is 33a64df551425fcc55e4d42a148795d9f25f89d4
