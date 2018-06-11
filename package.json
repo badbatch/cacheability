@@ -51,6 +51,9 @@
       "pre-push": "yarn run test"
     }
   },
+  "dependencies": {
+    "@babel/polyfill": "7.0.0-beta.44"
+  },
   "peerDependencies": {
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.5"
