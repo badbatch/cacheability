@@ -1,3 +1,9 @@
+#### 1.0.5 (2018-06-11)
+
+##### Chores
+
+* **dependencies:**  Add @babel/polyfill as dependency. ([2b88968a](https://github.com/dylanaubrey/cacheability/commit/2b88968a52a7a0f7b2833bad09e8cca5b4778908))
+
 #### 1.0.4 (2018-06-07)
 
 ##### Documentation Changes
