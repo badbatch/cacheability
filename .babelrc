@@ -54,8 +54,7 @@
   "plugins": [
     ["module-resolver", {
       "alias": {
-        "~": "./src",
-        "~/test": "./test"
+        "~": "./src"
       }
     }],
     "lodash"
