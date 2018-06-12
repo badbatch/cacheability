@@ -1,3 +1,9 @@
+#### 1.0.7 (2018-06-12)
+
+##### Bug Fixes
+
+* **dependencies:**  Adding codecov config to npmignore file. ([e75e6066](https://github.com/dylanaubrey/cacheability/commit/e75e6066074249353d7dab68f96e48cc2b307357))
+
 #### 1.0.6 (2018-06-11)
 
 ##### Tests
