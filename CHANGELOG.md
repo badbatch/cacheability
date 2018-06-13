@@ -1,3 +1,9 @@
+#### 1.0.8 (2018-06-13)
+
+##### Bug Fixes
+
+* **tests:**  Update test folder name. ([b3647557](https://github.com/dylanaubrey/cacheability/commit/b364755787f0a8d5da02407ecac60578a04ee92d))
+
 #### 1.0.7 (2018-06-12)
 
 ##### Bug Fixes
