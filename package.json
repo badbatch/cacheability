@@ -4,13 +4,13 @@
   "description": "A utility class to parse, store and print http cache headers.",
   "author": "Dylan Aubrey <dylanaubrey@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/dylanaubrey/cacheability",
+  "homepage": "https://github.com/bad-batch/cacheability",
   "bugs": {
-    "url": "https://github.com/dylanaubrey/cacheability/issues"
+    "url": "https://github.com/bad-batch/cacheability/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dylanaubrey/cacheability"
+    "url": "https://github.com/bad-batch/cacheability"
   },
   "main": "lib/main/index.js",
   "module": "lib/module/index.js",
