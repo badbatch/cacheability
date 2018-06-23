@@ -7,7 +7,7 @@ import {
   isString,
   kebabCase,
 } from "lodash";
-import { CacheControl, CacheHeaders, ConstructorArgs, Metadata } from "~/types";
+import { CacheControl, CacheHeaders, ConstructorArgs, Metadata } from "../types";
 
 /**
  * A utility class to parse, store and print http cache headers.
@@ -82,7 +82,7 @@ export class Cacheability {
    * a derived TTL timestamp.
    *
    */
-  public metadata: Metadata;
+  public metadata: Metadata | undefined;
 
   constructor(args: ConstructorArgs = {}) {
     const { cacheControl, headers, metadata } = args;
