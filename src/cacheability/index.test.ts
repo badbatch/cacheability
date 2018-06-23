@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { cacheControl, cacheHeaders, metadata, rawHeaders } from "~/__test__";
-import { Cacheability } from "~/cacheability";
+import { cacheControl, cacheHeaders, metadata, rawHeaders } from "../__test__";
+import { Cacheability } from "../cacheability";
 
 describe("the cacheability class", () => {
   let cacheability: Cacheability;
@@ -23,10 +23,14 @@ describe("the cacheability class", () => {
         });
 
         it("then the constructor should parse the headers and set the resulting data to this._metadata", () => {
-          expect(cacheability.metadata.cacheControl.maxAge).to.equal(1);
-          expect(cacheability.metadata.cacheControl.public).to.equal(true);
-          expect(cacheability.metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
-          expect(cacheability.metadata.ttl).to.be.a("number");
+          expect(cacheability.metadata !== undefined).to.equal(true);
+
+          if (cacheability.metadata) {
+            expect(cacheability.metadata.cacheControl.maxAge).to.equal(1);
+            expect(cacheability.metadata.cacheControl.public).to.equal(true);
+            expect(cacheability.metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
+            expect(cacheability.metadata.ttl).to.be.a("number");
+          }
         });
       });
 
@@ -36,10 +40,14 @@ describe("the cacheability class", () => {
         });
 
         it("then the constructor should parse the headers and set the resulting data to this._metadata", () => {
-          expect(cacheability.metadata.cacheControl.maxAge).to.equal(3);
-          expect(cacheability.metadata.cacheControl.public).to.equal(true);
-          expect(cacheability.metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
-          expect(cacheability.metadata.ttl).to.be.a("number");
+          expect(cacheability.metadata !== undefined).to.equal(true);
+
+          if (cacheability.metadata) {
+            expect(cacheability.metadata.cacheControl.maxAge).to.equal(3);
+            expect(cacheability.metadata.cacheControl.public).to.equal(true);
+            expect(cacheability.metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
+            expect(cacheability.metadata.ttl).to.be.a("number");
+          }
         });
       });
     });
@@ -50,9 +58,13 @@ describe("the cacheability class", () => {
       });
 
       it("then the constructor should parse the cacheControl and set the resulting data to this._metadata", () => {
-        expect(cacheability.metadata.cacheControl.maxAge).to.equal(2);
-        expect(cacheability.metadata.cacheControl.public).to.equal(true);
-        expect(cacheability.metadata.ttl).to.be.a("number");
+        expect(cacheability.metadata !== undefined).to.equal(true);
+
+        if (cacheability.metadata) {
+          expect(cacheability.metadata.cacheControl.maxAge).to.equal(2);
+          expect(cacheability.metadata.cacheControl.public).to.equal(true);
+          expect(cacheability.metadata.ttl).to.be.a("number");
+        }
       });
     });
   });
@@ -64,7 +76,11 @@ describe("the cacheability class", () => {
     });
 
     it("the method should set metadata to this._metadata", () => {
-      expect(cacheability.metadata).to.equal(metadata);
+      expect(cacheability.metadata !== undefined).to.equal(true);
+
+      if (cacheability.metadata) {
+        expect(cacheability.metadata).to.equal(metadata);
+      }
     });
   });
 
@@ -133,10 +149,14 @@ describe("the cacheability class", () => {
       });
 
       it("then the method should parse the headers and set the resulting data to this._metadata", () => {
-        expect(cacheability.metadata.cacheControl.maxAge).to.equal(1);
-        expect(cacheability.metadata.cacheControl.public).to.equal(true);
-        expect(cacheability.metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
-        expect(cacheability.metadata.ttl).to.be.a("number");
+        expect(cacheability.metadata !== undefined).to.equal(true);
+
+        if (cacheability.metadata) {
+          expect(cacheability.metadata.cacheControl.maxAge).to.equal(1);
+          expect(cacheability.metadata.cacheControl.public).to.equal(true);
+          expect(cacheability.metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
+          expect(cacheability.metadata.ttl).to.be.a("number");
+        }
       });
     });
 
@@ -147,9 +167,13 @@ describe("the cacheability class", () => {
       });
 
       it("then the method should parse the headers and set the resulting data to this._metadata", () => {
-        expect(cacheability.metadata.cacheControl).to.deep.equal({});
-        expect(cacheability.metadata.etag).to.equal(undefined);
-        expect(cacheability.metadata.ttl).to.equal(Infinity);
+        expect(cacheability.metadata !== undefined).to.equal(true);
+
+        if (cacheability.metadata) {
+          expect(cacheability.metadata.cacheControl).to.deep.equal({});
+          expect(cacheability.metadata.etag).to.equal(undefined);
+          expect(cacheability.metadata.ttl).to.equal(Infinity);
+        }
       });
     });
 
@@ -160,10 +184,14 @@ describe("the cacheability class", () => {
       });
 
       it("then the method should parse the object and set the resulting data to this._metadata", () => {
-        expect(cacheability.metadata.cacheControl.maxAge).to.equal(3);
-        expect(cacheability.metadata.cacheControl.public).to.equal(true);
-        expect(cacheability.metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
-        expect(cacheability.metadata.ttl).to.be.a("number");
+        expect(cacheability.metadata !== undefined).to.equal(true);
+
+        if (cacheability.metadata) {
+          expect(cacheability.metadata.cacheControl.maxAge).to.equal(3);
+          expect(cacheability.metadata.cacheControl.public).to.equal(true);
+          expect(cacheability.metadata.etag).to.equal("33a64df551425fcc55e4d42a148795d9f25f89d4");
+          expect(cacheability.metadata.ttl).to.be.a("number");
+        }
       });
     });
   });
@@ -176,9 +204,13 @@ describe("the cacheability class", () => {
       });
 
       it("then the method should parse the cache control and set the resulting data to this._metadata", () => {
-        expect(cacheability.metadata.cacheControl.maxAge).to.equal(2);
-        expect(cacheability.metadata.cacheControl.public).to.equal(true);
-        expect(cacheability.metadata.ttl).to.be.a("number");
+        expect(cacheability.metadata !== undefined).to.equal(true);
+
+        if (cacheability.metadata) {
+          expect(cacheability.metadata.cacheControl.maxAge).to.equal(2);
+          expect(cacheability.metadata.cacheControl.public).to.equal(true);
+          expect(cacheability.metadata.ttl).to.be.a("number");
+        }
       });
     });
   });
