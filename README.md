@@ -18,7 +18,108 @@ yarn add cacheability
 
 ## Documentation
 
-Please read the documentation on the cacheability [github pages](https://bad-batch.github.io/cacheability/).
+### Initialisation
+
+The constructor takes either a Headers instance, object literal of header key/values, cache-control header field value
+or Cacheability metadata object, parses it, if required, and then stores the result on the Cacheability instance's
+metadata property.
+
+```javascript
+import Cacheability from "cacheability";
+
+const headers = new Headers({
+  "cache-control": "public, max-age=60",
+  "content-type": "application/json",
+  "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
+});
+
+const cacheability = new Cacheability({ headers });
+
+const { cacheControl, etag, ttl } = cacheability.metadata;
+// cacheControl is { maxAge: 60, public: true }
+// etag is 33a64df551425fcc55e4d42a148795d9f25f89d4
+// ttl is 1516060712991 if Date.now is 1516060501948
+```
+
+### Properties
+
+#### metadata
+
+The property holds the Cacheability instance's parsed cache headers data, including cache control directives, etag,
+and a derived TTL timestamp.
+
+### Methods
+
+#### checkTTL
+
+The method checks whether the TTL timestamp stored in the Cacheability instance is still valid, by comparing it to the
+current timestamp.
+
+```javascript
+cacheability.parseCacheControl("public, max-age=3");
+
+// One second elapses...
+
+const isValid = cacheability.checkTTL();
+// isValid is true
+
+// Three seconds elapse...
+
+const isStillValid = cacheability.checkTTL();
+// isStillValid is false
+```
+
+#### parseCacheControl
+
+The method takes a cache-control header field value, parses it into an object literal and derives a TTL from the
+max-age or s-maxage directives. If no max-age or s-maxage directives are present, the TTL is given a value of Infinity.
+The data is stored on the Cacheability instance's metadata property.
+
+```javascript
+const {
+  cacheControl,
+  ttl,
+} = cacheability.parseCacheControl("public, max-age=60, s-maxage=60");
+
+// cacheControl is { maxAge: 60, public: true, sMaxage: 60 }
+// ttl is 1516060712991 if Date.now is 1516060501948
+```
+
+#### parseHeaders
+
+Takes a Headers instance or object literal of header key/values, filters the cache-control and etag header fields,
+parses the cache-control into an object literal and derives a TTL from the max-age or s-maxage directives. If no
+max-age or s-maxage directives are present, the TTL is given a value of Infinity. The data is stored on the
+Cacheability instance's metadata property.
+
+```javascript
+const headers = new Headers({
+  "cache-control": "public, max-age=60",
+  "content-type": "application/json",
+  "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
+});
+
+const { cacheControl, etag, ttl } = cacheability.parseHeaders(headers);
+// cacheControl is { maxAge: 60, public: true }
+// etag is 33a64df551425fcc55e4d42a148795d9f25f89d4
+// ttl is 1516060712991 if Date.now is 1516060501948
+```
+
+#### printCacheControl
+
+The method prints a cache-control header field value based on the Cacheability instance's metadata. The max-age and/or
+s-maxage are derived from the TTL stored in the metadata.
+
+```javascript
+cacheability.parseCacheControl("public, max-age=60, s-maxage=60");
+
+// Five seconds elapse...
+
+const cacheControl = cacheability.printCacheControl();
+// cacheControl is "public, max-age=55, s-maxage=55"
+```
+
+The full API documentation can be read on the Cacheability [github pages](https://bad-batch.github.io/cacheability/).
 
 ## Changelog
 
