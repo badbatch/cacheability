@@ -13,7 +13,7 @@ import { CacheControl, CacheHeaders, ConstructorArgs, Metadata } from "../types"
  * A utility class to parse, store and print http cache headers.
  *
  */
-export class Cacheability {
+export default class Cacheability {
   private static _headerKeys: Array<"cache-control" | "etag"> = ["cache-control", "etag"];
 
   private static _getDirectives(cacheControl: string): string[] {
