@@ -1,3 +1,9 @@
+#### 1.0.10 (2018-06-24)
+
+##### Bug Fixes
+
+* **definitions:**  Default export definition broken. ([739ab890](https://github.com/bad-batch/cacheability/commit/739ab8909463240527e7cdd2a1fa6fda84e14d04))
+
 #### 1.0.9 (2018-06-24)
 
 ##### Documentation Changes
