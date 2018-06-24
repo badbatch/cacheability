@@ -1,3 +1,14 @@
+#### 1.0.9 (2018-06-24)
+
+##### Documentation Changes
+
+* **api:**  Adding API info to readme. ([#10](https://github.com/bad-batch/cacheability/pull/10)) ([a6f08585](https://github.com/bad-batch/cacheability/commit/a6f085858e7513169d550c0d019a2576c0ace333))
+
+##### Bug Fixes
+
+* **definitions:**  Fix broken type definitions. ([#9](https://github.com/bad-batch/cacheability/pull/9)) ([09dbcb30](https://github.com/bad-batch/cacheability/commit/09dbcb3027c981511a3382fc3079f29915bb01ad))
+* **config:**  Update urls in package.json. ([fba3cdb6](https://github.com/bad-batch/cacheability/commit/fba3cdb674567ae7a69dbca1803365cd3c33159f))
+
 #### 1.0.8 (2018-06-13)
 
 ##### Bug Fixes
