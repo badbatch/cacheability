@@ -32,7 +32,12 @@ gulp.task('main', () => {
 });
 
 gulp.task('types', () => {
-  const tsProject = ts.createProject('tsconfig.json', { declaration: true, module: 'commonjs', removeComments: true });
+  const tsProject = ts.createProject('tsconfig.json', {
+    declaration: true,
+    module: 'commonjs',
+    removeComments: true,
+  });
+
   const transpiled = gulp.src([...sources, '!src/index.ts']).pipe(tsProject());
   const copied = gulp.src(['src/**/*.d.ts']);
 

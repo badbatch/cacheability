@@ -26,6 +26,11 @@ export const cacheHeaders = {
 
 export const cacheControl = "public, max-age=2, s-maxage=2";
 
+export const defaultMetadata = {
+  cacheControl: {},
+  ttl: Infinity,
+};
+
 export const metadata = {
   cacheControl: { maxAge: 5, public: true },
   etag: "33a64df551425fcc55e4d42a148795d9f25f89d4",
