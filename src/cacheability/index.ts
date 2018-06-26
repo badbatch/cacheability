@@ -131,10 +131,6 @@ export default class Cacheability {
    *
    */
   public checkTTL(): boolean {
-    if (!this.metadata || !isNumber(this.metadata.ttl)) {
-      throw new TypeError("checkTTL expected this._metadata.ttl to be a number.");
-    }
-
     return this.metadata.ttl > Date.now();
   }
 
@@ -145,10 +141,6 @@ export default class Cacheability {
    *
    */
   public printCacheControl(): string {
-    if (!this.metadata || !this.metadata.cacheControl) {
-      throw new TypeError("printCacheControl expected this._metadata.cacheControl to be an object");
-    }
-
     if (!Object.values(this.metadata.cacheControl).length) return "";
     const cacheControl: CacheControl = { ...this.metadata.cacheControl };
 
