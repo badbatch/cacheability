@@ -22,3 +22,12 @@ export interface Metadata {
   etag?: string;
   ttl: number;
 }
+
+/** @internal */
+export type HeaderKeys = Array<"cache-control" | "etag">;
+
+/** @internal */
+export interface ParsedCacheHeaders {
+  cacheControl: CacheControl;
+  etag?: string;
+}

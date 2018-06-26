@@ -7,22 +7,29 @@ import {
   isString,
   kebabCase,
 } from "lodash";
-import { CacheControl, CacheHeaders, ConstructorArgs, Metadata } from "../types";
+import {
+  CacheControl,
+  CacheHeaders,
+  ConstructorArgs,
+  HeaderKeys,
+  Metadata,
+  ParsedCacheHeaders,
+} from "../types";
 
 /**
  * A utility class to parse, store and print http cache headers.
  *
  */
 export default class Cacheability {
-  private static _headerKeys: Array<"cache-control" | "etag"> = ["cache-control", "etag"];
+  private static _headerKeys: HeaderKeys = ["cache-control", "etag"];
 
   private static _getDirectives(cacheControl: string): string[] {
     return cacheControl.split(", ");
   }
 
-  private static _parseCacheControl(cacheControl: string): CacheControl {
+  private static _parseCacheControl(cacheControl?: string): CacheControl {
     const obj: CacheControl = {};
-    if (!cacheControl.length) return obj;
+    if (!isString(cacheControl) || !cacheControl.length) return obj;
     const directives = Cacheability._getDirectives(cacheControl);
 
     directives.forEach((dir) => {
@@ -38,17 +45,39 @@ export default class Cacheability {
     return obj;
   }
 
-  private static _parseHeaders(headers: Headers): CacheHeaders {
-    const metadata: CacheHeaders = {};
+  private static _parseHeaders(headers: Headers | CacheHeaders): ParsedCacheHeaders {
+    let parsed: CacheHeaders = {};
 
-    Cacheability._headerKeys.forEach((key) => {
-      const headerValue = headers.get(key);
-      if (!headerValue) return;
-      const metadataKey = camelCase(key) as "cacheControl" | "etag";
-      metadata[metadataKey] = headerValue;
-    });
+    if (headers instanceof Headers) {
+      Cacheability._headerKeys.forEach((key) => {
+        const headerValue = headers.get(key);
+        if (!headerValue) return;
+        const metadataKey = camelCase(key) as "cacheControl" | "etag";
+        parsed[metadataKey] = headerValue;
+      });
+    } else if (isPlainObject(headers)) {
+      parsed = headers;
+    }
 
-    return metadata;
+    return {
+      cacheControl: Cacheability._parseCacheControl(parsed.cacheControl),
+      etag: parsed.etag,
+    };
+  }
+
+  private static _setDefaultMetadata(): Metadata {
+    return {
+      cacheControl: {},
+      ttl: Infinity,
+    };
+  }
+
+  private static _setMetadata({ cacheControl, etag }: ParsedCacheHeaders): Metadata {
+    return {
+      cacheControl,
+      etag,
+      ttl: Cacheability._setTTL(cacheControl),
+    };
   }
 
   private static _setTTL({ maxAge, noCache, noStore, sMaxage }: CacheControl): number {
@@ -59,23 +88,40 @@ export default class Cacheability {
     return Date.now() + ms;
   }
 
+  private static _validateMetadata(metadata: Metadata): Metadata {
+    if (!isPlainObject(metadata)) return this._setDefaultMetadata();
+    const { cacheControl, etag, ttl } = metadata;
+
+    return {
+      cacheControl: isPlainObject(cacheControl) ? cacheControl : {},
+      etag: isString(etag) ? etag : undefined,
+      ttl: isNumber(ttl) ? ttl : Infinity,
+    };
+  }
+
   /**
    * The property holds the Cacheability instance's parsed cache
    * headers data, including cache control directives, etag, and
    * a derived TTL timestamp.
    *
    */
-  public metadata: Metadata | undefined;
+  public readonly metadata: Metadata;
 
   constructor(args: ConstructorArgs = {}) {
     const { cacheControl, headers, metadata } = args;
 
     if (cacheControl) {
-      this.parseCacheControl(cacheControl);
+      this.metadata = Cacheability._setMetadata({
+        cacheControl: Cacheability._parseCacheControl(cacheControl),
+      });
     } else if (headers) {
-      this.parseHeaders(headers);
+      this.metadata = Cacheability._setMetadata(
+        Cacheability._parseHeaders(headers),
+      );
     } else if (metadata) {
-      this.metadata = metadata;
+      this.metadata = Cacheability._validateMetadata(metadata);
+    } else {
+      this.metadata = Cacheability._setDefaultMetadata();
     }
   }
 
@@ -90,58 +136,6 @@ export default class Cacheability {
     }
 
     return this.metadata.ttl > Date.now();
-  }
-
-  /**
-   * The method takes a cache-control header field value, parses it into
-   * an object literal and derives a TTL from the max-age or s-maxage
-   * directives. If no max-age or s-maxage directives are present,
-   * the TTL is given a value of Infinity. The data is stored on the
-   * Cacheability instance's metadata property.
-   *
-   */
-  public parseCacheControl(cacheControl: string): Metadata {
-    if (!isString(cacheControl)) {
-      throw new TypeError("parseCacheControl expected cacheControl to be a string.");
-    }
-
-    const parsedCacheControl = Cacheability._parseCacheControl(cacheControl);
-
-    this.metadata = {
-      cacheControl: parsedCacheControl,
-      ttl: Cacheability._setTTL(parsedCacheControl),
-    };
-
-    return this.metadata;
-  }
-
-  /**
-   * Takes a Headers instance or object literal of header key/values,
-   * filters the cache-control and etag header fields, parses the
-   * cache-control into an object literal and derives a TTL from the
-   * max-age or s-maxage directives. If no max-age or s-maxage
-   * directives are present, the TTL is given a value of Infinity.
-   * The data is stored on the Cacheability instance's metadata property.
-   *
-   */
-  public parseHeaders(headers: Headers | CacheHeaders): Metadata {
-    if (!(headers instanceof Headers) && !isPlainObject(headers)) {
-      const message = "parseHeaders expected headers to be an instance of Headers or a plain object.";
-      throw new TypeError(message);
-    }
-
-    const { cacheControl = "", etag } = headers instanceof Headers
-      ? Cacheability._parseHeaders(headers) : headers;
-
-    const parsedCacheControl = Cacheability._parseCacheControl(cacheControl);
-
-    this.metadata = {
-      cacheControl: parsedCacheControl,
-      etag,
-      ttl: Cacheability._setTTL(parsedCacheControl),
-    };
-
-    return this.metadata;
   }
 
   /**

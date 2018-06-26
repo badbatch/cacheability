@@ -99,8 +99,6 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cacheability.html#checkttl" class="tsd-kind-icon">checkTTL</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cacheability.html#parsecachecontrol" class="tsd-kind-icon">parse<wbr>Cache<wbr>Control</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cacheability.html#parseheaders" class="tsd-kind-icon">parse<wbr>Headers</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cacheability.html#printcachecontrol" class="tsd-kind-icon">print<wbr>Cache<wbr>Control</a></li>
 							</ul>
 						</section>
@@ -119,7 +117,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/739ab89/src/cacheability/index.ts#L68">cacheability/index.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/e6b17e7/src/cacheability/index.ts#L108">cacheability/index.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -138,10 +136,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="metadata" class="tsd-anchor"></a>
 					<h3>metadata</h3>
-					<div class="tsd-signature tsd-kind-icon">metadata<span class="tsd-signature-symbol">:</span> <a href="../interfaces/metadata.html" class="tsd-signature-type">Metadata</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
+					<div class="tsd-signature tsd-kind-icon">metadata<span class="tsd-signature-symbol">:</span> <a href="../interfaces/metadata.html" class="tsd-signature-type">Metadata</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/739ab89/src/cacheability/index.ts#L68">cacheability/index.ts:68</a></li>
+							<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/e6b17e7/src/cacheability/index.ts#L108">cacheability/index.ts:108</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -165,7 +163,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/739ab89/src/cacheability/index.ts#L87">cacheability/index.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/e6b17e7/src/cacheability/index.ts#L133">cacheability/index.ts:133</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -179,71 +177,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="parsecachecontrol" class="tsd-anchor"></a>
-					<h3>parse<wbr>Cache<wbr>Control</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Cache<wbr>Control<span class="tsd-signature-symbol">(</span>cacheControl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/metadata.html" class="tsd-signature-type">Metadata</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/739ab89/src/cacheability/index.ts#L103">cacheability/index.ts:103</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>The method takes a cache-control header field value, parses it into
-										an object literal and derives a TTL from the max-age or s-maxage
-										directives. If no max-age or s-maxage directives are present,
-										the TTL is given a value of Infinity. The data is stored on the
-									Cacheability instance&#39;s metadata property.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>cacheControl: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/metadata.html" class="tsd-signature-type">Metadata</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="parseheaders" class="tsd-anchor"></a>
-					<h3>parse<wbr>Headers</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Headers<span class="tsd-signature-symbol">(</span>headers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/cacheheaders.html" class="tsd-signature-type">CacheHeaders</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/metadata.html" class="tsd-signature-type">Metadata</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/739ab89/src/cacheability/index.ts#L127">cacheability/index.ts:127</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Takes a Headers instance or object literal of header key/values,
-										filters the cache-control and etag header fields, parses the
-										cache-control into an object literal and derives a TTL from the
-										max-age or s-maxage directives. If no max-age or s-maxage
-										directives are present, the TTL is given a value of Infinity.
-									The data is stored on the Cacheability instance&#39;s metadata property.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>headers: <span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/cacheheaders.html" class="tsd-signature-type">CacheHeaders</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/metadata.html" class="tsd-signature-type">Metadata</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="printcachecontrol" class="tsd-anchor"></a>
 					<h3>print<wbr>Cache<wbr>Control</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -253,7 +186,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/739ab89/src/cacheability/index.ts#L153">cacheability/index.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/e6b17e7/src/cacheability/index.ts#L147">cacheability/index.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -294,12 +227,6 @@
 								<a href="cacheability.html#checkttl" class="tsd-kind-icon">checkTTL</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="cacheability.html#parsecachecontrol" class="tsd-kind-icon">parse<wbr>Cache<wbr>Control</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="cacheability.html#parseheaders" class="tsd-kind-icon">parse<wbr>Headers</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="cacheability.html#printcachecontrol" class="tsd-kind-icon">print<wbr>Cache<wbr>Control</a>
 							</li>
 						</ul>
@@ -317,6 +244,12 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/metadata.html" class="tsd-kind-icon">Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/parsedcacheheaders.html" class="tsd-kind-icon">Parsed<wbr>Cache<wbr>Headers</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../index.html#headerkeys" class="tsd-kind-icon">Header<wbr>Keys</a>
 					</li>
 				</ul>
 			</nav>
