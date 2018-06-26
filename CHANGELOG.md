@@ -1,3 +1,9 @@
+#### 2.0.1 (2018-06-26)
+
+##### Build System / Dependencies
+
+* **ts-node:**  Change to only transpile when running unit tests. ([08eb47a2](https://github.com/bad-batch/cacheability/commit/08eb47a21690523f1dacd9043ee196f02ed3182e))
+
 ## 2.0.0 (2018-06-26)
 
 ##### Breaking Changes
