@@ -1,3 +1,13 @@
+## 2.0.0 (2018-06-26)
+
+##### Breaking Changes
+
+* **refactor:**  Making metadata immutable and removing methods to set metadata. ([#11](https://github.com/bad-batch/cacheability/pull/11)) ([8111fcc1](https://github.com/bad-batch/cacheability/commit/8111fcc14b7f39613b1a1196501cc42379bd2bb6))
+
+##### Bug Fixes
+
+* **errors:**  Removing excessive error throwing. ([#12](https://github.com/bad-batch/cacheability/pull/12)) ([4fa692ec](https://github.com/bad-batch/cacheability/commit/4fa692ec38eb6232a3c00bcaf6bf70dc7c414010))
+
 #### 1.0.10 (2018-06-24)
 
 ##### Bug Fixes
