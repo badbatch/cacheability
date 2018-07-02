@@ -1,3 +1,9 @@
+#### 2.0.2 (2018-07-02)
+
+##### Chores
+
+* **dependencies:**  Upgrading dependencies. ([485afd8f](https://github.com/bad-batch/cacheability/commit/485afd8fe66827f2afb6ad4c64457ab1123c1694))
+
 #### 2.0.1 (2018-06-26)
 
 ##### Build System / Dependencies
