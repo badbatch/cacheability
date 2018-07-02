@@ -8,9 +8,9 @@ import {
   kebabCase,
 } from "lodash";
 import {
+  CacheabilityArgs,
   CacheControl,
   CacheHeaders,
-  ConstructorArgs,
   HeaderKeys,
   Metadata,
   ParsedCacheHeaders,
@@ -19,8 +19,24 @@ import {
 /**
  * A utility class to parse, store and print http cache headers.
  *
+ * ```typescript
+ * import Cacheability from "cacheability";
+ *
+ * const headers = new Headers({
+ *   "cache-control": "public, max-age=60",
+ *   "content-type": "application/json",
+ *   "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
+ * });
+ *
+ * const cacheability = new Cacheability({ headers });
+ *
+ * const { cacheControl, etag, ttl } = cacheability.metadata;
+ * // cacheControl is { maxAge: 60, public: true }
+ * // etag is 33a64df551425fcc55e4d42a148795d9f25f89d4
+ * // ttl is 1516060712991 if Date.now is 1516060501948
+ * ```
  */
-export default class Cacheability {
+export class Cacheability {
   private static _headerKeys: HeaderKeys = ["cache-control", "etag"];
 
   private static _getDirectives(cacheControl: string): string[] {
@@ -103,11 +119,10 @@ export default class Cacheability {
    * The property holds the Cacheability instance's parsed cache
    * headers data, including cache control directives, etag, and
    * a derived TTL timestamp.
-   *
    */
   public readonly metadata: Metadata;
 
-  constructor(args: ConstructorArgs = {}) {
+  constructor(args: CacheabilityArgs = {}) {
     const { cacheControl, headers, metadata } = args;
 
     if (cacheControl) {
@@ -129,6 +144,19 @@ export default class Cacheability {
    * The method checks whether the TTL timestamp stored in the Cacheability
    * instance is still valid, by comparing it to the current timestamp.
    *
+   * ```typescript
+   * cacheability.parseCacheControl("public, max-age=3");
+   *
+   * // One second elapses...
+   *
+   * const isValid = cacheability.checkTTL();
+   * // isValid is true
+   *
+   * // Three seconds elapse...
+   *
+   * const isStillValid = cacheability.checkTTL();
+   * // isStillValid is false
+   * ```
    */
   public checkTTL(): boolean {
     return this.metadata.ttl > Date.now();
@@ -139,6 +167,14 @@ export default class Cacheability {
    * the Cacheability instance's metadata. The max-age and/or s-maxage
    * are derived from the TTL stored in the metadata.
    *
+   * ```typescript
+   * cacheability.parseCacheControl("public, max-age=60, s-maxage=60");
+   *
+   * // Five seconds elapse...
+   *
+   * const cacheControl = cacheability.printCacheControl();
+   * // cacheControl is "public, max-age=55, s-maxage=55"
+   * ```
    */
   public printCacheControl(): string {
     if (!Object.values(this.metadata.cacheControl).length) return "";

@@ -12,7 +12,7 @@ webpackConfig.plugins.push(
   new BundleAnalyzerPlugin({
     analyzerMode: 'disabled',
     generateStatsFile: true,
-    statsFilename: './bundle/stats.json',
+    statsFilename: '../../bundle/stats.json',
   }),
   new UglifyJsPlugin({
     sourceMap: true,
@@ -21,7 +21,7 @@ webpackConfig.plugins.push(
 
 module.exports = {
   entry: {
-    cacheability: './src/index.ts',
+    cacheability: './src/cacheability/index.ts',
   },
   mode: 'production',
   module: {
@@ -44,6 +44,7 @@ module.exports = {
     filename: '[name].js',
     library: 'Cacheability',
     libraryTarget: 'umd',
+    path: resolve(__dirname, 'lib/umd'),
   },
   ...webpackConfig,
 };

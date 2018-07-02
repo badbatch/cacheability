@@ -6,7 +6,7 @@ import {
   metadata,
   rawHeaders,
 } from "../__test__";
-import Cacheability from "../cacheability";
+import { Cacheability } from "../cacheability";
 
 describe("the cacheability class", () => {
   let cacheability: Cacheability;

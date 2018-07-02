@@ -1,4 +1,4 @@
-export interface ConstructorArgs {
+export interface CacheabilityArgs {
   cacheControl?: string;
   headers?: Headers | CacheHeaders;
   metadata?: Metadata;
@@ -17,16 +17,16 @@ export interface CacheControl {
   [key: string]: string | number | boolean;
 }
 
+/** @hidden */
+export type HeaderKeys = Array<"cache-control" | "etag">;
+
 export interface Metadata {
   cacheControl: CacheControl;
   etag?: string;
   ttl: number;
 }
 
-/** @internal */
-export type HeaderKeys = Array<"cache-control" | "etag">;
-
-/** @internal */
+/** @hidden */
 export interface ParsedCacheHeaders {
   cacheControl: CacheControl;
   etag?: string;
