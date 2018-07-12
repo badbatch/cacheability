@@ -132,7 +132,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/485afd8/src/cacheability/index.ts#L123">cacheability/index.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/091b823/src/cacheability/index.ts#L123">cacheability/index.ts:123</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -154,7 +154,7 @@
 					<div class="tsd-signature tsd-kind-icon">metadata<span class="tsd-signature-symbol">:</span> <a href="../interfaces/metadata.html" class="tsd-signature-type">Metadata</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/485afd8/src/cacheability/index.ts#L123">cacheability/index.ts:123</a></li>
+							<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/091b823/src/cacheability/index.ts#L123">cacheability/index.ts:123</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -178,7 +178,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/485afd8/src/cacheability/index.ts#L161">cacheability/index.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/091b823/src/cacheability/index.ts#L161">cacheability/index.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -186,7 +186,7 @@
 									<p>The method checks whether the TTL timestamp stored in the Cacheability
 									instance is still valid, by comparing it to the current timestamp.</p>
 								</div>
-								<pre><code class="lang-typescript">cacheability.parseCacheControl(<span class="hljs-string">"public, max-age=3"</span>);
+								<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> cacheability = <span class="hljs-keyword">new</span> Cacheability({ cacheControl: <span class="hljs-string">"public, max-age=3"</span> });
 
 <span class="hljs-comment">// One second elapses...</span>
 
@@ -213,7 +213,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/485afd8/src/cacheability/index.ts#L179">cacheability/index.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/dylanaubrey/cacheability/blob/091b823/src/cacheability/index.ts#L179">cacheability/index.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -222,7 +222,7 @@
 										the Cacheability instance&#39;s metadata. The max-age and/or s-maxage
 									are derived from the TTL stored in the metadata.</p>
 								</div>
-								<pre><code class="lang-typescript">cacheability.parseCacheControl(<span class="hljs-string">"public, max-age=60, s-maxage=60"</span>);
+								<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> cacheability = <span class="hljs-keyword">new</span> Cacheability({ cacheControl: <span class="hljs-string">"public, max-age=60, s-maxage=60"</span> });
 
 <span class="hljs-comment">// Five seconds elapse...</span>
 

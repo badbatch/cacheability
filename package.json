@@ -1,6 +1,6 @@
 {
   "name": "cacheability",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A utility class to parse, store and print http cache headers.",
   "author": "Dylan Aubrey <dylanaubrey@gmail.com>",
   "license": "MIT",
@@ -34,7 +34,7 @@
     "compile:module": "cross-env BABEL_ENV=module gulp module",
     "compile:types": "gulp types",
     "compile:umd": "cross-env BABEL_ENV=browser webpack",
-    "cut-off": "cut-off",
+    "cutoff": "cutoff",
     "cutoff:post-version": "yarn run document",
     "debug:web": "cross-env BABEL_ENV=debug karma start --no-single-run --browsers",
     "document": "gulp document",

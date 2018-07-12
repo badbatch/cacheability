@@ -1,3 +1,9 @@
+#### 2.0.3 (2018-07-12)
+
+##### Documentation Changes
+
+* **code:**  Update code examples ([#13](https://github.com/bad-batch/cacheability/pull/13)) ([091b8234](https://github.com/bad-batch/cacheability/commit/091b8234f3d162041aebbf228816afba31f4bcf9))
+
 #### 2.0.2 (2018-07-02)
 
 ##### Chores
