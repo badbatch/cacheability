@@ -56,7 +56,7 @@ The method checks whether the TTL timestamp stored in the Cacheability instance 
 current timestamp.
 
 ```javascript
-cacheability.parseCacheControl("public, max-age=3");
+const cacheability = new Cacheability({ cacheControl: "public, max-age=3" });
 
 // One second elapses...
 
@@ -75,7 +75,7 @@ The method prints a cache-control header field value based on the Cacheability i
 s-maxage are derived from the TTL stored in the metadata.
 
 ```javascript
-cacheability.parseCacheControl("public, max-age=60, s-maxage=60");
+const cacheability = new Cacheability({ cacheControl: "public, max-age=60, s-maxage=60" });
 
 // Five seconds elapse...
 
