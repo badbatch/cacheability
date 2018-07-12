@@ -145,7 +145,7 @@ export class Cacheability {
    * instance is still valid, by comparing it to the current timestamp.
    *
    * ```typescript
-   * cacheability.parseCacheControl("public, max-age=3");
+   * const cacheability = new Cacheability({ cacheControl: "public, max-age=3" });
    *
    * // One second elapses...
    *
@@ -168,7 +168,7 @@ export class Cacheability {
    * are derived from the TTL stored in the metadata.
    *
    * ```typescript
-   * cacheability.parseCacheControl("public, max-age=60, s-maxage=60");
+   * const cacheability = new Cacheability({ cacheControl: "public, max-age=60, s-maxage=60" });
    *
    * // Five seconds elapse...
    *
