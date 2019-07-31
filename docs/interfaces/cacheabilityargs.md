@@ -22,7 +22,7 @@
 
 • **cacheControl**? : *undefined | string*
 
-*Defined in [types.ts:2](https://github.com/bad-batch/cacheability/blob/f62901c/src/types.ts#L2)*
+*Defined in [types.ts:2](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L2)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **headers**? : *`Headers` | [CacheHeaders](cacheheaders.md)*
 
-*Defined in [types.ts:3](https://github.com/bad-batch/cacheability/blob/f62901c/src/types.ts#L3)*
+*Defined in [types.ts:3](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L3)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **metadata**? : *[Metadata](metadata.md)*
 
-*Defined in [types.ts:4](https://github.com/bad-batch/cacheability/blob/f62901c/src/types.ts#L4)*
+*Defined in [types.ts:4](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L4)*

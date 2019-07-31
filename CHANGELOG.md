@@ -1,3 +1,15 @@
+#### 2.0.5 (2019-07-31)
+
+##### Chores
+
+* **dependencies|files:**  upgrade dependencies and files ([#14](https://github.com/bad-batch/cacheability/pull/14)) ([63f29792](https://github.com/bad-batch/cacheability/commit/63f29792e7ce35abaa5f9d7a3378099e1238e300))
+
+##### Bug Fixes
+
+* **readme:**
+  *  fix broken badge ([73224319](https://github.com/bad-batch/cacheability/commit/73224319ae8f9ec55950f42fa6a624829621e896))
+  *  update badge url ([e94d7931](https://github.com/bad-batch/cacheability/commit/e94d79318bf825d5d34e80e499a903927d1278a2))
+
 #### 2.0.4 (2018-07-13)
 
 #### 2.0.3 (2018-07-12)

@@ -48,7 +48,7 @@ const { cacheControl, etag, ttl } = cacheability.metadata;
 
 \+ **new Cacheability**(`args`: [CacheabilityArgs](../interfaces/cacheabilityargs.md)): *[Cacheability](cacheability.md)*
 
-*Defined in [cacheability/index.ts:123](https://github.com/bad-batch/cacheability/blob/f62901c/src/cacheability/index.ts#L123)*
+*Defined in [cacheability/index.ts:123](https://github.com/bad-batch/cacheability/blob/7322431/src/cacheability/index.ts#L123)*
 
 **Parameters:**
 
@@ -64,7 +64,7 @@ Name | Type | Default |
 
 • **metadata**: *[Metadata](../interfaces/metadata.md)*
 
-*Defined in [cacheability/index.ts:123](https://github.com/bad-batch/cacheability/blob/f62901c/src/cacheability/index.ts#L123)*
+*Defined in [cacheability/index.ts:123](https://github.com/bad-batch/cacheability/blob/7322431/src/cacheability/index.ts#L123)*
 
 The property holds the Cacheability instance's parsed cache
 headers data, including cache control directives, etag, and
@@ -76,7 +76,7 @@ a derived TTL timestamp.
 
 ▸ **checkTTL**(): *boolean*
 
-*Defined in [cacheability/index.ts:161](https://github.com/bad-batch/cacheability/blob/f62901c/src/cacheability/index.ts#L161)*
+*Defined in [cacheability/index.ts:161](https://github.com/bad-batch/cacheability/blob/7322431/src/cacheability/index.ts#L161)*
 
 The method checks whether the TTL timestamp stored in the Cacheability
 instance is still valid, by comparing it to the current timestamp.
@@ -103,7 +103,7 @@ ___
 
 ▸ **printCacheControl**(): *string*
 
-*Defined in [cacheability/index.ts:179](https://github.com/bad-batch/cacheability/blob/f62901c/src/cacheability/index.ts#L179)*
+*Defined in [cacheability/index.ts:179](https://github.com/bad-batch/cacheability/blob/7322431/src/cacheability/index.ts#L179)*
 
 The method prints a cache-control header field value based on
 the Cacheability instance's metadata. The max-age and/or s-maxage

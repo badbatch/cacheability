@@ -24,4 +24,4 @@
 
 Ƭ **HeaderKeys**: *`Array<"cache-control" | "etag">`*
 
-*Defined in [types.ts:21](https://github.com/bad-batch/cacheability/blob/f62901c/src/types.ts#L21)*
+*Defined in [types.ts:21](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L21)*
