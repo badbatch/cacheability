@@ -1,8 +1,14 @@
 {
-  "extends": "./tsconfig.base",
-  "compilerOptions": { "module": "esnext" },
+  "extends": "./tsconfig.settings.json",
+  "compilerOptions": {
+    "outDir": "lib/types",
+    "rootDir": "src"
+  },
   "exclude": [
     "**/__test__/**",
-    "**/*.test.*"
+    "**/*.test.ts"
+  ],
+  "include": [
+    "src"
   ]
 }

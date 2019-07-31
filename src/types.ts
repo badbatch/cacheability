@@ -14,10 +14,10 @@ export interface CacheControl {
   noCache?: boolean;
   noStore?: boolean;
   sMaxage?: number;
-  [key: string]: string | number | boolean;
+  [key: string]: string | number | boolean | undefined;
 }
 
-/** @hidden */
+/** @private */
 export type HeaderKeys = Array<"cache-control" | "etag">;
 
 export interface Metadata {
@@ -26,7 +26,7 @@ export interface Metadata {
   ttl: number;
 }
 
-/** @hidden */
+/** @private */
 export interface ParsedCacheHeaders {
   cacheControl: CacheControl;
   etag?: string;
