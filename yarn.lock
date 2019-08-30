@@ -1173,10 +1173,10 @@
   resolved "https://registry.yarnpkg.com/@repodog/ts-config/-/ts-config-0.2.26.tgz#c4dc9b8c1741ca8c4e532dabe62777bbba3745ef"
   integrity sha512-Pq3aJ3cIhnUtJXCZuJ1Vgmz9pdg5hhjxgkLkTx3au7k2z/3NHV1v+7C91mPktlGaWr3dEE0AECcwIlv4ApPjXA==
 
-"@repodog/tslint-config@^0.2.26":
-  version "0.2.26"
-  resolved "https://registry.yarnpkg.com/@repodog/tslint-config/-/tslint-config-0.2.26.tgz#6015e377c17617bf48fe26f5af3e7f82ff4efbaf"
-  integrity sha512-RXQvVRn3n9Py0xZZrqTXigZVsjbrFSs6iNn2kKxoatnC6tEfd/l7dH9qDF+zAZ0DjVFHaj6SixOaol3nJKDCiw==
+"@repodog/tslint-config@^0.2.27":
+  version "0.2.27"
+  resolved "https://registry.yarnpkg.com/@repodog/tslint-config/-/tslint-config-0.2.27.tgz#936662939000a2bb84aefc24cf3fb27a523b3a63"
+  integrity sha512-zaxHSA4+SKFVYUdm5gYaOwuiQC3aDGp8Xga0J7vr/ydHxciTxbJhxlkXcAl57R1n0CQGtDsmVaap1rwjFxqIPQ==
 
 "@repodog/typedoc-config@^0.2.26":
   version "0.2.26"

@@ -88,7 +88,7 @@
     "@repodog/markdownlint-config": "^0.2.26",
     "@repodog/prettier-config": "^0.2.26",
     "@repodog/ts-config": "^0.2.26",
-    "@repodog/tslint-config": "^0.2.26",
+    "@repodog/tslint-config": "^0.2.27",
     "@repodog/typedoc-config": "^0.2.26",
     "@types/isomorphic-fetch": "^0.0.35",
     "@types/jest": "^24.0.18",
