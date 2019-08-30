@@ -59,9 +59,7 @@ const devConfig = {
     sourcemap: true,
     sourcemapPathTransform,
   },
-  plugins: [
-    ...defaultPlugins,
-  ],
+  plugins: [...defaultPlugins],
 };
 
 const prodConfig = {
@@ -73,11 +71,7 @@ const prodConfig = {
     sourcemap: true,
     sourcemapPathTransform,
   },
-  plugins: [
-    ...defaultPlugins,
-    terser(),
-    analyzer({ writeTo }),
-  ],
+  plugins: [...defaultPlugins, terser(), analyzer({ writeTo })],
 };
 
 const config = [];
