@@ -1,4 +1,6 @@
-> **[Documentation](README.md)**
+**[Documentation](README.md)**
+
+[Globals](README.md)
 
 ## Index
 
@@ -22,6 +24,6 @@
 
 ### `Private` HeaderKeys
 
-Ƭ **HeaderKeys**: *`Array<"cache-control" | "etag">`*
+Ƭ **HeaderKeys**: *Array‹"cache-control" | "etag"›*
 
-*Defined in [types.ts:21](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L21)*
+*Defined in [types.ts:21](https://github.com/bad-batch/cacheability/blob/9e3b985/src/types.ts#L21)*

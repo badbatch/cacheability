@@ -1,3 +1,9 @@
+#### 2.0.6 (2019-08-30)
+
+##### New Features
+
+* **configs:**  add repodog configs and update deps ([9e3b985a](https://github.com/bad-batch/cacheability/commit/9e3b985a6c70b07982105a58a9b4a2e73be906aa))
+
 #### 2.0.5 (2019-07-31)
 
 ##### Chores

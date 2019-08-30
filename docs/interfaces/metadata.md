@@ -1,6 +1,6 @@
-> **[Documentation](../README.md)**
+**[Documentation](../README.md)**
 
-[Metadata](metadata.md) /
+[Globals](../README.md) › [Metadata](metadata.md)
 
 # Interface: Metadata
 
@@ -22,7 +22,7 @@
 
 • **cacheControl**: *[CacheControl](cachecontrol.md)*
 
-*Defined in [types.ts:24](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L24)*
+*Defined in [types.ts:24](https://github.com/bad-batch/cacheability/blob/9e3b985/src/types.ts#L24)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **etag**? : *undefined | string*
 
-*Defined in [types.ts:25](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L25)*
+*Defined in [types.ts:25](https://github.com/bad-batch/cacheability/blob/9e3b985/src/types.ts#L25)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **ttl**: *number*
 
-*Defined in [types.ts:26](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L26)*
+*Defined in [types.ts:26](https://github.com/bad-batch/cacheability/blob/9e3b985/src/types.ts#L26)*

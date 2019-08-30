@@ -1,6 +1,6 @@
-> **[Documentation](../README.md)**
+**[Documentation](../README.md)**
 
-[CacheHeaders](cacheheaders.md) /
+[Globals](../README.md) › [CacheHeaders](cacheheaders.md)
 
 # Interface: CacheHeaders
 
@@ -21,7 +21,7 @@
 
 • **cacheControl**? : *undefined | string*
 
-*Defined in [types.ts:8](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L8)*
+*Defined in [types.ts:8](https://github.com/bad-batch/cacheability/blob/9e3b985/src/types.ts#L8)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **etag**? : *undefined | string*
 
-*Defined in [types.ts:9](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L9)*
+*Defined in [types.ts:9](https://github.com/bad-batch/cacheability/blob/9e3b985/src/types.ts#L9)*

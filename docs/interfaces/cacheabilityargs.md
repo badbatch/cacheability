@@ -1,6 +1,6 @@
-> **[Documentation](../README.md)**
+**[Documentation](../README.md)**
 
-[CacheabilityArgs](cacheabilityargs.md) /
+[Globals](../README.md) › [CacheabilityArgs](cacheabilityargs.md)
 
 # Interface: CacheabilityArgs
 
@@ -22,15 +22,15 @@
 
 • **cacheControl**? : *undefined | string*
 
-*Defined in [types.ts:2](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L2)*
+*Defined in [types.ts:2](https://github.com/bad-batch/cacheability/blob/9e3b985/src/types.ts#L2)*
 
 ___
 
 ### `Optional` headers
 
-• **headers**? : *`Headers` | [CacheHeaders](cacheheaders.md)*
+• **headers**? : *Headers | [CacheHeaders](cacheheaders.md)*
 
-*Defined in [types.ts:3](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L3)*
+*Defined in [types.ts:3](https://github.com/bad-batch/cacheability/blob/9e3b985/src/types.ts#L3)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **metadata**? : *[Metadata](metadata.md)*
 
-*Defined in [types.ts:4](https://github.com/bad-batch/cacheability/blob/7322431/src/types.ts#L4)*
+*Defined in [types.ts:4](https://github.com/bad-batch/cacheability/blob/9e3b985/src/types.ts#L4)*
