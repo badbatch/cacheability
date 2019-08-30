@@ -1,3 +1,10 @@
+#### 2.0.7 (2019-08-30)
+
+##### Chores
+
+* **dependencies:**  update repodog-tslint config ([ce7b78b1](https://github.com/bad-batch/cacheability/commit/ce7b78b188764bf18f6a5348377458a650f37891))
+* **formatting:**  update js formatting ([7d338a8c](https://github.com/bad-batch/cacheability/commit/7d338a8cda5605a8ac3333542eb4c6ac75ccefa1))
+
 #### 2.0.6 (2019-08-30)
 
 ##### New Features
