@@ -5,17 +5,17 @@ export const rawHeaders = {
   noCache: {
     "cache-control": "public, no-cache",
     "content-type": "application/json",
-    "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
+    etag: "33a64df551425fcc55e4d42a148795d9f25f89d4",
   },
   noStore: {
     "cache-control": "public, no-store",
     "content-type": "application/json",
-    "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
+    etag: "33a64df551425fcc55e4d42a148795d9f25f89d4",
   },
   shortMaxAge: {
     "cache-control": "public, max-age=1",
     "content-type": "application/json",
-    "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4",
+    etag: "33a64df551425fcc55e4d42a148795d9f25f89d4",
   },
 };
 

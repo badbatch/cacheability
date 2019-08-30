@@ -1,2 +1,2 @@
-export { Cacheability as default } from "./cacheability";
+export { default } from "./main";
 export * from "./types";
