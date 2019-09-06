@@ -27,7 +27,7 @@
 
 • **maxAge**? : *undefined | number*
 
-*Defined in [main/types.ts:13](https://github.com/bad-batch/cacheability/blob/ce7b78b/src/main/types.ts#L13)*
+*Defined in [main/types.ts:13](https://github.com/bad-batch/cacheability/blob/251de40/src/main/types.ts#L13)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **noCache**? : *undefined | false | true*
 
-*Defined in [main/types.ts:14](https://github.com/bad-batch/cacheability/blob/ce7b78b/src/main/types.ts#L14)*
+*Defined in [main/types.ts:14](https://github.com/bad-batch/cacheability/blob/251de40/src/main/types.ts#L14)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **noStore**? : *undefined | false | true*
 
-*Defined in [main/types.ts:15](https://github.com/bad-batch/cacheability/blob/ce7b78b/src/main/types.ts#L15)*
+*Defined in [main/types.ts:15](https://github.com/bad-batch/cacheability/blob/251de40/src/main/types.ts#L15)*
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 • **sMaxage**? : *undefined | number*
 
-*Defined in [main/types.ts:16](https://github.com/bad-batch/cacheability/blob/ce7b78b/src/main/types.ts#L16)*
+*Defined in [main/types.ts:16](https://github.com/bad-batch/cacheability/blob/251de40/src/main/types.ts#L16)*

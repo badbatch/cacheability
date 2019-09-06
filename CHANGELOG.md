@@ -1,3 +1,9 @@
+#### 2.0.8 (2019-09-06)
+
+##### Chores
+
+* **repo:**  upgrade dependencies ([251de405](https://github.com/bad-batch/cacheability/commit/251de405d016e237c8c1d31011aa7b187c0dc429))
+
 #### 2.0.7 (2019-08-30)
 
 ##### Chores
