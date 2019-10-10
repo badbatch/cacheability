@@ -28,8 +28,8 @@
     "parser"
   ],
   "scripts": {
-    "build": "yarn clean:libs && yarn compile",
-    "clean": "yarn clean:libs && yarn clean:docs && yarn clean:node_modules",
+    "build": "yarn run clean:libs && yarn run compile",
+    "clean": "yarn run clean:libs && yarn run clean:docs && yarn run clean:node_modules",
     "clean:docs": "del-cli ./docs",
     "clean:libs": "del-cli ./lib",
     "clean:node_modules": "del-cli ./node_modules",
@@ -39,16 +39,16 @@
     "compile:module": "cross-env BABEL_ENV=module babel ./src --out-dir ./lib/module --extensions \".ts\" --source-maps --config-file ./babel.config.js",
     "compile:types": "tsc --declaration --declarationMap --emitDeclarationOnly",
     "cutoff": "cutoff",
-    "cutoff:post-version": "yarn compile && yarn docs",
+    "cutoff:post-version": "yarn run compile && yarn run docs",
     "docs": "typedoc --includes ./src --out ./docs --options ./typedoc.js",
-    "init": "yarn && yarn compile",
+    "init": "yarn run && yarn run compile",
     "lint": "concurrently npm:lint:*",
     "lint:js": "eslint .",
     "lint:ts": "tslint --project ./tsconfig.json",
     "publish-cutoff": "publish-cutoff",
     "test": "jest --logHeapUsage",
     "type-check": "tsc --noEmit",
-    "validate": "yarn build && yarn lint && yarn type-check && yarn test",
+    "validate": "yarn run build && yarn run lint && yarn run type-check && yarn run test",
     "wipe": "del-cli ./yarn.lock ./node_modules"
   },
   "husky": {

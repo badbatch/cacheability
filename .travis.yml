@@ -14,15 +14,15 @@ before_install:
 install:
   - yarn
 script:
-  - yarn compile
-  - yarn lint
-  - yarn type-check
-  - yarn test
+  - yarn run compile
+  - yarn run lint
+  - yarn run type-check
+  - yarn run test
   - codecov
 deploy:
   provider: script
   script:
-    - yarn publish-cutoff
+    - yarn run publish-cutoff
   skip_cleanup: true
   on:
     tags: true
