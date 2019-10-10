@@ -1,3 +1,9 @@
+#### 2.0.10 (2019-10-10)
+
+##### Chores
+
+*  update scripts ([b8f947ef](https://github.com/bad-batch/cacheability/commit/b8f947ef6e50ad5116aedbb7cbcf8b04460b6619))
+
 #### 2.0.9 (2019-10-10)
 
 ##### Chores
