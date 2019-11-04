@@ -5,8 +5,11 @@
     "rootDir": "src"
   },
   "exclude": [
+    "bin/**",
+    "lib/**",
+    "node_modules/**",
     "**/__test__/**",
-    "**/*.test.ts"
+    "**/*.test.*"
   ],
   "include": [
     "src"

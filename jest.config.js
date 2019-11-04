@@ -1,11 +1,7 @@
+const repodogConfig = require('@repodog/jest-config');
+
 module.exports = {
-  collectCoverage: true,
-  collectCoverageFrom: ['src/**/*', '!**/__test__/**', '!**/*.test.*', '!**/*.d.*'],
-  coverageDirectory: 'coverage',
-  coverageReporters: ['json', 'lcov', 'text-summary'],
-  moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
+  ...repodogConfig,
+  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!**/types.ts', '!**/*.test.*', '!**/__test__/**'],
   testMatch: ['<rootDir>/src/**/*.test.*'],
-  transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
-  },
 };

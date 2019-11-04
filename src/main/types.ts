@@ -18,7 +18,7 @@ export interface CacheControl {
 }
 
 /** @private */
-export type HeaderKeys = Array<"cache-control" | "etag">;
+export type HeaderKeys = ("cache-control" | "etag")[];
 
 export interface Metadata {
   cacheControl: CacheControl;
