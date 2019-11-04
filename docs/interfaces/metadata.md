@@ -20,7 +20,7 @@
 
 • **cacheControl**: *[CacheControl](cachecontrol.md)*
 
-*Defined in [main/types.ts:24](https://github.com/bad-batch/cacheability/blob/b8f947e/src/main/types.ts#L24)*
+*Defined in [main/types.ts:24](https://github.com/bad-batch/cacheability/blob/e311345/src/main/types.ts#L24)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **etag**? : *undefined | string*
 
-*Defined in [main/types.ts:25](https://github.com/bad-batch/cacheability/blob/b8f947e/src/main/types.ts#L25)*
+*Defined in [main/types.ts:25](https://github.com/bad-batch/cacheability/blob/e311345/src/main/types.ts#L25)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **ttl**: *number*
 
-*Defined in [main/types.ts:26](https://github.com/bad-batch/cacheability/blob/b8f947e/src/main/types.ts#L26)*
+*Defined in [main/types.ts:26](https://github.com/bad-batch/cacheability/blob/e311345/src/main/types.ts#L26)*

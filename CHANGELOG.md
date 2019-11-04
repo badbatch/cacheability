@@ -1,3 +1,9 @@
+## 3.0.0 (2019-11-04)
+
+##### Chores
+
+*  upgrade dependencies, including core-js ([e311345e](https://github.com/bad-batch/cacheability/commit/e311345eadd42d47aae870c71f6c10be5594442c))
+
 #### 2.0.10 (2019-10-10)
 
 ##### Chores
