@@ -1,3 +1,15 @@
+#### 3.0.1 (2020-03-02)
+
+##### Build System / Dependencies
+
+* **deps-dev:**  bump codecov from 3.6.1 to 3.6.5 ([#16](https://github.com/bad-batch/cacheability/pull/16)) ([da09c5f5](https://github.com/bad-batch/cacheability/commit/da09c5f5fc79cba0b5a2e69dda88bd6bbc0beaec))
+* **deps:**  bump handlebars from 4.1.2 to 4.5.3 ([#15](https://github.com/bad-batch/cacheability/pull/15)) ([b5942ec7](https://github.com/bad-batch/cacheability/commit/b5942ec7a43fa70d51869de13396a0d7c9ba4a29))
+
+##### Chores
+
+*  commit yarn lock ([311cae70](https://github.com/bad-batch/cacheability/commit/311cae7022cbc2b9d871a7f2d143d2c25a8417ce))
+*  upgrading dependencies and sorting peer versions ([e7278f05](https://github.com/bad-batch/cacheability/commit/e7278f05b929f3149dd6cde4c7a1eaa38e119c5b))
+
 ## 3.0.0 (2019-11-04)
 
 ##### Chores
