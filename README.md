@@ -2,7 +2,7 @@
 
 A utility class to parse, store and print http cache headers.
 
-[![Build Status](https://travis-ci.org/badbatch/cacheability.svg?branch=master)](https://travis-ci.org/badbatch/cacheability)
+[![Build Status](https://travis-ci.com/badbatch/cacheability.svg?branch=master)](https://travis-ci.com/badbatch/cacheability)
 [![codecov](https://codecov.io/gh/badbatch/cacheability/branch/master/graph/badge.svg)](https://codecov.io/gh/badbatch/cacheability)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![npm version](https://badge.fury.io/js/cacheability.svg)](https://badge.fury.io/js/cacheability)
