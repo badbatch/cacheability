@@ -1,3 +1,14 @@
+#### 3.0.2 (2023-08-11)
+
+##### Bug Fixes
+
+*  output .mjs files for module build ([4f4ccd41](https://github.com/bad-batch/cacheability/commit/4f4ccd41de395841f6ebf9c2ccb5b505da0c00c3))
+*  update travis url ([575f5e2a](https://github.com/bad-batch/cacheability/commit/575f5e2ae501cbc14710bf8a9deb58d9b45f4adf))
+
+##### Refactors
+
+*  use github actions instead of travis ([69598798](https://github.com/bad-batch/cacheability/commit/69598798f8bac5ff9c08dd873165b83d57c5615e))
+
 #### 3.0.1 (2020-03-02)
 
 ##### Build System / Dependencies
