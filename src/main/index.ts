@@ -1,45 +1,56 @@
-import "isomorphic-fetch";
-import { camelCase, isBoolean, isNumber, isPlainObject, isString, kebabCase } from "lodash";
-import { CacheControl, CacheHeaders, CacheabilityArgs, HeaderKeys, Metadata, ParsedCacheHeaders } from "./types";
+import camelCase from 'lodash/camelCase.js';
+import isBoolean from 'lodash/isBoolean.js';
+import isNumber from 'lodash/isNumber.js';
+import isPlainObject from 'lodash/isPlainObject.js';
+import isString from 'lodash/isString.js';
+import kebabCase from 'lodash/kebabCase.js';
+import {
+  type CacheControl,
+  type CacheHeaders,
+  type CacheabilityArgs as CacheabilityArguments,
+  type HeaderKeys,
+  type Metadata,
+  type ParsedCacheHeaders,
+} from './types.ts';
 
 /**
  * A utility class to parse, store and print http cache headers.
  */
-export default class Cacheability {
-  private static _headerKeys: HeaderKeys = ["cache-control", "etag"];
+export class Cacheability {
+  private static _headerKeys: HeaderKeys = ['cache-control', 'etag'];
 
   private static _getDirectives(cacheControl: string): string[] {
-    return cacheControl.split(", ");
+    return cacheControl.split(', ');
   }
 
   private static _parseCacheControl(cacheControl?: string): CacheControl {
-    const obj: CacheControl = {};
-    if (!isString(cacheControl) || !cacheControl.length) return obj;
+    const object: CacheControl = {};
+    if (!isString(cacheControl) || cacheControl.length === 0) return object;
     const directives = Cacheability._getDirectives(cacheControl);
 
-    directives.forEach(dir => {
-      if (dir.match(/=/)) {
-        const [key, value] = dir.split("=");
-        obj[camelCase(key)] = Number(value);
-        return;
+    for (const directive of directives) {
+      if (directive.includes('=')) {
+        const [key, value] = directive.split('=');
+        object[camelCase(key)] = Number(value);
+        continue;
       }
 
-      obj[camelCase(dir)] = true;
-    });
+      object[camelCase(directive)] = true;
+    }
 
-    return obj;
+    return object;
   }
 
   private static _parseHeaders(headers: Headers | CacheHeaders): ParsedCacheHeaders {
     let parsed: CacheHeaders = {};
 
     if (headers instanceof Headers) {
-      Cacheability._headerKeys.forEach(key => {
+      for (const key of Cacheability._headerKeys) {
         const headerValue = headers.get(key);
-        if (!headerValue) return;
-        const metadataKey = camelCase(key) as "cacheControl" | "etag";
+        if (!headerValue) continue;
+        const metadataKey = camelCase(key) as 'cacheControl' | 'etag';
         parsed[metadataKey] = headerValue;
-      });
+      }
     } else if (isPlainObject(headers)) {
       parsed = headers;
     }
@@ -53,7 +64,7 @@ export default class Cacheability {
   private static _setDefaultMetadata(): Metadata {
     return {
       cacheControl: {},
-      ttl: Infinity,
+      ttl: Number.POSITIVE_INFINITY,
     };
   }
 
@@ -67,8 +78,8 @@ export default class Cacheability {
 
   private static _setTTL({ maxAge, noCache, noStore, sMaxage }: CacheControl): number {
     if (noCache || noStore) return 0;
-    const sec = sMaxage || maxAge;
-    if (!isNumber(sec)) return Infinity;
+    const sec = sMaxage ?? maxAge;
+    if (!isNumber(sec)) return Number.POSITIVE_INFINITY;
     const ms = sec * 1000;
     return Date.now() + ms;
   }
@@ -80,7 +91,7 @@ export default class Cacheability {
     return {
       cacheControl: isPlainObject(cacheControl) ? cacheControl : {},
       etag: isString(etag) ? etag : undefined,
-      ttl: isNumber(ttl) ? ttl : Infinity,
+      ttl: isNumber(ttl) ? ttl : Number.POSITIVE_INFINITY,
     };
   }
 
@@ -91,8 +102,8 @@ export default class Cacheability {
    */
   public readonly metadata: Metadata;
 
-  constructor(args: CacheabilityArgs = {}) {
-    const { cacheControl, headers, metadata } = args;
+  constructor(arguments_: CacheabilityArguments = {}) {
+    const { cacheControl, headers, metadata } = arguments_;
 
     if (cacheControl) {
       this.metadata = Cacheability._setMetadata({
@@ -121,7 +132,7 @@ export default class Cacheability {
    * are derived from the TTL stored in the metadata.
    */
   public printCacheControl(): string {
-    if (!Object.values(this.metadata.cacheControl).length) return "";
+    if (Object.values(this.metadata.cacheControl).length === 0) return '';
     const cacheControl: CacheControl = { ...this.metadata.cacheControl };
 
     if (cacheControl.sMaxage || cacheControl.maxAge) {
@@ -132,15 +143,15 @@ export default class Cacheability {
 
     const directives: string[] = [];
 
-    Object.keys(cacheControl).forEach(key => {
+    for (const key of Object.keys(cacheControl)) {
       if (isBoolean(cacheControl[key])) {
         directives.push(kebabCase(key));
-        return;
+        continue;
       }
 
-      directives.push(`${kebabCase(key)}=${cacheControl[key]}`);
-    });
+      directives.push(`${kebabCase(key)}=${String(cacheControl[key])}`);
+    }
 
-    return directives.join(", ");
+    return directives.join(', ');
   }
 }

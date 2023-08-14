@@ -1,26 +1,31 @@
-.nyc_output/
-.sonar/
+.github/
+.husky/
 .vscode/
 bundle/
 coverage/
 docs/
-test/
-*.log
+
+# private files
 .*
-*.config.js
+
+# logs
+*.log
+
+# configs
+*.config.*
+
+# doc files
 CHANGELOG.md
 CONTRIBUTING.md
-codecov.yml
-gulpfile.js
+
+# build files
 karma.*
-lerna.json
-mocha.opts
-package-lock.json
-repodog.config.json
-sonar-project.properties
-test-setup.js
-tsconfig.*
-tslint.*
-typedoc.js
 webpack.*
+
+# jest files
+jest.*
+
+# lock files
+package-lock.json
+pnpm-lock.yaml
 yarn.lock

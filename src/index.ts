@@ -1,2 +1,2 @@
-export { default } from "./main";
-export * from "./main/types";
+export { Cacheability } from './main/index.ts';
+export * from './main/types.ts';

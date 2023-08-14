@@ -10,15 +10,15 @@ export interface CacheHeaders {
 }
 
 export interface CacheControl {
+  [key: string]: string | number | boolean | undefined;
   maxAge?: number;
   noCache?: boolean;
   noStore?: boolean;
   sMaxage?: number;
-  [key: string]: string | number | boolean | undefined;
 }
 
 /** @private */
-export type HeaderKeys = ("cache-control" | "etag")[];
+export type HeaderKeys = ('cache-control' | 'etag')[];
 
 export interface Metadata {
   cacheControl: CacheControl;
