@@ -21,7 +21,7 @@ or Cacheability metadata object, parses it, if required, and then stores the res
 metadata property.
 
 ```javascript
-import Cacheability from "cacheability";
+import { Cacheability } from "cacheability";
 
 const headers = new Headers({
   "cache-control": "public, max-age=60",
