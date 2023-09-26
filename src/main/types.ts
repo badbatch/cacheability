@@ -17,7 +17,6 @@ export interface CacheControl {
   sMaxage?: number;
 }
 
-/** @private */
 export type HeaderKeys = ('cache-control' | 'etag')[];
 
 export interface Metadata {
@@ -26,7 +25,6 @@ export interface Metadata {
   ttl: number;
 }
 
-/** @private */
 export interface ParsedCacheHeaders {
   cacheControl: CacheControl;
   etag?: string;
