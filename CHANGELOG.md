@@ -1,3 +1,10 @@
+#### 4.0.4 (2023-09-28)
+
+##### Refactors
+
+*  replace lodash with lodash-es (be99907c)
+*  remove js doc private annotations (5e24a965)
+
 #### 4.0.3 (2023-08-15)
 
 ##### Bug Fixes
