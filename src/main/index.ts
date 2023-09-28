@@ -1,9 +1,4 @@
-import camelCase from 'lodash/camelCase.js';
-import isBoolean from 'lodash/isBoolean.js';
-import isNumber from 'lodash/isNumber.js';
-import isPlainObject from 'lodash/isPlainObject.js';
-import isString from 'lodash/isString.js';
-import kebabCase from 'lodash/kebabCase.js';
+import { camelCase, isBoolean, isNumber, isPlainObject, isString, kebabCase } from 'lodash-es';
 import {
   type CacheControl,
   type CacheHeaders,
