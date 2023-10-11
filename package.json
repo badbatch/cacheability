@@ -30,12 +30,10 @@
     "type-check": "tsc --noEmit",
     "validate": "syncpack format && syncpack lint-semver-ranges && pnpm run build && pnpm run lint && pnpm run type-check && pnpm run test"
   },
-  "dependencies": {
-    "lodash-es": "^4.17.21"
-  },
   "peerDependencies": {
     "@babel/runtime": "<8",
-    "core-js": "<4"
+    "core-js": "<4",
+    "lodash-es": "<5"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",
@@ -101,6 +99,7 @@
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.5.0",
+    "lodash-es": "^4.17.21",
     "markdownlint-cli": "^0.34.0",
     "prettier": "^2.8.8",
     "rollup": "^3.21.6",
