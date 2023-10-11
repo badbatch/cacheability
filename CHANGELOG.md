@@ -1,3 +1,9 @@
+#### 4.0.5 (2023-10-11)
+
+##### Refactors
+
+*  move lodash to peer dep (70c00f0f)
+
 #### 4.0.4 (2023-09-28)
 
 ##### Refactors
