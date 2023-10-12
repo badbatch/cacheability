@@ -1,3 +1,9 @@
+#### 4.0.9 (2023-10-12)
+
+##### Bug Fixes
+
+*  remove redundant deps (cdf6fd05)
+
 #### 4.0.8 (2023-10-12)
 
 ##### Chores
