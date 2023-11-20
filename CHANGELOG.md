@@ -1,3 +1,13 @@
+#### 4.0.10 (2023-11-20)
+
+##### Build System / Dependencies
+
+* **deps-dev:**  bump @babel/traverse from 7.22.10 to 7.23.2 (#40) (6f75259e)
+
+##### Refactors
+
+*  update syncpack and use exports map (7bbe6118)
+
 #### 4.0.9 (2023-10-12)
 
 ##### Bug Fixes
