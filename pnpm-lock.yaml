@@ -59,8 +59,8 @@ devDependencies:
     specifier: ^1.1.11
     version: 1.1.11(@babel/cli@7.21.5)(@babel/core@7.21.8)(@babel/plugin-proposal-decorators@7.23.3)(@babel/plugin-syntax-import-assertions@7.20.0)(@babel/plugin-transform-class-properties@7.23.3)(@babel/plugin-transform-export-namespace-from@7.23.3)(@babel/plugin-transform-modules-commonjs@7.23.3)(@babel/plugin-transform-runtime@7.21.4)(@babel/preset-env@7.21.5)(@babel/preset-react@7.18.6)(@babel/preset-typescript@7.21.5)(@babel/runtime@7.21.5)(babel-plugin-codegen@4.1.5)(babel-plugin-macros@3.1.0)
   '@repodog/cli':
-    specifier: ^1.1.18
-    version: 1.1.18
+    specifier: ^1.2.1
+    version: 1.2.1
   '@repodog/commitlint-config':
     specifier: ^1.1.6
     version: 1.1.6(@commitlint/cli@17.6.3)(@commitlint/config-conventional@17.6.3)(@commitlint/prompt-cli@17.6.3)
@@ -83,8 +83,8 @@ devDependencies:
     specifier: ^1.1.8
     version: 1.1.8(@rollup/plugin-babel@6.0.3)(@rollup/plugin-commonjs@25.0.7)(@rollup/plugin-image@3.0.2)(@rollup/plugin-json@6.0.0)(@rollup/plugin-node-resolve@15.0.2)(@rollup/plugin-terser@0.4.1)(rollup-plugin-analyzer@4.0.0)(rollup-plugin-copy@3.4.0)(rollup-plugin-sourcemaps@0.6.3)(rollup@3.21.6)
   '@repodog/syncpack-config':
-    specifier: ^1.1.6
-    version: 1.1.6(syncpack@12.0.0-alpha.0)
+    specifier: ^1.2.1
+    version: 1.2.1(syncpack@9.8.6)
   '@repodog/ts-config':
     specifier: ^1.1.6
     version: 1.1.6(typescript@5.0.3)
@@ -172,9 +172,6 @@ devDependencies:
   eslint-plugin-unicorn:
     specifier: ^46.0.1
     version: 46.0.1(eslint@8.40.0)
-  fast-check:
-    specifier: ^3.14.0
-    version: 3.14.0
   generate-changelog:
     specifier: ^1.8.0
     version: 1.8.0
@@ -218,8 +215,8 @@ devDependencies:
     specifier: ^1.1.17
     version: 1.1.17
   syncpack:
-    specifier: ^12.0.0-alpha.0
-    version: 12.0.0-alpha.0(fast-check@3.14.0)(typescript@5.0.3)
+    specifier: ^9.8.6
+    version: 9.8.6
   type-fest:
     specifier: ^3.10.0
     version: 3.10.0(typescript@5.0.3)
@@ -1844,24 +1841,6 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@effect/match@0.40.0(effect@2.0.0-next.48):
-    resolution: {integrity: sha512-1v2UpVxbUybx6zmN0R1uraRkCju15xLmHquoNQxPFGrQABq2dRI0nSsVM+/yibggUnQ9QAEx2MxQ6xdrQR+8hg==}
-    peerDependencies:
-      effect: 2.0.0-next.47
-    dependencies:
-      effect: 2.0.0-next.48
-    dev: true
-
-  /@effect/schema@0.43.0(effect@2.0.0-next.48)(fast-check@3.14.0):
-    resolution: {integrity: sha512-MvWDyS1u/+X7DYQdhnN/Tu0/NwTlFx2/XgR9+JVrX7hQOzH01li6463rohfiH+NYxx3aruAqA1Oz5MSOCB7hnA==}
-    peerDependencies:
-      effect: 2.0.0-next.48
-      fast-check: ^3.13.1
-    dependencies:
-      effect: 2.0.0-next.48
-      fast-check: 3.14.0
-    dev: true
-
   /@eslint-community/eslint-utils@4.4.0(eslint@8.40.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -2375,14 +2354,14 @@ packages:
       babel-plugin-macros: 3.1.0
     dev: true
 
-  /@repodog/cli-cut@1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-RUtG1/bvjjH4HZZKN+U3CfzM01T7TssR5Vcg5tQHc2Bj8qDhDph48sOorq5JuedKTEOab2KoAtcq0LUQkkZq3Q==}
+  /@repodog/cli-cut@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-ZfgH63wHG/KumEZ4unQJZAcdMuO8P2e/oJ6cz3/zFin/1e7ELIPB0ZVTr0WvZDWrSfdGUXnWkN8YPGDP1eO5Zg==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       semver: 7.5.4
@@ -2392,16 +2371,16 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli-new@1.1.15(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-15h1B5RRE9w01hAOZSwhahdMA/kCaKvM+MBDrm8NJt3n5x3HkzUmFVB9G49CR4XYOv807aaWz2p/7bpJm0bSNg==}
+  /@repodog/cli-new@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-6oG3UBsVvgnrvkagppFvW92nrnuJXtR+j6RduAMZCE3u3Bk3ZB6hB/hOHPaS7BRbz3oUlFGaUkL39IgY8Rg0Wg==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
       lodash-es: <5
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-setup': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-utils': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-setup': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       enquirer: 2.4.1
@@ -2413,14 +2392,14 @@ packages:
       - supports-color
     dev: true
 
-  /@repodog/cli-postinstall@0.1.14(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-5YJRBXyZuCHdHoG+iHIkT2I10SSFFF+2x5eo7CtrGMGeE0dXuy59lgndZoqEMjB0Q4UHZ1clW+/vGAchoYZ+tA==}
+  /@repodog/cli-postinstall@0.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-o2g3ZDG5eQsf24gjqs0jwzYWaSE2ZVy7gUgvxEtnwwmvxkUF5v5BMEbHHyZ7VArr3MLn3p5YVtvJXrRtibq0SQ==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       package-json: 8.1.1
@@ -2430,14 +2409,14 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli-publish@1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-81HGhWRMmckmtAqnc+P8lVBq+eL3olAXQbFreepDq9FLAFnnFouv0ETQsoQC7FrH+TV3wTumLl3gUKmecJGbiA==}
+  /@repodog/cli-publish@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-9ZTIiH54p5gdkwdRS4GiXCrJV7MX88kuIRNwedONN21LFtrbySk7a5smTyt2xKn65m91JcTIvbjOYLAjNiLhYQ==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       semver: 7.5.4
@@ -2447,14 +2426,14 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli-setup@1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-bBMMMpFrBg1pH/TfZM3ayCfcoRI/+OiRvN/e1CD9UGriXi5KZD3s+GmyOWP2bMr1u9I7l0AqJElv6E21LwhpyQ==}
+  /@repodog/cli-setup@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-OXRF9mzgf2GHdvVod50eKz2JU+2vBa3xKkbg8ERhZnxX9bfmn+1eQLr9FLDNmGNVGJswVteoSU3ycZs8ZfDjZg==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       enquirer: 2.4.1
@@ -2464,8 +2443,8 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli-utils@1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-mcXWhHxfC7LSJIuAnmy6lkp6kIR7Rps6hS1l8ETCTVs/6X0oFPUKywIhTGVGs8eNnJj4o1e66Jjt0f2hrHApwA==}
+  /@repodog/cli-utils@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-GWiY0SVY7RYxap4Aurb3iyZJHiYue4in/45dUAupqCp6S9lFXN5rctm519v4e0PHd0TRbGImaLtCvignOPj/7Q==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
@@ -2481,14 +2460,14 @@ packages:
       shelljs: 0.8.5
     dev: true
 
-  /@repodog/cli-write@1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-39+uod+mUv+OfuKdOmFSSW4kChEkW0n3k0/qOGYVtTyP7qcdIE+dPPoEaMRZvnGRAwTu5EjsrrKc3dWpQANNIw==}
+  /@repodog/cli-write@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-LFmzmHNwXc8dGhAPoshpW5myim7YdaPPKizDGSKDNCy3hZbBykf8eYBug8WtCGv+7a2oYsKUVgtb1m5cWXmhlQ==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       dotenv: 16.3.1
@@ -2500,18 +2479,18 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli@1.1.18:
-    resolution: {integrity: sha512-7AqY1EKoBGV5AfPsJrBqoigeWkSg2XB6nFL0HiiiXe5I9tUK6UJxfysQI+qSvm4q/1cuCfX+PDIQoJMYw7tQgg==}
+  /@repodog/cli@1.2.1:
+    resolution: {integrity: sha512-7ExhHFLimrnHjGh4s8Wmdy2CTnXJIoEx+PhuFczI8MalptmwzusXppYqHi8V6S7eVJwG/mKFSxVbEubzlgMFwQ==}
     engines: {node: ^18.13.0}
     hasBin: true
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-cut': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-new': 1.1.15(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-postinstall': 0.1.14(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-publish': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-setup': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-write': 1.1.10(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-cut': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-new': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-postinstall': 0.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-publish': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-setup': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-write': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       jiti: 1.21.0
@@ -2643,12 +2622,12 @@ packages:
       rollup-plugin-sourcemaps: 0.6.3(@types/node@18.11.18)(rollup@3.21.6)
     dev: true
 
-  /@repodog/syncpack-config@1.1.6(syncpack@12.0.0-alpha.0):
-    resolution: {integrity: sha512-xbqiPa2gNKQWTXpoP4Q7Do6DHAV0ev5bvSho5ui/i2TCGKcJXIJ2R3Z1jC88A63U5t2dT9qLBt2yqd5R9uOCng==}
+  /@repodog/syncpack-config@1.2.1(syncpack@9.8.6):
+    resolution: {integrity: sha512-mNjdp/enQIVtZlhc3zE8kqZ0XzE1YN6L2jQay+jW4jQ7xGSBgf5m3WBBn6ZIpXuwuYoH6FpsrEN+YCWBfKWmKw==}
     peerDependencies:
-      syncpack: <13
+      syncpack: <10
     dependencies:
-      syncpack: 12.0.0-alpha.0(fast-check@3.14.0)(typescript@5.0.3)
+      syncpack: 9.8.6
     dev: true
 
   /@repodog/ts-config@1.1.6(typescript@5.0.3):
@@ -3715,12 +3694,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /builtins@5.0.1:
-    resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
-    dependencies:
-      semver: 7.5.4
-    dev: true
-
   /bundle-name@3.0.0:
     resolution: {integrity: sha512-PKA4BeSvBpQKQ8iPOGCSiell+N8P+Tf1DlwqmYhpe2gAhKPHn8EYOxVT+ShuGmhg8lN8XiSlS80yiExKXrURlw==}
     engines: {node: '>=12'}
@@ -3988,11 +3961,6 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /commander@11.0.0:
-    resolution: {integrity: sha512-9HMlXtt/BNoYr8ooyjjNRdIilOTkVJXB+GhxMTtOKwk0R4j4lS4NpjuqmRxroBfnfTSHQIHQB7wryHhXarNjmQ==}
-    engines: {node: '>=16'}
-    dev: true
-
   /commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
@@ -4101,6 +4069,16 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       yaml: 1.10.2
+    dev: true
+
+  /cosmiconfig@8.1.3:
+    resolution: {integrity: sha512-/UkO2JKI18b5jVMJUp0lvKFMpa/Gye+ZgZjKD+DGEN9y7NRcf/nK1A0sp67ONmKtnDCNMS44E6jrk0Yc3bDuUw==}
+    engines: {node: '>=14'}
+    dependencies:
+      import-fresh: 3.3.0
+      js-yaml: 4.1.0
+      parse-json: 5.2.0
+      path-type: 4.0.0
     dev: true
 
   /cosmiconfig@8.3.6(typescript@5.0.3):
@@ -4389,10 +4367,6 @@ packages:
 
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
-    dev: true
-
-  /effect@2.0.0-next.48:
-    resolution: {integrity: sha512-vwMIl39m8fMBeXoGIdSwMi2lrg7NltyrGMK0N/liGDl7G9LXvERKOCipNcobSIGO0V7hjaXEWgL6W/KEWEww+g==}
     dev: true
 
   /ejs@3.1.9:
@@ -5004,13 +4978,6 @@ packages:
       tmp: 0.0.33
     dev: true
 
-  /fast-check@3.14.0:
-    resolution: {integrity: sha512-9Z0zqASzDNjXBox/ileV/fd+4P+V/f3o4shM6QawvcdLFh8yjPG4h5BrHUZ8yzY6amKGDTAmRMyb/JZqe+dCgw==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      pure-rand: 6.0.2
-    dev: true
-
   /fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
     dev: true
@@ -5172,7 +5139,7 @@ packages:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.1.0
-      universalify: 2.0.0
+      universalify: 2.0.1
     dev: true
 
   /fs-extra@8.1.0:
@@ -5543,13 +5510,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       lru-cache: 6.0.0
-    dev: true
-
-  /hosted-git-info@7.0.1:
-    resolution: {integrity: sha512-+K84LB1DYwMHoHSgaOY/Jfhw3ucPmSET5v98Ke/HdNSw4a0UktWzyW1mjhjpuxxTqOOsfWT/7iVshHmVZ4IpOA==}
-    engines: {node: ^16.14.0 || >=18.0.0}
-    dependencies:
-      lru-cache: 10.0.1
     dev: true
 
   /html-encoding-sniffer@3.0.0:
@@ -7112,6 +7072,13 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
+  /minimatch@6.2.0:
+    resolution: {integrity: sha512-sauLxniAmvnhhRjFwPNnJKaPFYyddAgbYdeUpHULtCT/GhzdCx/MDNy+Y40lBxTQUrMzDE8e0S43Z5uqfO0REg==}
+    engines: {node: '>=10'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: true
+
   /minimatch@9.0.3:
     resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -7212,16 +7179,6 @@ packages:
   /normalize-url@8.0.0:
     resolution: {integrity: sha512-uVFpKhj5MheNBJRTiMZ9pE/7hD1QTeEvugSJW/OmLzAp78PB5O6adfMNTvmfKhXBkvCzC+rqifWcVYpGFwTjnw==}
     engines: {node: '>=14.16'}
-    dev: true
-
-  /npm-package-arg@11.0.1:
-    resolution: {integrity: sha512-M7s1BD4NxdAvBKUPqqRW957Xwcl/4Zvo8Aj+ANrzvIPzGJZElrH7Z//rSaec2ORcND6FHHLnZeY8qgTpXDMFQQ==}
-    engines: {node: ^16.14.0 || >=18.0.0}
-    dependencies:
-      hosted-git-info: 7.0.1
-      proc-log: 3.0.0
-      semver: 7.5.4
-      validate-npm-package-name: 5.0.0
     dev: true
 
   /npm-run-path@4.0.1:
@@ -7601,11 +7558,6 @@ packages:
       '@jest/schemas': 29.6.3
       ansi-styles: 5.2.0
       react-is: 18.2.0
-    dev: true
-
-  /proc-log@3.0.0:
-    resolution: {integrity: sha512-++Vn7NS4Xf9NacaU9Xq3URUuqZETPsf8L4j5/ckhaRYsfPeRyzGw+iDjFhV/Jr3uNmTvvddEJFWh5R1gRgUH8A==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dev: true
 
   /prompts@2.4.2:
@@ -8075,6 +8027,14 @@ packages:
     hasBin: true
     dev: true
 
+  /semver@7.5.0:
+    resolution: {integrity: sha512-+XC0AD/R7Q2mPSRuy2Id0+CGTZ98+8f+KvwirxOKIEyid+XSx6HbC63p+O4IndTHuX5Z+JxQ0TghCkO5Cg/2HA==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /semver@7.5.4:
     resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
     engines: {node: '>=10'}
@@ -8421,30 +8381,21 @@ packages:
       tslib: 2.6.1
     dev: true
 
-  /syncpack@12.0.0-alpha.0(fast-check@3.14.0)(typescript@5.0.3):
-    resolution: {integrity: sha512-ZqrE+WtdgQGH2bVJpWzN6dfQwT4NIm0d6mlwj3txUCp0zxDst4RrqUjtPwJGoe5OEdbrAQQKVuc1JnKrTfEwGw==}
-    engines: {node: '>=16'}
+  /syncpack@9.8.6:
+    resolution: {integrity: sha512-4S4cUoKK9WenA/Wdk9GvlekzPR9PxC7sqcsUIsK4ypsa/pIYv8Ju1vxGNvp6Y1yI2S9EdCk0QJsB3/wRB8XYVw==}
+    engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      '@effect/match': 0.40.0(effect@2.0.0-next.48)
-      '@effect/schema': 0.43.0(effect@2.0.0-next.48)(fast-check@3.14.0)
       chalk: 4.1.2
-      commander: 11.0.0
-      cosmiconfig: 8.3.6(typescript@5.0.3)
-      effect: 2.0.0-next.48
-      enquirer: 2.4.1
-      globby: 11.1.0
-      minimatch: 9.0.3
-      npm-package-arg: 11.0.1
-      ora: 5.4.1
-      prompts: 2.4.2
+      commander: 10.0.1
+      cosmiconfig: 8.1.3
+      fs-extra: 11.1.1
+      glob: 8.1.0
+      minimatch: 6.2.0
       read-yaml-file: 2.1.0
-      semver: 7.5.4
+      semver: 7.5.0
       tightrope: 0.1.0
-      ts-toolbelt: 9.6.0
-    transitivePeerDependencies:
-      - fast-check
-      - typescript
+      zod: 3.21.4
     dev: true
 
   /tapable@2.2.1:
@@ -8588,10 +8539,6 @@ packages:
       typescript: 5.0.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
-    dev: true
-
-  /ts-toolbelt@9.6.0:
-    resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
     dev: true
 
   /tsconfig-paths@3.14.2:
@@ -8830,13 +8777,6 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /validate-npm-package-name@5.0.0:
-    resolution: {integrity: sha512-YuKoXDAhBYxY7SfOKxHBDoSyENFeW5VvIIQp2TGQuit8gpK6MnWaQelBKxso72DoxTZfZdcP3W90LqpSkgPzLQ==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-    dependencies:
-      builtins: 5.0.1
-    dev: true
-
   /w3c-xmlserializer@4.0.0:
     resolution: {integrity: sha512-d+BFHzbiCx6zGfz0HyQ6Rg69w9k19nviJspaj4yNscGjrHu94sVP+aRm75yEbCh+r2/yR+7q6hux9LVtbuTGBw==}
     engines: {node: '>=14'}
@@ -9059,6 +8999,10 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  /zod@3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: true
 
 settings:
