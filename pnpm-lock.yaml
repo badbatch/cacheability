@@ -59,8 +59,8 @@ devDependencies:
     specifier: ^1.1.11
     version: 1.1.11(@babel/cli@7.21.5)(@babel/core@7.21.8)(@babel/plugin-proposal-decorators@7.23.3)(@babel/plugin-syntax-import-assertions@7.20.0)(@babel/plugin-transform-class-properties@7.23.3)(@babel/plugin-transform-export-namespace-from@7.23.3)(@babel/plugin-transform-modules-commonjs@7.23.3)(@babel/plugin-transform-runtime@7.21.4)(@babel/preset-env@7.21.5)(@babel/preset-react@7.18.6)(@babel/preset-typescript@7.21.5)(@babel/runtime@7.21.5)(babel-plugin-codegen@4.1.5)(babel-plugin-macros@3.1.0)
   '@repodog/cli':
-    specifier: ^1.2.1
-    version: 1.2.1
+    specifier: ^1.2.2
+    version: 1.2.2
   '@repodog/commitlint-config':
     specifier: ^1.1.6
     version: 1.1.6(@commitlint/cli@17.6.3)(@commitlint/config-conventional@17.6.3)(@commitlint/prompt-cli@17.6.3)
@@ -2354,14 +2354,14 @@ packages:
       babel-plugin-macros: 3.1.0
     dev: true
 
-  /@repodog/cli-cut@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-ZfgH63wHG/KumEZ4unQJZAcdMuO8P2e/oJ6cz3/zFin/1e7ELIPB0ZVTr0WvZDWrSfdGUXnWkN8YPGDP1eO5Zg==}
+  /@repodog/cli-cut@1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-UUIuHuW70atd7Ku7A4eQKT8B44Pmq8IhqPEpCF4vHPTJYwPhNzc14w3gKdHWLW0Mb98kle9f/tIGQumQV2a05A==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       semver: 7.5.4
@@ -2371,16 +2371,16 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli-new@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-6oG3UBsVvgnrvkagppFvW92nrnuJXtR+j6RduAMZCE3u3Bk3ZB6hB/hOHPaS7BRbz3oUlFGaUkL39IgY8Rg0Wg==}
+  /@repodog/cli-new@1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-eP1dj7lO+z9wHR8MKtDpABeSg/YpSmGl/jMOBGJkAH8t17F6fFMFrgIj41jSD8egAH/poquHDMCLnVDc7oJGNw==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
       lodash-es: <5
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-setup': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-setup': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       enquirer: 2.4.1
@@ -2392,14 +2392,14 @@ packages:
       - supports-color
     dev: true
 
-  /@repodog/cli-postinstall@0.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-o2g3ZDG5eQsf24gjqs0jwzYWaSE2ZVy7gUgvxEtnwwmvxkUF5v5BMEbHHyZ7VArr3MLn3p5YVtvJXrRtibq0SQ==}
+  /@repodog/cli-postinstall@0.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-rjWX1YVPvYK+bpqjrX7bBX7BRiD5mK1u4SnjAoCi1ZktP47MsnvQEt/3WqL3BxlZz57hjRW/vcVz2aAFJesn5w==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       package-json: 8.1.1
@@ -2409,14 +2409,14 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli-publish@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-9ZTIiH54p5gdkwdRS4GiXCrJV7MX88kuIRNwedONN21LFtrbySk7a5smTyt2xKn65m91JcTIvbjOYLAjNiLhYQ==}
+  /@repodog/cli-publish@1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-NEC4rlWcnysKZ0qnI9eGZJfNLlXfZWhM84la038a8l0pPJZLP/GXXEOKMY9KqUVKnTa4x3VCvsnciQmhbTTFqw==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       semver: 7.5.4
@@ -2426,14 +2426,14 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli-setup@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-OXRF9mzgf2GHdvVod50eKz2JU+2vBa3xKkbg8ERhZnxX9bfmn+1eQLr9FLDNmGNVGJswVteoSU3ycZs8ZfDjZg==}
+  /@repodog/cli-setup@1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-RSlMzkTwBJBdkE8k9GgXidXx+9LqSNadrAVnPwBmQBkCDNoT32jUtbtdVOsf6/psDoC3VYSHm6UaxANG0Appcw==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       enquirer: 2.4.1
@@ -2443,8 +2443,8 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli-utils@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-GWiY0SVY7RYxap4Aurb3iyZJHiYue4in/45dUAupqCp6S9lFXN5rctm519v4e0PHd0TRbGImaLtCvignOPj/7Q==}
+  /@repodog/cli-utils@1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-gwya61dF0cNGORoCtIR53wKMU3I0+EMmFNrzxDV3ks/pwMXXNNpjiM7iACdF08/Fyh9fDz8r5ZsxLD0U5lc9oA==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
@@ -2460,14 +2460,14 @@ packages:
       shelljs: 0.8.5
     dev: true
 
-  /@repodog/cli-write@1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
-    resolution: {integrity: sha512-LFmzmHNwXc8dGhAPoshpW5myim7YdaPPKizDGSKDNCy3hZbBykf8eYBug8WtCGv+7a2oYsKUVgtb1m5cWXmhlQ==}
+  /@repodog/cli-write@1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21):
+    resolution: {integrity: sha512-LFDoUtCy5RQYo5i1TQ54M6931HC51bZHhf8c57IaGBO7FpYNvf2yo//NhQGZV3IgJoMeGxfUibaB3MTQpg37qA==}
     peerDependencies:
       '@babel/runtime': <8
       core-js: <4
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-utils': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-utils': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       dotenv: 16.3.1
@@ -2479,18 +2479,18 @@ packages:
       - lodash-es
     dev: true
 
-  /@repodog/cli@1.2.1:
-    resolution: {integrity: sha512-7ExhHFLimrnHjGh4s8Wmdy2CTnXJIoEx+PhuFczI8MalptmwzusXppYqHi8V6S7eVJwG/mKFSxVbEubzlgMFwQ==}
+  /@repodog/cli@1.2.2:
+    resolution: {integrity: sha512-/qf3He5iU5nl6cjJoOvY4A9I3iBNXRet9YbEu5tyJzKCc8mzYtQGWFNxX4iUQq9nhqDCJdnc82sUKoZt2bx0cw==}
     engines: {node: ^18.13.0}
     hasBin: true
     dependencies:
       '@babel/runtime': 7.21.5
-      '@repodog/cli-cut': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-new': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-postinstall': 0.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-publish': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-setup': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
-      '@repodog/cli-write': 1.2.1(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-cut': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-new': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-postinstall': 0.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-publish': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-setup': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
+      '@repodog/cli-write': 1.2.2(@babel/runtime@7.21.5)(core-js@3.27.2)(lodash-es@4.17.21)
       ansi-colors: 4.1.3
       core-js: 3.27.2
       jiti: 1.21.0
