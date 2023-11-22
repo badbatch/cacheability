@@ -1,3 +1,9 @@
+#### 4.0.11 (2023-11-22)
+
+##### Reverts
+
+*  syncpack changes (ac0b0850)
+
 #### 4.0.10 (2023-11-20)
 
 ##### Build System / Dependencies
