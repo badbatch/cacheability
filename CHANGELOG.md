@@ -1,3 +1,9 @@
+#### 4.0.14 (2023-11-22)
+
+##### New Features
+
+*  upgrade syncpack (1fe26084)
+
 #### 4.0.13 (2023-11-22)
 
 ##### Bug Fixes
