@@ -32,7 +32,7 @@
     "syncpack": "syncpack format && syncpack list-mismatches && syncpack lint-semver-ranges",
     "test": "node --require=suppress-experimental-warnings --experimental-vm-modules node_modules/jest/bin/jest.js",
     "type-check": "tsc --noEmit",
-    "validate": "npm run syncpack && pnpm run build && pnpm run lint && pnpm run type-check && pnpm run test"
+    "validate": "pnpm run syncpack && pnpm run build && pnpm run lint && pnpm run type-check && pnpm run test"
   },
   "peerDependencies": {
     "@babel/runtime": "<8",
