@@ -1,3 +1,10 @@
+#### 4.0.15 (2023-11-28)
+
+##### Bug Fixes
+
+*  update installation example to npm (41b161ea)
+*  typo in package json (9e4f449d)
+
 #### 4.0.14 (2023-11-22)
 
 ##### New Features
