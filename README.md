@@ -9,7 +9,7 @@ A utility class to parse, store and print http cache headers.
 ## Installation
 
 ```bash
-yarn add cacheability
+npm add cacheability
 ```
 
 ## Documentation
