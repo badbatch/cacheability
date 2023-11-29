@@ -1,8 +1,7 @@
 {
   "extends": "@repodog/ts-config/build.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist/types"
+    "rootDir": "src"
   },
   "include": [
     "src/**/*"
