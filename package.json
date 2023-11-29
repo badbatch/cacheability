@@ -9,10 +9,7 @@
   "bugs": "https://github.com/badbatch/cacheability/issues",
   "type": "module",
   "exports": {
-    "types": {
-      "import": "./dist/types/esm/index.d.ts",
-      "require": "./dist/types/cjs/index.d.cts"
-    },
+    "types": "./dist/types/index.d.ts",
     "import": "./dist/esm/index.mjs",
     "require": "./dist/cjs/index.cjs"
   },
@@ -27,8 +24,7 @@
     "compile": "pnpm run /^compile:.*/",
     "compile:cjs": "MODULE_SYSTEM=cjs rollup -c ./rollup.config.cjs",
     "compile:esm": "rollup -c ./rollup.config.cjs",
-    "compile:types:cjs": "tsc --project ./tsconfig.build.json --outDir dist/types/cjs && replace-in-files --string='.d.ts' --replacement='.d.cts' dist/types/cjs/** && replace-in-files --string='.ts' --replacement='.cts' dist/types/cjs/**/*.ts && replace-in-files --string='.ts' --replacement='.cts' dist/types/cjs/*.ts && renamer --find='.d.ts' --replace='.d.cts' dist/types/cjs/** && renamer --find='.d.ts' --replace='.d.cts' dist/types/cjs/**/*",
-    "compile:types:esm": "tsc --project ./tsconfig.build.json --outDir dist/types/esm",
+    "compile:types": "tsc --project ./tsconfig.build.json",
     "cut:changelog": "changelog",
     "cut:post-version": "pnpm run build",
     "lint": "eslint . --ext .ts,.cjs",
@@ -110,8 +106,6 @@
     "lodash-es": "^4.17.21",
     "markdownlint-cli": "^0.34.0",
     "prettier": "^2.8.8",
-    "renamer": "^4.0.0",
-    "replace-in-files-cli": "^2.2.0",
     "rollup": "^3.21.6",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-copy": "^3.4.0",
