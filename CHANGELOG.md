@@ -1,3 +1,9 @@
+#### 4.0.18 (2023-12-16)
+
+##### Bug Fixes
+
+*  version of pnpm used in pipeline (18b65f79)
+
 #### 4.0.17 (2023-12-16)
 
 ##### Bug Fixes
