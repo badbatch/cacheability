@@ -1,3 +1,17 @@
+#### 4.0.16 (2023-12-16)
+
+##### Bug Fixes
+
+*  legacy link was not removed (5c14710c)
+
+##### Other Changes
+
+*  add import and require types" (f58af576)
+
+##### Tests
+
+*  add import and require types (f52bf088)
+
 #### 4.0.15 (2023-11-28)
 
 ##### Bug Fixes
