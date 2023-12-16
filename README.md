@@ -79,8 +79,6 @@ const cacheControl = cacheability.printCacheControl();
 // cacheControl is "public, max-age=55, s-maxage=55"
 ```
 
-Additional documentation can be found on the Cacheability [github pages](https://bad-batch.github.io/cacheability/).
-
 ## Changelog
 
 Check out the [features, fixes and more](CHANGELOG.md) that go into each major, minor and patch version.
