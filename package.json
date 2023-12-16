@@ -1,7 +1,7 @@
 {
   "name": "cacheability",
   "description": "A utility class to parse, store and print http cache headers.",
-  "version": "4.0.16",
+  "version": "4.0.17",
   "author": "Dylan Aubrey",
   "license": "MIT",
   "homepage": "https://github.com/badbatch/cacheability",

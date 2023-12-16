@@ -1,3 +1,10 @@
+#### 4.0.17 (2023-12-16)
+
+##### Bug Fixes
+
+*  bump node version (e888e1ee)
+*  update esm cjs support (4ce446e3)
+
 #### 4.0.16 (2023-12-16)
 
 ##### Bug Fixes
