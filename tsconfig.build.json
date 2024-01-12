@@ -1,12 +1,9 @@
 {
-  "extends": "@repodog/ts-config/build.json",
+  "extends": ["./tsconfig.json", "@repodog/ts-config/build.json"],
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist/types/esm"
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "**/*.test.*",
     "**/__testUtils__/**"
