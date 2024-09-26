@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.22 (2024-09-26)
+
+### Chores
+
+* upgrade deps (bd2e6280)
+* minor update to package json (90a6c95b)
+
 ## 4.0.21 (2024-09-25)
 
 ### Build System / Dependencies
