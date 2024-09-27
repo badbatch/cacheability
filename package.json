@@ -66,7 +66,6 @@
     "@swc/jest": "^0.2.36",
     "@types/jest": "^29.5.13",
     "@types/node": "^22.5.5",
-    "core-js": "^3.38.1",
     "cts-types": "^0.0.6",
     "del-cli": "^5.1.0",
     "eslint": "^9.11.0",
