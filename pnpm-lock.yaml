@@ -73,6 +73,9 @@ importers:
       '@types/node':
         specifier: ^22.5.5
         version: 22.7.2
+      core-js:
+        specifier: ^3.38.1
+        version: 3.38.1
       cts-types:
         specifier: ^0.0.6
         version: 0.0.6
