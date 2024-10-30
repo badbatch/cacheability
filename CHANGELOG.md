@@ -1,5 +1,41 @@
 # Changelog
 
+## 4.0.23 (2024-10-30)
+
+### Build System / Dependencies
+
+* **deps-dev:**
+  * bump @types/jest from 29.5.13 to 29.5.14 (#61) (3217e090)
+  * bump rollup from 4.24.2 to 4.24.3 (#68) (dc36b1fc)
+  * bump @swc/core from 1.7.39 to 1.7.40 (#64) (8a4ebea1)
+  * bump @types/node from 22.7.8 to 22.8.4 (#67) (50e0922c)
+  * bump rollup from 4.24.0 to 4.24.2 (#66) (682a69ef)
+  * bump @swc/core from 1.7.36 to 1.7.39 (#60) (ea545ff6)
+  * bump @types/node from 22.7.7 to 22.7.8 (#59) (cacf61d2)
+  * bump @swc/core from 1.7.28 to 1.7.36 (#58) (ee32ce51)
+  * bump typescript from 5.6.2 to 5.6.3 (#57) (bd511565)
+  * bump @types/node from 22.7.2 to 22.7.7 (#56) (1333fac6)
+  * bump eslint from 9.11.1 to 9.13.0 (#54) (dfc89bd0)
+  * bump del-cli from 5.1.0 to 6.0.0 (#51) (bc4f6d7e)
+  * bump rollup from 4.22.4 to 4.24.0 (#49) (cc9edbba)
+* **deps:**
+  * bump micromatch from 4.0.5 to 4.0.8 (#55) (2f7d381f)
+  * bump @types/lodash-es from 4.17.9 to 4.17.12 (#48) (f62d04de)
+
+### Chores
+
+* exclude idea/ folder (8045541c)
+
+### Bug Fixes
+
+* lock file (17a48939)
+* add corejs as dependency (40bc2086)
+* remove unused deps (863e4f54)
+
+### Other Changes
+
+* remove unused deps" (a953c9c5)
+
 ## 4.0.22 (2024-09-26)
 
 ### Chores
