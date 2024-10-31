@@ -42,7 +42,14 @@ export class Cacheability {
     if (headers instanceof Headers) {
       for (const key of Cacheability._headerKeys) {
         const headerValue = headers.get(key);
-        if (!headerValue) continue;
+
+        if (!headerValue) {
+          continue;
+        }
+
+        // camelCase returns a string type and we know the
+        // string is either 'cacheControl' or 'etag'.
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
         const metadataKey = camelCase(key) as 'cacheControl' | 'etag';
         parsed[metadataKey] = headerValue;
       }
