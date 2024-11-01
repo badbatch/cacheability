@@ -60,7 +60,7 @@ importers:
         version: 13.0.2(syncpack@13.0.0(typescript@5.6.3))
       '@repodog/ts-config':
         specifier: ^5.0.2
-        version: 5.0.2(typescript@5.6.3)
+        version: 5.0.3(typescript@5.6.3)
       '@rollup/plugin-swc':
         specifier: ^0.3.0
         version: 0.3.1(@swc/core@1.7.40)(rollup@4.24.3)
@@ -672,8 +672,8 @@ packages:
     peerDependencies:
       syncpack: <14
 
-  '@repodog/ts-config@5.0.2':
-    resolution: {integrity: sha512-fIAMJoE/c6RviQSEZ+IdXZ6NNlJIPiR+UNgfTvWmTVtvw2u4dYoOHBg7iQL5CyGyuTLC02W8HB0U7meIFQlSXw==}
+  '@repodog/ts-config@5.0.3':
+    resolution: {integrity: sha512-ty64gvTYKpMgHqlo4UQRoVg19Mj1iFsRUsfYIhzsTaC2djaIF8khhGfbEWocgO4YQmwEODaVI1SHtB+QJDYPBw==}
     peerDependencies:
       typescript: <6
 
@@ -4410,7 +4410,7 @@ snapshots:
     dependencies:
       syncpack: 13.0.0(typescript@5.6.3)
 
-  '@repodog/ts-config@5.0.2(typescript@5.6.3)':
+  '@repodog/ts-config@5.0.3(typescript@5.6.3)':
     dependencies:
       typescript: 5.6.3
 
