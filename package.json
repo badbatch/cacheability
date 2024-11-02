@@ -62,7 +62,7 @@
     "@repodog/rollup-config": "^4.0.3",
     "@repodog/swc-config": "^1.0.3",
     "@repodog/syncpack-config": "^13.0.2",
-    "@repodog/ts-config": "^5.0.2",
+    "@repodog/ts-config": "^5.0.3",
     "@rollup/plugin-swc": "^0.3.0",
     "@swc/core": "^1.7.26",
     "@swc/jest": "^0.2.36",
