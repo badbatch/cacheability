@@ -5,7 +5,7 @@
   "author": "Dylan Aubrey",
   "license": "MIT",
   "homepage": "https://github.com/badbatch/cacheability",
-  "repository": "https://github.com/badbatch/cacheability",
+  "repository": "badbatch/cacheability",
   "bugs": "https://github.com/badbatch/cacheability/issues",
   "type": "module",
   "main": "./dist/cjs/index.cjs",
