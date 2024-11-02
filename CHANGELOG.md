@@ -1,5 +1,32 @@
 # Changelog
 
+## 4.0.24 (2024-11-02)
+
+### Build System / Dependencies
+
+* **deps-dev:**
+  * bump @types/node from 22.8.5 to 22.8.6 (#74) (4521a0fe)
+  * bump @swc/core from 1.7.40 to 1.7.42 (#76) (23b8abbb)
+  * bump eslint from 9.13.0 to 9.14.0 (#77) (f1a6c44a)
+  * bump @swc/jest from 0.2.36 to 0.2.37 (#69) (e62f5681)
+  * bump rollup from 4.24.0 to 4.24.3 (#70) (15501d34)
+  * bump @types/node from 22.7.9 to 22.8.5 (#73) (4efe5516)
+  * bump @swc/core from 1.7.39 to 1.7.40 (#72) (f336cea2)
+* **deps:**  bump core-js from 3.38.1 to 3.39.0 (#75) (8ae439ea)
+
+### Chores
+
+* bump deps (e99c543d)
+* bump repodog typescript version (da1ccb9d)
+
+### New Features
+
+* add mise and upgrade deps (70c7a3b2)
+
+### Bug Fixes
+
+* add husky commit message file (1dfbbff0)
+
 ## 4.0.23 (2024-10-30)
 
 ### Build System / Dependencies
