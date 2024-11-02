@@ -54,7 +54,7 @@
     "@jest/globals": "^29.7.0",
     "@repodog/cli": "^1.6.36",
     "@repodog/commitlint-config": "^19.0.3",
-    "@repodog/eslint-config": "^9.0.5",
+    "@repodog/eslint-config": "^9.0.6",
     "@repodog/eslint-config-jest": "^9.0.3",
     "@repodog/jest-config": "^29.0.2",
     "@repodog/markdownlint-config": "^1.2.4",
