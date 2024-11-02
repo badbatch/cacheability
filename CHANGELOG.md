@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.25 (2024-11-02)
+
+### Chores
+
+* bump deps (b87476c9)
+
+### Bug Fixes
+
+* minor update to package json (5b7ad703)
+
 ## 4.0.24 (2024-11-02)
 
 ### Build System / Dependencies
