@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.26 (2024-11-03)
+
+### Chores
+
+* bump deps (2c7c6ea9)
+
 ## 4.0.25 (2024-11-02)
 
 ### Chores
