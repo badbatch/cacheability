@@ -1,5 +1,21 @@
 # Changelog
 
+## 4.0.27 (2024-11-20)
+
+### Build System / Dependencies
+
+* **deps-dev:**
+  * bump @repodog/eslint-config from 9.0.7 to 9.0.10 (#83) (ec72e283)
+  * bump @swc/core from 1.8.0 to 1.9.1 (#82) (98516791)
+  * bump rollup from 4.24.3 to 4.24.4 (#79) (3b2f0cf1)
+  * bump @swc/core from 1.7.42 to 1.8.0 (#80) (6663c85b)
+  * bump @types/node from 22.8.7 to 22.9.0 (#81) (a5ad30bd)
+
+### Bug Fixes
+
+* remove postinstall script (c27a941d)
+* remove dependabot version updates (4baaf6d3)
+
 ## 4.0.26 (2024-11-03)
 
 ### Chores
