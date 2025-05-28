@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.28 (2025-05-28)
+
+### Build System / Dependencies
+
+* **deps:**
+  * bump cross-spawn (#85) (dd3eaa6a)
+  * bump @eslint/plugin-kit (#84) (c0328220)
+
 ## 4.0.27 (2024-11-20)
 
 ### Build System / Dependencies
