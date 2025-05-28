@@ -93,6 +93,7 @@
   ],
   "pnpm": {
     "overrides": {
+      "@babel/helpers": ">=7.26.10",
       "@babel/traverse": ">=7.23.2",
       "braces": ">=3.0.3"
     }
