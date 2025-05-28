@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.29 (2025-05-28)
+
+### Bug Fixes
+
+* vulnerbilities (d507ad8d)
+
 ## 4.0.28 (2025-05-28)
 
 ### Build System / Dependencies
