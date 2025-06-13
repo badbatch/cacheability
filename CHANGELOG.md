@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.30 (2025-06-13)
+
+### Chores
+
+* minor update (73edc1a6)
+
 ## 4.0.29 (2025-05-28)
 
 ### Bug Fixes
