@@ -9,93 +9,10 @@ import {
 } from './types.ts';
 
 /**
- * A utility class to parse, store and print http cache headers.
+ * A utility class to parse, store and print HTTP cache headers.
  */
 export class Cacheability {
   private static _headerKeys: HeaderKeys = ['cache-control', 'etag'];
-
-  private static _getDirectives(cacheControl: string): string[] {
-    return cacheControl.split(', ');
-  }
-
-  private static _parseCacheControl(cacheControl?: string): CacheControl {
-    const object: CacheControl = {};
-    if (!isString(cacheControl) || cacheControl.length === 0) return object;
-    const directives = Cacheability._getDirectives(cacheControl);
-
-    for (const directive of directives) {
-      if (directive.includes('=')) {
-        const [key, value] = directive.split('=');
-        object[camelCase(key)] = Number(value);
-        continue;
-      }
-
-      object[camelCase(directive)] = true;
-    }
-
-    return object;
-  }
-
-  private static _parseHeaders(headers: Headers | CacheHeaders): ParsedCacheHeaders {
-    let parsed: CacheHeaders = {};
-
-    if (headers instanceof Headers) {
-      for (const key of Cacheability._headerKeys) {
-        const headerValue = headers.get(key);
-
-        if (!headerValue) {
-          continue;
-        }
-
-        // camelCase returns a string type and we know the
-        // string is either 'cacheControl' or 'etag'.
-        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-        const metadataKey = camelCase(key) as 'cacheControl' | 'etag';
-        parsed[metadataKey] = headerValue;
-      }
-    } else if (isPlainObject(headers)) {
-      parsed = headers;
-    }
-
-    return {
-      cacheControl: Cacheability._parseCacheControl(parsed.cacheControl),
-      etag: parsed.etag,
-    };
-  }
-
-  private static _setDefaultMetadata(): Metadata {
-    return {
-      cacheControl: {},
-      ttl: Number.POSITIVE_INFINITY,
-    };
-  }
-
-  private static _setMetadata({ cacheControl, etag }: ParsedCacheHeaders): Metadata {
-    return {
-      cacheControl,
-      etag,
-      ttl: Cacheability._setTTL(cacheControl),
-    };
-  }
-
-  private static _setTTL({ maxAge, noCache, noStore, sMaxage }: CacheControl): number {
-    if (noCache || noStore) return 0;
-    const sec = sMaxage ?? maxAge;
-    if (!isNumber(sec)) return Number.POSITIVE_INFINITY;
-    const ms = sec * 1000;
-    return Date.now() + ms;
-  }
-
-  private static _validateMetadata(metadata: Metadata): Metadata {
-    if (!isPlainObject(metadata)) return this._setDefaultMetadata();
-    const { cacheControl, etag, ttl } = metadata;
-
-    return {
-      cacheControl: isPlainObject(cacheControl) ? cacheControl : {},
-      etag: isString(etag) ? etag : undefined,
-      ttl: isNumber(ttl) ? ttl : Number.POSITIVE_INFINITY,
-    };
-  }
 
   /**
    * The property holds the Cacheability instance's parsed cache
@@ -118,6 +35,89 @@ export class Cacheability {
     } else {
       this.metadata = Cacheability._setDefaultMetadata();
     }
+  }
+
+  private static _getDirectives(cacheControl: string): string[] {
+    return cacheControl.split(', ');
+  }
+
+  private static _parseCacheControl(cacheControl?: string): CacheControl {
+    const object: CacheControl = {};
+    if (!isString(cacheControl) || cacheControl.length === 0) return object;
+    const directives = this._getDirectives(cacheControl);
+
+    for (const directive of directives) {
+      if (directive.includes('=')) {
+        const [key, value] = directive.split('=');
+        object[camelCase(key)] = Number(value);
+        continue;
+      }
+
+      object[camelCase(directive)] = true;
+    }
+
+    return object;
+  }
+
+  private static _parseHeaders(headers: Headers | CacheHeaders): ParsedCacheHeaders {
+    let parsed: CacheHeaders = {};
+
+    if (headers instanceof Headers) {
+      for (const key of this._headerKeys) {
+        const headerValue = headers.get(key);
+
+        if (!headerValue) {
+          continue;
+        }
+
+        // camelCase returns a string type and we know the
+        // string is either 'cacheControl' or 'etag'.
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+        const metadataKey = camelCase(key) as 'cacheControl' | 'etag';
+        parsed[metadataKey] = headerValue;
+      }
+    } else if (isPlainObject(headers)) {
+      parsed = headers;
+    }
+
+    return {
+      cacheControl: this._parseCacheControl(parsed.cacheControl),
+      etag: parsed.etag,
+    };
+  }
+
+  private static _setDefaultMetadata(): Metadata {
+    return {
+      cacheControl: {},
+      ttl: Infinity,
+    };
+  }
+
+  private static _setMetadata({ cacheControl, etag }: ParsedCacheHeaders): Metadata {
+    return {
+      cacheControl,
+      etag,
+      ttl: this._setTTL(cacheControl),
+    };
+  }
+
+  private static _setTTL({ maxAge, noCache, noStore, sMaxage }: CacheControl): number {
+    if (noCache || noStore) return 0;
+    const sec = sMaxage ?? maxAge;
+    if (!isNumber(sec)) return Infinity;
+    const ms = sec * 1000;
+    return Date.now() + ms;
+  }
+
+  private static _validateMetadata(metadata: Metadata): Metadata {
+    if (!isPlainObject(metadata)) return this._setDefaultMetadata();
+    const { cacheControl, etag, ttl } = metadata;
+
+    return {
+      cacheControl: isPlainObject(cacheControl) ? cacheControl : {},
+      etag: isString(etag) ? etag : undefined,
+      ttl: isNumber(ttl) ? ttl : Infinity,
+    };
   }
 
   /**
@@ -145,13 +145,13 @@ export class Cacheability {
 
     const directives: string[] = [];
 
-    for (const key of Object.keys(cacheControl)) {
-      if (isBoolean(cacheControl[key])) {
+    for (const [key, value] of Object.entries(cacheControl)) {
+      if (isBoolean(value)) {
         directives.push(kebabCase(key));
         continue;
       }
 
-      directives.push(`${kebabCase(key)}=${String(cacheControl[key])}`);
+      directives.push(`${kebabCase(key)}=${String(value)}`);
     }
 
     return directives.join(', ');

@@ -28,7 +28,7 @@ export const cacheControl = 'public, max-age=2, s-maxage=2';
 
 export const defaultMetadata = {
   cacheControl: {},
-  ttl: Number.POSITIVE_INFINITY,
+  ttl: Infinity,
 };
 
 export const metadata = {
