@@ -16,16 +16,13 @@
   "types": "./dist/types/esm/index.d.ts",
   "exports": {
     ".": {
+      "source": "./src/index.ts",
       "types": {
         "import": "./dist/types/esm/index.d.ts",
         "require": "./dist/types/cjs/index.d.cts"
       },
       "import": "./dist/esm/index.mjs",
       "require": "./dist/cjs/index.cjs"
-    },
-    "./ts": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts"
     }
   },
   "publishConfig": {
@@ -60,17 +57,17 @@
   "devDependencies": {
     "@commitlint/cli": "^21.1.0",
     "@jest/globals": "^30.4.1",
-    "@repodog/cli": "^1.6.55",
-    "@repodog/commitlint-config": "^21.0.1",
+    "@repodog/cli": "^1.6.57",
+    "@repodog/commitlint-config": "^21.0.2",
     "@repodog/eslint-config": "^9.0.29",
-    "@repodog/eslint-config-jest": "^9.0.8",
-    "@repodog/jest-config": "^30.0.1",
-    "@repodog/markdownlint-config": "^1.2.6",
-    "@repodog/prettier-config": "^3.0.4",
-    "@repodog/rollup-config": "^4.0.14",
-    "@repodog/swc-config": "^1.0.14",
-    "@repodog/syncpack-config": "^15.0.1",
-    "@repodog/ts-config": "^6.0.2",
+    "@repodog/eslint-config-jest": "^9.0.9",
+    "@repodog/jest-config": "^30.0.2",
+    "@repodog/markdownlint-config": "^1.2.7",
+    "@repodog/prettier-config": "^3.0.5",
+    "@repodog/rollup-config": "^4.0.15",
+    "@repodog/swc-config": "^1.0.15",
+    "@repodog/syncpack-config": "^15.0.3",
+    "@repodog/ts-config": "^6.0.3",
     "@rollup/plugin-swc": "^0.4.1",
     "@swc/core": "^1.15.43",
     "@swc/jest": "^0.2.39",

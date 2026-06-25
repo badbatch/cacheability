@@ -25,38 +25,38 @@ importers:
         specifier: ^30.4.1
         version: 30.4.1
       '@repodog/cli':
-        specifier: ^1.6.55
-        version: 1.6.55(ws@8.21.0)
+        specifier: ^1.6.57
+        version: 1.6.57(ws@8.21.0)
       '@repodog/commitlint-config':
-        specifier: ^21.0.1
-        version: 21.0.1(@commitlint/cli@21.1.0(@types/node@24.13.2)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(husky@9.1.7)
+        specifier: ^21.0.2
+        version: 21.0.2(@commitlint/cli@21.1.0(@types/node@24.13.2)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(husky@9.1.7)
       '@repodog/eslint-config':
         specifier: ^9.0.29
         version: 9.0.29(@typescript-eslint/parser@8.62.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(@typescript-eslint/utils@8.62.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3)
       '@repodog/eslint-config-jest':
-        specifier: ^9.0.8
-        version: 9.0.8(@typescript-eslint/eslint-plugin@8.62.0(@typescript-eslint/parser@8.62.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(jest@30.4.2(@types/node@24.13.2))(typescript@6.0.3)
+        specifier: ^9.0.9
+        version: 9.0.9(@typescript-eslint/eslint-plugin@8.62.0(@typescript-eslint/parser@8.62.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(jest@30.4.2(@types/node@24.13.2))(typescript@6.0.3)
       '@repodog/jest-config':
-        specifier: ^30.0.1
-        version: 30.0.1(@jest/globals@30.4.1)(@swc/jest@0.2.39(@swc/core@1.15.43))(babel-jest@30.4.1(@babel/core@7.29.7))(jest-environment-jsdom@30.4.1)(jest-environment-node@30.4.1)(jest@30.4.2(@types/node@24.13.2))(suppress-experimental-warnings@2.0.0)
+        specifier: ^30.0.2
+        version: 30.0.2(@jest/globals@30.4.1)(@swc/jest@0.2.39(@swc/core@1.15.43))(babel-jest@30.4.1(@babel/core@7.29.7))(jest-environment-jsdom@30.4.1)(jest-environment-node@30.4.1)(jest@30.4.2(@types/node@24.13.2))(suppress-experimental-warnings@2.0.0)
       '@repodog/markdownlint-config':
-        specifier: ^1.2.6
-        version: 1.2.6(markdownlint-cli2@0.22.1)
+        specifier: ^1.2.7
+        version: 1.2.7(markdownlint-cli2@0.22.1)
       '@repodog/prettier-config':
-        specifier: ^3.0.4
-        version: 3.0.4(prettier@3.8.4)
+        specifier: ^3.0.5
+        version: 3.0.5(prettier@3.8.4)
       '@repodog/rollup-config':
-        specifier: ^4.0.14
-        version: 4.0.14(@types/node@24.13.2)(jiti@2.6.1)(rolldown@1.1.3)(rollup@4.62.2)(terser@5.48.0)
+        specifier: ^4.0.15
+        version: 4.0.15(@types/node@24.13.2)(jiti@2.6.1)(rolldown@1.1.3)(rollup@4.62.2)(terser@5.48.0)
       '@repodog/swc-config':
-        specifier: ^1.0.14
-        version: 1.0.14(@rollup/plugin-swc@0.4.1(@swc/core@1.15.43)(rollup@4.62.2))(@swc/core@1.15.43)(core-js@3.49.0)
+        specifier: ^1.0.15
+        version: 1.0.15(@rollup/plugin-swc@0.4.1(@swc/core@1.15.43)(rollup@4.62.2))(@swc/core@1.15.43)(core-js@3.49.0)
       '@repodog/syncpack-config':
-        specifier: ^15.0.1
-        version: 15.0.1(syncpack@15.3.2)
+        specifier: ^15.0.3
+        version: 15.0.3(syncpack@15.3.2)
       '@repodog/ts-config':
-        specifier: ^6.0.2
-        version: 6.0.2(typescript@6.0.3)
+        specifier: ^6.0.3
+        version: 6.0.3(typescript@6.0.3)
       '@rollup/plugin-swc':
         specifier: ^0.4.1
         version: 0.4.1(@swc/core@1.15.43)(rollup@4.62.2)
@@ -672,43 +672,43 @@ packages:
     resolution: {integrity: sha512-//0sR/cow/s4ICQaYoAobOl4aU8cjU6x/V24V7XkKotb9+O+3zySIYp146vpaobYHnxa4pZX8NkV54Z5AwbDKA==}
     engines: {node: '>=12'}
 
-  '@repodog/cli-cut@1.4.27':
-    resolution: {integrity: sha512-C5T2nls5VzRDAi1TsycDh5YbRGvjwkK4b6+ybhLeKbAYBXqKpNVpqATwvzKbKctBoDr8VXnziW0r2wZsVehjtg==}
+  '@repodog/cli-cut@1.4.29':
+    resolution: {integrity: sha512-9XSuoM1LuYPC6MPF9GmoyBu3FAsdAEWIF08RQAgXIDBNrmYlDp44j3dLnQFx/nYaY7JDomYSlKDRscPVp6H6xA==}
 
-  '@repodog/cli-new@1.5.44':
-    resolution: {integrity: sha512-orQTDCNXK2hvxSB0BptJxGQPRHHSTblD897ngP1MW5AV+kVHpCFr3o7mka5WvrLJYKrou67vH6ym1yRHGqPKwQ==}
+  '@repodog/cli-new@1.5.46':
+    resolution: {integrity: sha512-KbAtgtMBs4BYze43RFW2RAayx6+E65wRl7t35H1OGkpaFR35kH9ql/u0w7GUfW5LOas6QraoJmKbVEEg0scOwA==}
 
-  '@repodog/cli-postinstall@0.4.23':
-    resolution: {integrity: sha512-9XNWfOHHBP251t2wtyUo7g0dw4PICZFWnGpTD/TPNXZH8TXqaWDFkF4dlpyUBlJuqixkW8xVg2qrhaVy7glMmQ==}
+  '@repodog/cli-postinstall@0.4.25':
+    resolution: {integrity: sha512-HlPdZUpjDwdPibfff1bX0uS3ETaf6s/c8OfoM+NFA0npH/Zu632zwjWrTm/ulhnbQ8THCoc6rAoQb0zGShnVlA==}
 
-  '@repodog/cli-publish@1.4.27':
-    resolution: {integrity: sha512-ff9rpYjqb655OZJsjwQNBlrW2zVSvWT0s0+KoUnhYn3rOKwXdHkQGOLT0EfnFGf2zPg6MWA5kFFjetKW8lCwzA==}
+  '@repodog/cli-publish@1.4.29':
+    resolution: {integrity: sha512-bk6jHjPTiMbD5bInZlXJjZcPT8HLKQQrncLZ4G0+rp1N9k4qrXg/flzTw/+9VsjuJE62GZUBcjrdRO2q2oWGvQ==}
 
-  '@repodog/cli-setup@1.4.24':
-    resolution: {integrity: sha512-/itKOtzDuUjyXn+oVc+jTk757OqRC2iTv2bfKh6yFSpwmKmFNpFWG5xG2sc4eRO/JOw9Ti0hYWhpZqrjBGUY6A==}
+  '@repodog/cli-setup@1.4.26':
+    resolution: {integrity: sha512-Kcvo5rGphWQ33IPfV/2l4dtOwAvB6px3zgQfWDSgZ0+O4he2i8K7yNOVwWvrrhXDxtEal0UfN6vC2+2ioAuB2g==}
 
   '@repodog/cli-utils@1.4.21':
     resolution: {integrity: sha512-UjmPDK6Tsi+lmrWcxGo+iD6xAupxIXkhXscAbafU2aLGtmgiMHzXelB4QdGZpMV0Ptqnb1WKuXImblMS501ZSg==}
 
-  '@repodog/cli-utils@1.4.22':
-    resolution: {integrity: sha512-mUzJR7DMo6mWhk1Cy1zxVYhyNAc+kmnuOKRSckLbbLegLMNFmDVBeRh1vBuxpF1/wp+P4WkQWkG/xX7L505haQ==}
+  '@repodog/cli-utils@1.4.24':
+    resolution: {integrity: sha512-8P+lmqSedpvMJoCCSgkuEwRy3tlZl8qNwTd5SXV9vT76nqv8aAyrS+8PsjcPPKyJW9WLC4kHiY28CvwRHZuQzg==}
 
-  '@repodog/cli-write@1.4.23':
-    resolution: {integrity: sha512-59aAowmCOXlcu5bWlHHdpp6/2Cov42fSx9qxzTEXtI0SiEOSkBxskjjCGD7x50w97MbbaA9AJTrqjOGiUrnang==}
+  '@repodog/cli-write@1.4.25':
+    resolution: {integrity: sha512-g3nvLxnOVm9v4MeMZB+vvNb5y308dsjI9R510ptIWCx1mucALktoX7oh+9musqh6CowtqUJZfvcwQghKYYw3Yw==}
 
-  '@repodog/cli@1.6.55':
-    resolution: {integrity: sha512-6N4KIUw9qMX6f5C52kKn7nB1khDCuWeJXwre4ksb2T8TsjFXkB1MynjT1B95WS1ydbw7hbGdh85/MnCevLjpQw==}
-    engines: {node: ^24}
+  '@repodog/cli@1.6.57':
+    resolution: {integrity: sha512-UA4QTHF+yd8H5LMGgrKdxQ/ZBUXyeq3vaZ6P12Z1ALqc+J8kjeCfmIudPypu1p+AfX/wkFEm1xdW651P4wp8Zw==}
+    engines: {node: '>=20'}
     hasBin: true
 
-  '@repodog/commitlint-config@21.0.1':
-    resolution: {integrity: sha512-e+dkf43l8rXn3bvC1IL2U9TKaUCasuNlG47/uLWFLRJD1t4tWcedTeQ0fGzlYiudwcWbuKUFjaVYbLX1tKztjA==}
+  '@repodog/commitlint-config@21.0.2':
+    resolution: {integrity: sha512-CollAkrz9cQiMuUjBwOoznYmbe6aj7/y1Dr3UOXGbNGtYOH58anB0YcyNjvfOroadc6jjgsLsByYGjiEw43VTg==}
     peerDependencies:
       '@commitlint/cli': <22
       husky: <10
 
-  '@repodog/eslint-config-jest@9.0.8':
-    resolution: {integrity: sha512-6GD5ZiqfEktfWWBExCtNFlB22ydzA71q1ViQRIBGf6TbHjE5obLuGYaGnlTs407oohWGJcYFS9u2oAM+XpJKig==}
+  '@repodog/eslint-config-jest@9.0.9':
+    resolution: {integrity: sha512-HK4i2ECAaKngXoXlr7bEcIdpzIdqobCilEVxY89VXJ/3KtNEz9jPhITafizqoBTMjrv0YB+u44H3q6+qF8Hnmw==}
     peerDependencies:
       eslint: <10
 
@@ -718,8 +718,8 @@ packages:
       eslint: <10
       typescript: <7
 
-  '@repodog/jest-config@30.0.1':
-    resolution: {integrity: sha512-RrQhHOwMxda7094l43oQSr2R6UrH7zmiHiUcljEWikAyjoE4YB7NTmeMVTn5wSCVI/tQwMOJPIVt0ifvK06QUw==}
+  '@repodog/jest-config@30.0.2':
+    resolution: {integrity: sha512-v5s0I9ZoaNOOtbE0A0ff7RAjbfeG9qrRj2ZuEEfPGTbTTiajzFmFORBizEbuF5+IagQDrBeGcMNuebAv0PrCjA==}
     peerDependencies:
       '@jest/globals': <31
       '@swc/jest': <1
@@ -734,23 +734,23 @@ packages:
       babel-jest:
         optional: true
 
-  '@repodog/markdownlint-config@1.2.6':
-    resolution: {integrity: sha512-IxNcfjM/H/62ti5smaUPWPb1YyuCG39kPRF02HRIAr+wovkGYa1qVij2fsS6xumSkrfwGwhmDLNsAtWqpiS45w==}
+  '@repodog/markdownlint-config@1.2.7':
+    resolution: {integrity: sha512-uQRSZRxjpZw15YB4npqiJpxooj76l0jWC7XGdgLGKRUNUS5Z8BRldCODtX6ZSIClsxIYgttcS4w1E78q19D9Ew==}
     peerDependencies:
       markdownlint-cli2: <1
 
-  '@repodog/prettier-config@3.0.4':
-    resolution: {integrity: sha512-6/qdkeAg5I2M5HD6jC/Wbn71aEDablG/gXXOAi9yT5iuWjs4SiJYGps81pCdvNpqbE8iROfQvQ0iAggS+aqEPA==}
+  '@repodog/prettier-config@3.0.5':
+    resolution: {integrity: sha512-97YDIOHGRXBcJGSlvIQWBxhP4Ue4sBF413OHaCW7IdXn4CYAD65PJsaS3ruAYLeG2pT+SUSOoryxl6l/yXHqxg==}
     peerDependencies:
       prettier: <4
 
-  '@repodog/rollup-config@4.0.14':
-    resolution: {integrity: sha512-5dAV+QTl9i/LjJ704fS4O6kZTUZwKJXb41h6ScpIB8+jd7oMGlKUbQXU//KmEd4hYAd6Td11GKUOVHsZLcfnCg==}
+  '@repodog/rollup-config@4.0.15':
+    resolution: {integrity: sha512-x2Bz+k44lRXwEWBXEAO9s/PlIBCLwOUD6ENpMsZCmn1ErVbWg+v9fz17Wpwr/albftSNuVqevQbyKu17Ie7xjQ==}
     peerDependencies:
       rollup: <5
 
-  '@repodog/swc-config@1.0.14':
-    resolution: {integrity: sha512-+QZtn+6sytNPLOIwRR2Z6tsZLa+Z+xcRPUibZnsxH4XJax8xDbo4EbTH/XyiqqDUFqg0t8JKhobz2IOQrJpjkQ==}
+  '@repodog/swc-config@1.0.15':
+    resolution: {integrity: sha512-k5Bh6Cv+HahDK5rl3iWikW88NyGOdkuix6cXhTBVxjszeKynNWy2GqGwEX0SGoHn5PuAEi4mpDSs5Ey3r0cMeA==}
     peerDependencies:
       '@rollup/plugin-swc': <1
       '@swc/core': <2
@@ -761,13 +761,13 @@ packages:
       core-js:
         optional: true
 
-  '@repodog/syncpack-config@15.0.1':
-    resolution: {integrity: sha512-BZzytJD4Vz/InHEaMK3YAqFWjnmjLI44N1FJHLG337SpwNL31WjvKnb94m8TcWkxyXeGhFNPLrE6p9N/pwE+XA==}
+  '@repodog/syncpack-config@15.0.3':
+    resolution: {integrity: sha512-Va719fK/DmprjBW4KS6kEkdHDCYv7Uxs5uG/0acrjfNO3l3aD3IZvmRaPGS1Aqh96qXgdhNrrca6ccEcSbzFBw==}
     peerDependencies:
       syncpack: <16
 
-  '@repodog/ts-config@6.0.2':
-    resolution: {integrity: sha512-pGVYs7J/ytoQIdJD7650IwES4mN7JTwPHL3KfD+lPPSaHLZ82E0Tvh/vCUZB2bMDD+ynxu1q4EtZpiMiz/eMtQ==}
+  '@repodog/ts-config@6.0.3':
+    resolution: {integrity: sha512-EZcA6dRiLr0LnGP6k6w6xeH57vPXSackOhnw8riFoDdkaQAnosZ/NW9KGGhI2nX1gd9qb3yH9Y3JudMyJ/X08w==}
     peerDependencies:
       typescript: <7
 
@@ -4839,9 +4839,9 @@ snapshots:
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
 
-  '@repodog/cli-cut@1.4.27':
+  '@repodog/cli-cut@1.4.29':
     dependencies:
-      '@repodog/cli-utils': 1.4.22
+      '@repodog/cli-utils': 1.4.24
       ansi-colors: 4.1.3
       markdownlint-cli2: 0.22.1
       shelljs: 0.10.0
@@ -4849,11 +4849,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@repodog/cli-new@1.5.44':
+  '@repodog/cli-new@1.5.46':
     dependencies:
-      '@repodog/cli-postinstall': 0.4.23
-      '@repodog/cli-setup': 1.4.24
-      '@repodog/cli-utils': 1.4.22
+      '@repodog/cli-postinstall': 0.4.25
+      '@repodog/cli-setup': 1.4.26
+      '@repodog/cli-utils': 1.4.24
       ansi-colors: 4.1.3
       enquirer: 2.4.1
       hygen: 6.2.11
@@ -4863,26 +4863,26 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@repodog/cli-postinstall@0.4.23':
+  '@repodog/cli-postinstall@0.4.25':
     dependencies:
-      '@repodog/cli-utils': 1.4.22
+      '@repodog/cli-utils': 1.4.24
       ansi-colors: 4.1.3
       lodash-es: 4.18.1
       package-json: 10.0.1
       shelljs: 0.10.0
       yargs: 18.0.0
 
-  '@repodog/cli-publish@1.4.27':
+  '@repodog/cli-publish@1.4.29':
     dependencies:
-      '@repodog/cli-utils': 1.4.22
+      '@repodog/cli-utils': 1.4.24
       ansi-colors: 4.1.3
       semver: 7.8.5
       shelljs: 0.10.0
       yargs: 18.0.0
 
-  '@repodog/cli-setup@1.4.24':
+  '@repodog/cli-setup@1.4.26':
     dependencies:
-      '@repodog/cli-utils': 1.4.22
+      '@repodog/cli-utils': 1.4.24
       ansi-colors: 4.1.3
       enquirer: 2.4.1
       shelljs: 0.10.0
@@ -4897,7 +4897,7 @@ snapshots:
       semver: 7.8.5
       shelljs: 0.10.0
 
-  '@repodog/cli-utils@1.4.22':
+  '@repodog/cli-utils@1.4.24':
     dependencies:
       ansi-colors: 4.1.3
       glob: 13.0.6
@@ -4906,9 +4906,9 @@ snapshots:
       semver: 7.8.5
       shelljs: 0.10.0
 
-  '@repodog/cli-write@1.4.23(ws@8.21.0)':
+  '@repodog/cli-write@1.4.25(ws@8.21.0)':
     dependencies:
-      '@repodog/cli-utils': 1.4.22
+      '@repodog/cli-utils': 1.4.24
       ansi-colors: 4.1.3
       dotenv: 17.4.2
       openai: 4.104.0(ws@8.21.0)
@@ -4919,15 +4919,15 @@ snapshots:
       - ws
       - zod
 
-  '@repodog/cli@1.6.55(ws@8.21.0)':
+  '@repodog/cli@1.6.57(ws@8.21.0)':
     dependencies:
-      '@repodog/cli-cut': 1.4.27
-      '@repodog/cli-new': 1.5.44
-      '@repodog/cli-postinstall': 0.4.23
-      '@repodog/cli-publish': 1.4.27
-      '@repodog/cli-setup': 1.4.24
-      '@repodog/cli-utils': 1.4.22
-      '@repodog/cli-write': 1.4.23(ws@8.21.0)
+      '@repodog/cli-cut': 1.4.29
+      '@repodog/cli-new': 1.5.46
+      '@repodog/cli-postinstall': 0.4.25
+      '@repodog/cli-publish': 1.4.29
+      '@repodog/cli-setup': 1.4.26
+      '@repodog/cli-utils': 1.4.24
+      '@repodog/cli-write': 1.4.25(ws@8.21.0)
       '@types/lodash-es': 4.17.12
       '@types/semver': 7.7.1
       '@types/shelljs': 0.8.17
@@ -4944,13 +4944,13 @@ snapshots:
       - ws
       - zod
 
-  '@repodog/commitlint-config@21.0.1(@commitlint/cli@21.1.0(@types/node@24.13.2)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(husky@9.1.7)':
+  '@repodog/commitlint-config@21.0.2(@commitlint/cli@21.1.0(@types/node@24.13.2)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(husky@9.1.7)':
     dependencies:
       '@commitlint/cli': 21.1.0(@types/node@24.13.2)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@commitlint/config-conventional': 21.1.0
       husky: 9.1.7
 
-  '@repodog/eslint-config-jest@9.0.8(@typescript-eslint/eslint-plugin@8.62.0(@typescript-eslint/parser@8.62.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(jest@30.4.2(@types/node@24.13.2))(typescript@6.0.3)':
+  '@repodog/eslint-config-jest@9.0.9(@typescript-eslint/eslint-plugin@8.62.0(@typescript-eslint/parser@8.62.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(jest@30.4.2(@types/node@24.13.2))(typescript@6.0.3)':
     dependencies:
       eslint: 9.39.4(jiti@2.6.1)
       eslint-plugin-jest: 29.15.2(@typescript-eslint/eslint-plugin@8.62.0(@typescript-eslint/parser@8.62.0(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(typescript@6.0.3))(eslint@9.39.4(jiti@2.6.1))(jest@30.4.2(@types/node@24.13.2))(typescript@6.0.3)
@@ -4985,7 +4985,7 @@ snapshots:
       - eslint-plugin-import
       - supports-color
 
-  '@repodog/jest-config@30.0.1(@jest/globals@30.4.1)(@swc/jest@0.2.39(@swc/core@1.15.43))(babel-jest@30.4.1(@babel/core@7.29.7))(jest-environment-jsdom@30.4.1)(jest-environment-node@30.4.1)(jest@30.4.2(@types/node@24.13.2))(suppress-experimental-warnings@2.0.0)':
+  '@repodog/jest-config@30.0.2(@jest/globals@30.4.1)(@swc/jest@0.2.39(@swc/core@1.15.43))(babel-jest@30.4.1(@babel/core@7.29.7))(jest-environment-jsdom@30.4.1)(jest-environment-node@30.4.1)(jest@30.4.2(@types/node@24.13.2))(suppress-experimental-warnings@2.0.0)':
     dependencies:
       '@jest/globals': 30.4.1
       identity-obj-proxy: 3.0.0
@@ -4997,15 +4997,15 @@ snapshots:
       '@swc/jest': 0.2.39(@swc/core@1.15.43)
       babel-jest: 30.4.1(@babel/core@7.29.7)
 
-  '@repodog/markdownlint-config@1.2.6(markdownlint-cli2@0.22.1)':
+  '@repodog/markdownlint-config@1.2.7(markdownlint-cli2@0.22.1)':
     dependencies:
       markdownlint-cli2: 0.22.1
 
-  '@repodog/prettier-config@3.0.4(prettier@3.8.4)':
+  '@repodog/prettier-config@3.0.5(prettier@3.8.4)':
     dependencies:
       prettier: 3.8.4
 
-  '@repodog/rollup-config@4.0.14(@types/node@24.13.2)(jiti@2.6.1)(rolldown@1.1.3)(rollup@4.62.2)(terser@5.48.0)':
+  '@repodog/rollup-config@4.0.15(@types/node@24.13.2)(jiti@2.6.1)(rolldown@1.1.3)(rollup@4.62.2)(terser@5.48.0)':
     dependencies:
       '@rollup/plugin-commonjs': 29.0.3(rollup@4.62.2)
       '@rollup/plugin-image': 3.0.3(rollup@4.62.2)
@@ -5037,7 +5037,7 @@ snapshots:
       - webpack
       - yaml
 
-  '@repodog/swc-config@1.0.14(@rollup/plugin-swc@0.4.1(@swc/core@1.15.43)(rollup@4.62.2))(@swc/core@1.15.43)(core-js@3.49.0)':
+  '@repodog/swc-config@1.0.15(@rollup/plugin-swc@0.4.1(@swc/core@1.15.43)(rollup@4.62.2))(@swc/core@1.15.43)(core-js@3.49.0)':
     dependencies:
       '@swc/core': 1.15.43
       browserslist: 4.28.4
@@ -5045,11 +5045,11 @@ snapshots:
       '@rollup/plugin-swc': 0.4.1(@swc/core@1.15.43)(rollup@4.62.2)
       core-js: 3.49.0
 
-  '@repodog/syncpack-config@15.0.1(syncpack@15.3.2)':
+  '@repodog/syncpack-config@15.0.3(syncpack@15.3.2)':
     dependencies:
       syncpack: 15.3.2
 
-  '@repodog/ts-config@6.0.2(typescript@6.0.3)':
+  '@repodog/ts-config@6.0.3(typescript@6.0.3)':
     dependencies:
       typescript: 6.0.3
 
