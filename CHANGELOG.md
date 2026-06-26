@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.0.31 (2026-06-26)
+
+### Chores
+
+* upgrade repodog packages ([2b8a0cf5](https://github.com/badbatch/cacheability/commit/2b8a0cf5d8d22aaf5d5be9f40727b93601a6806e))
+* upgrade deps ([b66d8873](https://github.com/badbatch/cacheability/commit/b66d887327f19b9d1709f6ceb35e870586b18f96))
+* force commit ([5ce03ca4](https://github.com/badbatch/cacheability/commit/5ce03ca467de344c8818245396b55cf4c7223496))
+
+### Bug Fixes
+
+* vulnerabilities ([7ef02a38](https://github.com/badbatch/cacheability/commit/7ef02a388e8ab1a20c9e953b1533e23d2cd3ba44))
+* stop eslint from formatting json files ([d1125685](https://github.com/badbatch/cacheability/commit/d11256856be9d5506df1809de84c5d29565b116b))
+
 ## 4.0.30 (2025-06-13)
 
 ### Chores
