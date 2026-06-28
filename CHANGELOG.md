@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.32 (2026-06-28)
+
+### Chores
+
+* upgrade deps ([724392b7](https://github.com/badbatch/cacheability/commit/724392b7e82f7c551ef1922566b700da6155472f))
+
 ## 4.0.31 (2026-06-26)
 
 ### Chores
