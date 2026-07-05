@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.33 (2026-07-05)
+
+### Chores
+
+* bump deps ([39be48f9](https://github.com/badbatch/cacheability/commit/39be48f953b627d9a642d103a96bf2708593572a))
+
+### Bug Fixes
+
+* add format to validate script ([46f907e1](https://github.com/badbatch/cacheability/commit/46f907e143c3999fe29b50f809ac764943ffc1f7))
+
 ## 4.0.32 (2026-06-28)
 
 ### Chores
