@@ -14,6 +14,9 @@
   "main": "./dist/esm/index.mjs",
   "module": "./dist/esm/index.mjs",
   "types": "./dist/types/esm/index.d.ts",
+  "imports": {
+    "#*": "./src/*"
+  },
   "exports": {
     ".": {
       "source": "./src/index.ts",
@@ -55,16 +58,16 @@
     "lodash-es": "^4.18.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.1.0",
+    "@commitlint/cli": "^21.2.0",
     "@jest/globals": "^30.4.1",
     "@repodog/cli": "^1.6.59",
     "@repodog/commitlint-config": "^21.0.2",
     "@repodog/eslint-config": "^9.0.29",
     "@repodog/eslint-config-jest": "^9.0.9",
-    "@repodog/jest-config": "^30.0.3",
+    "@repodog/jest-config": "^30.0.4",
     "@repodog/markdownlint-config": "^1.2.7",
     "@repodog/prettier-config": "^3.0.5",
-    "@repodog/rollup-config": "^4.0.15",
+    "@repodog/rollup-config": "^4.0.17",
     "@repodog/swc-config": "^1.0.15",
     "@repodog/syncpack-config": "^15.0.3",
     "@repodog/ts-config": "^6.0.3",
@@ -81,8 +84,8 @@
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
     "jest-environment-node": "^30.4.1",
-    "markdownlint-cli2": "^0.22.1",
-    "prettier": "^3.9.1",
+    "markdownlint-cli2": "^0.23.0",
+    "prettier": "^3.9.4",
     "rollup": "^4.62.2",
     "suppress-experimental-warnings": "^2.0.0",
     "syncpack": "^15.3.2",
