@@ -14,29 +14,6 @@ import {
 export class Cacheability {
   private static _headerKeys: HeaderKeys = ['cache-control', 'etag'];
 
-  /**
-   * The property holds the Cacheability instance's parsed cache
-   * headers data, including cache control directives, etag, and
-   * a derived TTL timestamp.
-   */
-  public readonly metadata: Metadata;
-
-  constructor(arguments_: CacheabilityArguments = {}) {
-    const { cacheControl, headers, metadata } = arguments_;
-
-    if (cacheControl) {
-      this.metadata = Cacheability._setMetadata({
-        cacheControl: Cacheability._parseCacheControl(cacheControl),
-      });
-    } else if (headers) {
-      this.metadata = Cacheability._setMetadata(Cacheability._parseHeaders(headers));
-    } else if (metadata) {
-      this.metadata = Cacheability._validateMetadata(metadata);
-    } else {
-      this.metadata = Cacheability._setDefaultMetadata();
-    }
-  }
-
   private static _getDirectives(cacheControl: string): string[] {
     return cacheControl.split(', ');
   }
@@ -48,7 +25,7 @@ export class Cacheability {
 
     for (const directive of directives) {
       if (directive.includes('=')) {
-        const [key, value] = directive.split('=');
+        const [key, value] = directive.split('=', 2);
         object[camelCase(key)] = Number(value);
         continue;
       }
@@ -118,6 +95,29 @@ export class Cacheability {
       etag: isString(etag) ? etag : undefined,
       ttl: isNumber(ttl) ? ttl : Infinity,
     };
+  }
+
+  /**
+   * The property holds the Cacheability instance's parsed cache
+   * headers data, including cache control directives, etag, and
+   * a derived TTL timestamp.
+   */
+  public readonly metadata: Metadata;
+
+  constructor(arguments_: CacheabilityArguments = {}) {
+    const { cacheControl, headers, metadata } = arguments_;
+
+    if (cacheControl) {
+      this.metadata = Cacheability._setMetadata({
+        cacheControl: Cacheability._parseCacheControl(cacheControl),
+      });
+    } else if (headers) {
+      this.metadata = Cacheability._setMetadata(Cacheability._parseHeaders(headers));
+    } else if (metadata) {
+      this.metadata = Cacheability._validateMetadata(metadata);
+    } else {
+      this.metadata = Cacheability._setDefaultMetadata();
+    }
   }
 
   /**
