@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.0.34 (2026-07-31)
+
+### Chores
+
+* upgrade deps ([d22e85ef](https://github.com/badbatch/cacheability/commit/d22e85efd10409e0ae330f0e8e90fd5e248ed478))
+
+### Bug Fixes
+
+* update overrides ([a3b8df89](https://github.com/badbatch/cacheability/commit/a3b8df89ef83dd2dc9dfa15d8d340a7c334497fb))
+* linting issues ([73da1ffd](https://github.com/badbatch/cacheability/commit/73da1ffd618562ce81b72f6ac421c70951faf96a))
+
 ## 4.0.33 (2026-07-05)
 
 ### Chores
