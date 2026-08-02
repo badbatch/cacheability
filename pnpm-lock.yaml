@@ -98,9 +98,6 @@ importers:
       jest:
         specifier: ^30.4.2
         version: 30.4.2(@types/node@26.1.2)
-      jest-environment-jsdom:
-        specifier: ^30.4.1
-        version: 30.4.1
       jest-environment-node:
         specifier: ^30.4.1
         version: 30.4.1
