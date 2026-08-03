@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.35 (2026-08-03)
+
+### Chores
+
+* bump cts types ([e81690c3](https://github.com/badbatch/cacheability/commit/e81690c3f2cd2656d4a89700046770087df4a4bc))
+* dep update ([6df8d77a](https://github.com/badbatch/cacheability/commit/6df8d77a80c6e343841d80eae1574079fc0e353f))
+
 ## 4.0.34 (2026-07-31)
 
 ### Chores
