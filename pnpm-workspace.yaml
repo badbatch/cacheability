@@ -3,7 +3,25 @@ allowBuilds:
   core-js: false
   unrs-resolver: false
 
-minimumReleaseAge: 0
+minimumReleaseAgeExclude:
+  - '@repodog/cli-cut'
+  - '@repodog/cli-new'
+  - '@repodog/cli-postinstall'
+  - '@repodog/cli-publish'
+  - '@repodog/cli-setup'
+  - '@repodog/cli-utils'
+  - '@repodog/cli'
+  - '@repodog/commitlint-config'
+  - '@repodog/eslint-config-jest'
+  - '@repodog/eslint-config'
+  - '@repodog/jest-config'
+  - '@repodog/markdownlint-config'
+  - '@repodog/prettier-config'
+  - '@repodog/rollup-config'
+  - '@repodog/swc-config'
+  - '@repodog/syncpack-config'
+  - '@repodog/ts-config'
+  - 'cts-types'
 
 overrides:
   'brace-expansion@<1.1.16': '^1.1.16'
