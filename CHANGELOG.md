@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.37 (2026-08-07)
+
+### Chores
+
+* bump dep ([0c4924d1](https://github.com/badbatch/cacheability/commit/0c4924d1754c0550fe77bf208325e185e719c81e))
+
 ## 4.0.36 (2026-08-07)
 
 ### Chores
