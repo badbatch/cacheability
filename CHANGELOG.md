@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.38 (2026-08-26)
+
+### Chores
+
+* change how we publish to npm ([47a3e530](https://github.com/badbatch/cacheability/commit/47a3e5301def66ddfb2fc282e3ca3fe7beec1bd8))
+
 ## 4.0.37 (2026-08-07)
 
 ### Chores
